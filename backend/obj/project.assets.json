@@ -20,7 +20,7 @@
       "outputPath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/sirakis/.nuget/NuGet/NuGet.Config"
+        "/Users/sirakis/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -3,7 +3,7 @@ namespace MvcMovie.Models
 {
     public class Album
     {
-        private MusicStoreContext context;
+        private DbContext context;
 
         public int ID { get; set; }
 

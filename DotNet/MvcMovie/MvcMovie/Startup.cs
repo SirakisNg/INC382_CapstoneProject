@@ -30,7 +30,8 @@ namespace MvcMovie
         {
             // Add framework services.  
             services.AddMvc();
-            services.Add(new ServiceDescriptor(typeof(MusicStoreContext), new MusicStoreContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.AddSwaggerGen();
+            services.Add(new ServiceDescriptor(typeof(DbContext), new DbContext(Configuration.GetConnectionString("DefaultConnection"))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +67,11 @@ namespace MvcMovie
             //            name: "default",
             //            template: "{controller=Album}/{action=Index}/{id?}");
             //    });
+
+            app.UseSwagger(); 
+            app.UseSwaggerUI(c => { 
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2"); 
+            });
 
 
 

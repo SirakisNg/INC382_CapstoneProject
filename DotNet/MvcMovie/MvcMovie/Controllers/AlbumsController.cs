@@ -15,7 +15,7 @@ namespace MvcMovie.Controllers
         {
             get
             {
-                MusicStoreContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.MusicStoreContext)) as MusicStoreContext;
+                DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
 
                 return View(context.GetAllAlbums());
             }
@@ -28,7 +28,7 @@ namespace MvcMovie.Controllers
         public IActionResult Albums()
         {
 
-                MusicStoreContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.MusicStoreContext)) as MusicStoreContext;
+                DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
 
                 return View(context.GetAllAlbums());
 
@@ -36,14 +36,14 @@ namespace MvcMovie.Controllers
 
         public IActionResult AlbumsByID(int ID)
         {
-            MusicStoreContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.MusicStoreContext)) as MusicStoreContext;
+            DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
             Console.WriteLine("info : "+ DateTime.Today + " : Search albums by album id");
             return View(context.GetAlbumsByID(ID));
         }
 
         public ActionResult deleteAlbum(int deleteID)
         {
-            MusicStoreContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.MusicStoreContext)) as MusicStoreContext;
+            DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
             Console.WriteLine("info : "+ DateTime.Today + " : delete album id "+deleteID+"--->");
             context.deleteAlbum(deleteID);
             return View();
@@ -51,7 +51,7 @@ namespace MvcMovie.Controllers
 
         public ActionResult addAlbum(string name, string artist, int price, string genre)
         {
-            MusicStoreContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.MusicStoreContext)) as MusicStoreContext;
+            DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
             Console.WriteLine("info : "+ DateTime.Today + " : add album id "+"--->");
             context.addAlbum(name, artist, price, genre);
             return View();
