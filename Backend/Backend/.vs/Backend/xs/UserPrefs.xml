@@ -1,16 +1,17 @@
-﻿<Properties StartupConfiguration="{D7198C8F-36DE-4552-BF70-1B4FA54BF800}|Default">
+﻿<Properties StartupConfiguration="{1BD8D35F-BAF1-4A1D-A3CD-0553C22E3F45}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Utill/EncodeString.cs">
     <Files>
-      <File FileName="Utill/DBConnect.cs" Line="3" Column="12" />
-      <File FileName="Utill/EncodeString.cs" Line="7" Column="10" />
-      <File FileName="../../../../../../../usr/local/share/dotnet/x64/sdk/6.0.101/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.Shared.targets" Line="90" Column="5" />
+      <File FileName="Utill/DBConnect.cs" Line="38" Column="1" />
+      <File FileName="Utill/EncodeString.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Backend" expanded="True">
             <Node name="Backend" expanded="True">
-              <Node name="Dependencies" expanded="True" />
+              <Node name="Utill" expanded="True">
+                <Node name="EncodeString.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
