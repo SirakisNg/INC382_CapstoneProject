@@ -1,34 +1,21 @@
 ﻿<Properties StartupConfiguration="{1BD8D35F-BAF1-4A1D-A3CD-0553C22E3F45}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
-    <Files>
-      <File FileName="Controllers/HomeController.cs" Line="10" Column="21" />
-      <File FileName="Startup.cs" Line="27" Column="23" />
-      <File FileName="Views/Shared/_Layout.cshtml" />
-      <File FileName="Views/Home/Index (copy).cshtml" Line="21" Column="79" />
-      <File FileName="Views/Home/Privacy.cshtml" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="16" Column="1" />
-      <File FileName="Utill/DBConnect.cs" Line="18" Column="53" />
-      <File FileName="Utill/EncodeString.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Shared/_Layout.cshtml">
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Backend" expanded="True">
             <Node name="Backend" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="HomeController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Utill" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Home" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

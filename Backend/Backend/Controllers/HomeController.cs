@@ -56,18 +56,18 @@ namespace Backend.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            DataTable dt = ConnectDB.GetData($"SELECT * FROM user WHERE usernsme ="+username+";");
+            DataTable dt = ConnectDB.GetData($"SELECT * FROM test.user WHERE Username ='{username}';");
             if(dt.Rows.Count > 0)
             {
                 if(dt.Rows[0]["Password"].ToString() == EncodeString.MD5HashCryptography(password))
                 {
                     HttpContext.Session.SetString("Login", "1");
-                    Console.WriteLine($"Login : " + DateTime.Today + "User : "+username+" login to the system");
+                    Console.WriteLine("Login : " + DateTime.Today + $"User : {username} login to the system");
                     return View("Index");
                 }
                 else
                 {
-                    Console.WriteLine($"Login : " + DateTime.Today + "User : "+username+" login fail");
+                    Console.WriteLine($"Login : " + DateTime.Today + $"User : {username} login fail");
                     return View("Login");
                 }
             }
@@ -86,6 +86,13 @@ namespace Backend.Controllers
                 }
             }
             return result;
+        }
+
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("Login");
         }
     }
 }
