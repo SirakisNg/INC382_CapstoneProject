@@ -1,43 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using MvcMovie.Models;
 
 
 namespace MvcMovie.Models
 {
     public class DbContext
     {
-        // Connection string
         public string ConnectionString { get; set; }
+
         public DbContext(string connectionString)
         {
             this.ConnectionString = connectionString;
         }
 
-
-
-
-
-
-        public virtual DbSet<UserModels> Users { get; set; }
-
-
-
-
-
-        //Database connect
         private MySqlConnection GetConnection()
         {
             return new MySqlConnection(ConnectionString);
         }
 
-
-
-
-
-// Seprate context -------------------------------------------------------------------------------
         public List<UserModels> GetAllUsers()
         {
 
@@ -66,7 +47,6 @@ namespace MvcMovie.Models
             return list;
         }
 
-
         public List<Album> GetAllAlbums()
         {
 
@@ -94,7 +74,6 @@ namespace MvcMovie.Models
             }
             return list;
         }
-
         public List<Album> GetAlbumsByID(int ID)
         {
 

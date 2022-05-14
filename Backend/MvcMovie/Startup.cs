@@ -9,8 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MvcMovie.Models;
-using Swashbuckle;
-using Microsoft.OpenApi.Models;
 
 namespace MvcMovie
 {
@@ -70,15 +68,11 @@ namespace MvcMovie
             //            template: "{controller=Album}/{action=Index}/{id?}");
             //    });
 
-            //app.UseSwagger(); 
-            //app.UseSwaggerUI(c => { 
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2"); 
-            //});
+            app.UseSwagger(); 
+            app.UseSwaggerUI(c => { 
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2"); 
+            });
 
-            app.UseSwaggerUI(c =>
-              {
-                  c.SwaggerEndpoint("/MvcMovie/swagger/v1/swagger.json", "My API V1");
-              });
 
 
         }

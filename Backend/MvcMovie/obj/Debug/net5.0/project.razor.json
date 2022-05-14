@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Backend.csproj",
+  "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/MvcMovie.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15616,80 +15616,80 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "Backend",
+  "RootNamespace": "MvcMovie",
   "Documents": [
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/User/AllUsers.cshtml",
-      "TargetPath": "Views\\User\\AllUsers.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Albums/Index.cshtml",
-      "TargetPath": "Views\\Albums\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Albums/deleteAlbum.cshtml",
-      "TargetPath": "Views\\Albums\\deleteAlbum.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Albums/AlbumsByID.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Albums/AlbumsByID.cshtml",
       "TargetPath": "Views\\Albums\\AlbumsByID.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Shared/Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Albums/Index.cshtml",
+      "TargetPath": "Views\\Albums\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Albums/Test.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Albums/Test.cshtml",
       "TargetPath": "Views\\Albums\\Test.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Albums/Albums.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Albums/Albums.cshtml",
       "TargetPath": "Views\\Albums\\Albums.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Home/Test.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/User/AllUsers.cshtml",
+      "TargetPath": "Views\\User\\AllUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Albums/deleteAlbum.cshtml",
+      "TargetPath": "Views\\Albums\\deleteAlbum.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Home/Test.cshtml",
       "TargetPath": "Views\\Home\\Test.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/MvcMovie/Views/Albums/addAlbum.cshtml",
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/DotNet/MvcMovie/MvcMovie/Views/Albums/addAlbum.cshtml",
       "TargetPath": "Views\\Albums\\addAlbum.cshtml",
       "FileKind": "mvc"
     }
