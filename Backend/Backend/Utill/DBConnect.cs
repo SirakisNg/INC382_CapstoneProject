@@ -6,7 +6,7 @@ namespace Backend.Utill
 {
     public class DBConnect
     {
-        private string ConnectionString = "server=localhost;username=root;password=password,database=test";
+        private string ConnectionString = "Server = localhost; Database = test; Uid = root; Pwd = password";
         public MySqlConnection myConnection;
 
         public DBConnect()
