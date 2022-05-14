@@ -1,4 +1,20 @@
 ﻿<Properties StartupConfiguration="{94C56144-B91D-47E4-B5FA-E965FBF42090}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Backend" expanded="True" selected="True">
+            <Node name="Backend" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Backend FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Backend FirstBuild="True" PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>
