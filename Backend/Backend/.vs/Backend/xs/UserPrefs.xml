@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{1BD8D35F-BAF1-4A1D-A3CD-0553C22E3F45}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Utill/EncodeString.cs">
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Backend" expanded="True">
+            <Node name="Backend" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Utill" expanded="True">
+                <Node name="EncodeString.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Backend PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>
