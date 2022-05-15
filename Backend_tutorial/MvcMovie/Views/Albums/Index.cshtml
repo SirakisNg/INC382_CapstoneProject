@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>This is the all albums</h2>
+<h2>Albums</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Aetist</th>
+        <th>Price</th>
+        <th>Genre</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+<tr>
+    <td>@item.ID</td>
+    <td>@item.Name</td>
+    <td>@item.ArtistName</td>
+    <td>@item.Price</td>
+    <td>@item.Genre</td>
+</tr>
+    }
+</table>
