@@ -23,11 +23,12 @@ namespace Backend.Controllers
 
         public FinanceController(ILogger<FinanceController> logger) => _logger = logger;
 
+
         public IActionResult allOrder()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : allOrder");
-            return (IActionResult)context.getAllOrder();
+            return View(context.getAllOrder());
         }
     }
 }

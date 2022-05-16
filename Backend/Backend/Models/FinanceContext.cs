@@ -18,7 +18,8 @@ namespace Backend.Models
 
         public  List<FinanceList> getAllOrder()
         {
-            DataTable dt = ConnectDB.GetData($"SELECT * FROM TAS_Project.order;");
+            DataTable dt = ConnectDB.GetData("SELECT * FROM TAS_Project.order;");
+            Console.WriteLine("info : " + DateTime.Today + " : Database connected");
 
             //List < DataRow > data = dt.AsEnumerable().ToList();
 
@@ -36,6 +37,7 @@ namespace Backend.Models
                     bayFillID = Convert.ToInt32(values[5]),
                 };
                 data.Add(value);
+                Console.WriteLine(data.GetType());
                 
             }
             return data;

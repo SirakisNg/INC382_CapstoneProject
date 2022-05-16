@@ -4,7 +4,7 @@ namespace Backend.Models
 {
     public class FinanceList
     {
-        //private FinanceModel context;
+        private FinanceContext context;
 
         public int orderID { get; set; }
 
@@ -15,6 +15,7 @@ namespace Backend.Models
         public int price { get; set; }
 
         public int gasID { get; set; }
+
         public int bayFillID { get; set; }
     }
 }

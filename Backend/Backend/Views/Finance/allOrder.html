@@ -1,26 +1,28 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <h2>This is the all albums</h2>
-<h2>Albums</h2>
+<h2>test table</h2>
 <table class="table">
     <tr>
-        <th>ID</th>
-        <th>Name</th>
+        <th>orderID</th>
+        <th>date</th>
         <th>Aetist</th>
         <th>Price</th>
         <th>Genre</th>
+        <th>bayFillID</th>
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.ID</td>
-            <td>@item.Name</td>
-            <td>@item.ArtistName</td>
-            <td>@item.Price</td>
-            <td>@item.Genre</td>
-        </tr>
+    <tr>
+        <td>@item.orderID</td>
+        <td>@item.date</td>
+        <td>@item.cost</td>
+        <td>@item.gasIDe</td>
+        <td>@item.Genre</td>
+        <td>@item.bayFillID</td>
+    </tr>
     }
 </table>
 

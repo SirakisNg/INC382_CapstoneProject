@@ -1,23 +1,24 @@
 ﻿<Properties StartupConfiguration="{1BD8D35F-BAF1-4A1D-A3CD-0553C22E3F45}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/FinanceController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/FinanceContext.cs">
     <Files>
-      <File FileName="Models/FinanceModel.cs" Line="15" Column="1" />
-      <File FileName="Models/Finance.cs" Line="9" Column="27" />
+      <File FileName="Models/FinanceModel.cs" Line="45" Column="1" />
+      <File FileName="Models/Finance.cs" Line="12" Column="1" />
       <File FileName="Controllers/HomeController.cs" Line="19" Column="9" NotebookId="1" />
-      <File FileName="Controllers/FinanceController.cs" Line="22" Column="10" NotebookId="1" />
+      <File FileName="Controllers/FinanceController.cs" Line="31" Column="1" NotebookId="1" />
       <File FileName="Startup.cs" Line="33" Column="15" NotebookId="1" />
       <File FileName="Utill/EncodeString.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Utill/DBConnect.cs" Line="9" Column="79" NotebookId="1" />
+      <File FileName="Utill/DBConnect.cs" Line="9" Column="86" NotebookId="1" />
+      <File FileName="Views/Finance/test.html" Line="14" Column="22" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Backend" expanded="True">
             <Node name="Backend" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="FinanceController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="FinanceContext.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
               <Node name="Utill" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Finance" expanded="True" />
