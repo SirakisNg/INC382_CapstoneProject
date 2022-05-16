@@ -12,7 +12,7 @@ using System.Data;
 
 namespace Backend.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Contro
     {
         private readonly ILogger<HomeController> _logger;
 
