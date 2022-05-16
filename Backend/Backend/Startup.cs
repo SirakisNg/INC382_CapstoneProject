@@ -30,6 +30,7 @@ namespace Backend
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
             });
             services.AddControllersWithViews();
+            //services.Add(new ServiceDescriptor(typeof(DbContext), new DbContext(Configuration.GetConnectionString("DefaultConnection"))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

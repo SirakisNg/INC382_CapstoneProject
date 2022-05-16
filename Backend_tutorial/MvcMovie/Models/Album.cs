@@ -1,4 +1,5 @@
 ﻿using MvcMovie.Models;
+
 namespace MvcMovie.Models
 {
     public class Album
