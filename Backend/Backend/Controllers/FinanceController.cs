@@ -18,16 +18,17 @@ namespace Backend.Controllers
 
         public string Index()
         {
+            Console.WriteLine("info : " + DateTime.Today + " : test");
             return "This is a test page";
         }
 
         public FinanceController(ILogger<FinanceController> logger) => _logger = logger;
 
 
-        public IActionResult allOrder()
+        public IActionResult GetAllOrder()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : allOrder");
+            Console.WriteLine("info : " + DateTime.Today + " : getAllOrder");
             return View(context.getAllOrder());
         }
     }
