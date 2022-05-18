@@ -1,15 +1,30 @@
 ﻿<Properties StartupConfiguration="{1BD8D35F-BAF1-4A1D-A3CD-0553C22E3F45}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Utill/EncodeString.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Finance/GetAllOrder.cshtml">
+    <Files>
+      <File FileName="Controllers/HomeController.cs" />
+      <File FileName="Controllers/FinanceController.cs" />
+      <File FileName="Startup.cs" />
+      <File FileName="Utill/EncodeString.cs" />
+      <File FileName="Utill/DBConnect.cs" />
+      <File FileName="Models/FinanceContext.cs" />
+      <File FileName="Views/Finance/getAllOrder.cshtml" />
+      <File FileName="Models/DbContext.cs" />
+      <File FileName="Models/FinanceModel.cs" />
+      <File FileName="Program.cs" />
+      <File FileName="appsettings.json" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Backend" expanded="True">
             <Node name="Backend" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Utill" expanded="True">
-                <Node name="EncodeString.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Utill" expanded="True" />
               <Node name="Views" expanded="True">
+                <Node name="Finance" expanded="True">
+                  <Node name="GetAllOrder.cshtml" selected="True" />
+                </Node>
                 <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>

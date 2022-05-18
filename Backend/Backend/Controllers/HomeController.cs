@@ -25,7 +25,7 @@ namespace Backend.Controllers
 
         public IActionResult Index()
         {
-            if(LoginChecker() == true)
+            if (LoginChecker() == true)
             {
                 return View();
             }
@@ -33,7 +33,7 @@ namespace Backend.Controllers
             {
                 return View("Login");
             }
-            
+
         }
 
         public IActionResult Privacy()
@@ -56,18 +56,19 @@ namespace Backend.Controllers
         [HttpPost]
         public IActionResult Login(string username, string password)
         {
-            DataTable dt = ConnectDB.GetData($"SELECT * FROM test.user WHERE Username ='{username}';");
-            if(dt.Rows.Count > 0)
+
+            DataTable dt = ConnectDB.GetData($"SELECT * FROM User WHERE Username ='{username}';");
+            if (dt.Rows.Count > 0)
             {
-                if(dt.Rows[0]["Password"].ToString() == EncodeString.MD5HashCryptography(password))
+                if (dt.Rows[0]["Password"].ToString() == EncodeString.MD5HashCryptography(password))
                 {
                     HttpContext.Session.SetString("Login", "1");
-                    Console.WriteLine("Login : " + DateTime.Today + $"User : {username} login to the system");
-                    return View("Index");
+                    Console.WriteLine("info : " + DateTime.Today + $" : User {username} login to the system");
+                    return View("Home");
                 }
                 else
                 {
-                    Console.WriteLine($"Login : " + DateTime.Today + $"User : {username} login fail");
+                    Console.WriteLine($"info : " + DateTime.Today + $" : User {username} login fail");
                     return View("Login");
                 }
             }
@@ -78,7 +79,7 @@ namespace Backend.Controllers
         private bool LoginChecker()
         {
             bool result = false;
-            if(HttpContext.Session.GetString("login") != null)
+            if (HttpContext.Session.GetString("login") != null)
             {
                 if (HttpContext.Session.GetString("login") == "1")
                 {
