@@ -14407,6 +14407,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/MothlyIncomeStatement.cshtml",
+      "TargetPath": "Views\\Finance\\MothlyIncomeStatement.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -14427,6 +14432,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/GeneralLedger.cshtml",
+      "TargetPath": "Views\\Finance\\GeneralLedger.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Home/Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -14442,8 +14452,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/JournalizingTransaction.cshtml",
+      "TargetPath": "Views\\Finance\\JournalizingTransaction.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/Invoice.cshtml",
+      "TargetPath": "Views\\Finance\\Invoice.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/PurchaseOrder.cshtml",
+      "TargetPath": "Views\\Finance\\PurchaseOrder.cshtml",
       "FileKind": "mvc"
     },
     {

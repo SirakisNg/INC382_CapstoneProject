@@ -36,5 +36,27 @@ namespace Backend.Controllers
         {
             return View();
         }
+        public IActionResult GeneralLedger()
+        {
+            return View();
+        }
+
+        public IActionResult Invoice()
+        {
+            return View();
+        }
+        public IActionResult JournalizingTransaction()
+        {
+            return View();
+        }
+        public IActionResult MothlyIncomeStatement()
+        {
+            return View();
+        }
+        public IActionResult PurchaseOrder()
+        {
+            return View();
+        }
+
     }
 }
