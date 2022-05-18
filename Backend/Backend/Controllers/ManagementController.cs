@@ -25,5 +25,10 @@ namespace Backend.Controllers
         private DBConnect ConnectDB = new DBConnect();//Database connection
 
         public ManagementController(ILogger<ManagementController> logger) => _logger = logger;
+
+        public IActionResult Management()
+        {
+            return View();
+        }
     }
 }

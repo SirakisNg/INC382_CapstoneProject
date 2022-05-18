@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/DataTable/Table.cshtml",
+      "TargetPath": "Views\\DataTable\\Table.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/GetAllOrder.cshtml",
       "TargetPath": "Views\\Finance\\GetAllOrder.cshtml",
       "FileKind": "mvc"
@@ -14457,6 +14462,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Operation/Operation.cshtml",
+      "TargetPath": "Views\\Operation\\Operation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/Invoice.cshtml",
       "TargetPath": "Views\\Finance\\Invoice.cshtml",
       "FileKind": "mvc"
@@ -14464,6 +14474,11 @@
     {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Management/Management.cshtml",
+      "TargetPath": "Views\\Management\\Management.cshtml",
       "FileKind": "mvc"
     },
     {

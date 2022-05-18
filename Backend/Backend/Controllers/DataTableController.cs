@@ -25,7 +25,7 @@ namespace Backend.Controllers
         public DataTableController(ILogger<FinanceController> logger) => _logger = logger;
 
 
-        public IActionResult Operation()
+        public IActionResult Table()
         {
             return View();
         }
