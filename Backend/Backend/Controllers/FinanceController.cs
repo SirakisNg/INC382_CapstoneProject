@@ -29,6 +29,7 @@ namespace Backend.Controllers
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : getAllOrder");
+            //Console.WriteLine(context.getAllOrder.ToString())
             return View(context.getAllOrder());
         }
     }

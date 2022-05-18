@@ -66,7 +66,7 @@ namespace Backend.Models
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT * FROM TAS_Project.test where test_id = 1;", conn);
-                
+
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -87,6 +87,11 @@ namespace Backend.Models
                         });
                     }
                 }
+            }
+            Console.WriteLine(list[0]);
+            foreach (FinanceModel item in list)
+            {
+                Console.WriteLine(item);
             }
             return list;
         }

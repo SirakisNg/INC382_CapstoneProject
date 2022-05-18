@@ -63,12 +63,12 @@ namespace Backend.Controllers
                 if (dt.Rows[0]["Password"].ToString() == EncodeString.MD5HashCryptography(password))
                 {
                     HttpContext.Session.SetString("Login", "1");
-                    Console.WriteLine("info : " + DateTime.Today + $" User : {username} login to the system");
-                    return View("Index");
+                    Console.WriteLine("info : " + DateTime.Today + $" : User {username} login to the system");
+                    return View("Home");
                 }
                 else
                 {
-                    Console.WriteLine($"info : " + DateTime.Today + $" User : {username} login fail");
+                    Console.WriteLine($"info : " + DateTime.Today + $" : User {username} login fail");
                     return View("Login");
                 }
             }

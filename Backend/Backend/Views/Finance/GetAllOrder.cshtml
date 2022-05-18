@@ -1,21 +1,19 @@
-@{
-    Layout = null;
-}
-
-<h2>This is the all albums</h2>
-<h2>Albums</h2>
-<table class="table">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-
-    </tr>
-    @foreach (var item in Model)
-    {
+<body>
+    <h2>This is the all albums</h2>
+    <h2>Albums</h2>
+    <table class="table">
         <tr>
-            <td>@item.test_id</td>
-            <td>@item.data</td>
+            <th>ID</th>
+            <th>Name</th>
 
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.test_id</td>
+                <td>@item.data</td>
+
+            </tr>
+        }
+    </table>
+</body>
