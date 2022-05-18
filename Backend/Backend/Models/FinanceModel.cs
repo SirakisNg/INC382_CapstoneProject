@@ -18,7 +18,6 @@ namespace Backend.Models
         //public int gasID { get; set; }
 
         //public int bayFillID { get; set; }
-
         public int test_id { get; set; }
         public int data { get; set; }
 

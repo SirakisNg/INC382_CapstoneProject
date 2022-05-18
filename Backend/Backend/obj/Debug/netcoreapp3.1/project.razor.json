@@ -14445,6 +14445,11 @@
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/Inventory.cshtml",
+      "TargetPath": "Views\\Finance\\Inventory.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

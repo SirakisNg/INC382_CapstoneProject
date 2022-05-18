@@ -18,8 +18,8 @@ namespace Backend.Controllers
 
         public string Index()
         {
-            Console.WriteLine("info : " + DateTime.Today + " : test");
-            return "This is a test page";
+            Console.WriteLine("info : " + DateTime.Today + " : Finance access test success ...");
+            return "This is a Finance test response";
         }
 
         public FinanceController(ILogger<FinanceController> logger) => _logger = logger;
@@ -30,6 +30,11 @@ namespace Backend.Controllers
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : getAllOrder");
             return View(context.getAllOrder());
+        }
+
+        public IActionResult Inventory()
+        {
+            return View();
         }
     }
 }

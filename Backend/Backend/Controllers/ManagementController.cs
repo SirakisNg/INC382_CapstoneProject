@@ -14,6 +14,12 @@ namespace Backend.Controllers
 {
     public class ManagementController : Controller
     {
+
+        public string Index()
+        {
+            Console.WriteLine("info : " + DateTime.Today + " : Management access test success ...");
+            return "This is an Management test response";
+        }
         private readonly ILogger<ManagementController> _logger;
 
         private DBConnect ConnectDB = new DBConnect();//Database connection
