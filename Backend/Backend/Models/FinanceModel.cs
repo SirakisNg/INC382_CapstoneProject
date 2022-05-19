@@ -15,7 +15,7 @@ namespace Backend.Models
     {
         public int inventory_id { get; set; }
         public int side { get; set; }
-        public int gas_id { get; set; }
+        public string type { get; set; }
         public int volume { get; set; }
         public int price { get; set; }
         public string date { get; set; }

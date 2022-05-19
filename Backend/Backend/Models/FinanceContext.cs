@@ -73,7 +73,7 @@ namespace Backend.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM TAS_Project.Inventory WHERE inventory_id IS NOT NULL;", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id;;", conn);
 
 
                 using (var reader = cmd.ExecuteReader())
@@ -91,7 +91,7 @@ namespace Backend.Models
 
                             inventory_id = Convert.ToInt32(reader["inventory_id"]),
                             side = Convert.ToInt32(reader["side"]),
-                            gas_id = Convert.ToInt32(reader["gas_id"]),
+                            type = reader["type"].ToString(),
                             volume = Convert.ToInt32(reader["Volume"]),
                             price = Convert.ToInt32(reader["Price"]),
                             date = reader["Date"].ToString()
