@@ -305,6 +305,34 @@
                                   </div>
                               </div>
 
+                                  <div>
+
+                                      <h2>Inventory</h2>
+                                      <table class="table">
+                                          <tr>
+                                              <th>No</th>
+                                              <th>debit/Cradit</th>
+                                              <th>type</th>
+                                              <th>volume</th>
+                                              <th>date</th>
+
+
+                                          </tr>
+                                          @foreach (var item in Model)
+                                          {
+                                      <tr>
+                                          <td>@item.inventory_id</td>
+                                          <td>@item.side</td>
+                                          <td>@item.gas_id</td>
+                                          <td>@item.volume</td>
+                                          <td>@item.price</td>
+                                          <td>@item.date</td>
+
+                                      </tr>
+                                          }
+                                      </table>
+                                  </div>
+
                              
 
 

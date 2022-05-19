@@ -97,7 +97,6 @@ d:/Users/Desktop/GitHub_Frontend/INC382_CapstoneProject/Backend/Backend/obj/Debu
 d:/Users/Desktop/GitHub_Frontend/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Backend.genruntimeconfig.cache
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/bin/Debug/netcoreapp3.1/dist/js/.eslintrc.json
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/bin/Debug/netcoreapp3.1/Views/Utill/dist/js/.eslintrc.json
-/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/bin/Debug/netcoreapp3.1/Backend
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/GetAllOrder.cshtml.g.cs
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/Inventory.cshtml.g.cs
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/DataTable/Table.cshtml.g.cs

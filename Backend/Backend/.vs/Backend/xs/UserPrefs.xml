@@ -1,17 +1,14 @@
 ﻿<Properties StartupConfiguration="{1BD8D35F-BAF1-4A1D-A3CD-0553C22E3F45}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Finance/GetAllOrder.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Finance/Inventory.cshtml">
     <Files>
-      <File FileName="Controllers/HomeController.cs" />
-      <File FileName="Controllers/FinanceController.cs" />
-      <File FileName="Startup.cs" />
-      <File FileName="Utill/EncodeString.cs" />
-      <File FileName="Utill/DBConnect.cs" />
-      <File FileName="Models/FinanceContext.cs" />
-      <File FileName="Views/Finance/getAllOrder.cshtml" />
-      <File FileName="Models/DbContext.cs" />
-      <File FileName="Models/FinanceModel.cs" />
-      <File FileName="Program.cs" />
-      <File FileName="appsettings.json" />
+      <File FileName="Controllers/FinanceController.cs" Line="38" Column="88" NotebookId="1" />
+      <File FileName="Models/FinanceContext.cs" Line="47" Column="1" NotebookId="1" />
+      <File FileName="Views/Finance/Inventory.cshtml" Line="308" Column="40" NotebookId="1" />
+      <File FileName="Views/Finance/GetAllOrder.cshtml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Models/FinanceModel.cs" Line="20" Column="25" NotebookId="2" />
+      <File FileName="Models/DataTableV2Context.cs" Line="55" Column="1" NotebookId="2" />
+      <File FileName="Models/DataTableV2Model.cs" Line="8" Column="25" NotebookId="2" />
+      <File FileName="Controllers/DataTableController.cs" Line="31" Column="1" NotebookId="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,10 +17,11 @@
             <Node name="Backend" expanded="True">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
               <Node name="Utill" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Finance" expanded="True">
-                  <Node name="GetAllOrder.cshtml" selected="True" />
+                  <Node name="Inventory.cshtml" selected="True" />
                 </Node>
                 <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
