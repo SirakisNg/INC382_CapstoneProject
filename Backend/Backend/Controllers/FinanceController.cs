@@ -32,11 +32,11 @@ namespace Backend.Controllers
             return View(context.getAllOrder());
         }
 
-        public IActionResult Inventory()
+        public IActionResult Inventory(string startDate, string endDate)
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
-            return View(context.getInventory());
+            return View(context.getInventory(startDate,endDate));
         }
         public IActionResult GeneralLedger()
         {
