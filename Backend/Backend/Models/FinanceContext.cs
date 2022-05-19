@@ -64,52 +64,20 @@ namespace Backend.Models
             return list;
         }
 
-        public List<InventoryModel> getInventory(string startDate, string endDate)
+
+        public List<InventoryModel> getInventory(string startDate = "2022-01-01", string endDate = "2022-01-05")
         {
-
-            List<InventoryModel> list = new List<InventoryModel>();
-
-            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
-            using (MySqlConnection conn = GetConnection())
+            if(startDate == "")
             {
-
-
-                string sql = $"SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id;";
-
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        list.Add(new InventoryModel()
-                        {
-                            //orderID = Convert.ToInt32(reader["orderID"]),
-                            //date = reader["date"].ToString(),
-                            //cost = Convert.ToInt32(reader["cost"]),
-                            //price = Convert.ToInt32(reader["price"]),
-                            //gasID = Convert.ToInt32(reader["gasID"]),
-                            //bayFillID = Convert.ToInt32(reader["bayFillID"]),
-
-                            inventory_id = Convert.ToInt32(reader["inventory_id"]),
-                            side = Convert.ToInt32(reader["side"]),
-                            type = reader["type"].ToString(),
-                            volume = Convert.ToInt32(reader["Volume"]),
-                            price = Convert.ToInt32(reader["Price"]),
-                            date = reader["Date"].ToString()
-
-                        });
-                    }
-                }
-                conn.Close();
+                startDate = "2022-01-01";
             }
-            return list;
-        }
+            if (endDate == "")
+            {
+                endDate = "2022-01-05";
+            }
 
-        public List<InventoryModel> getInventoryByDate(string startDate, string endDate)
-        {
+
+            Console.WriteLine("info : " + DateTime.Today + " : query form " + startDate +"to"+ endDate);
 
             List<InventoryModel> list = new List<InventoryModel>();
 
@@ -119,7 +87,6 @@ namespace Backend.Models
 
 
                 string sql = $"SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id WHERE date >= '{startDate} 00:00:00 AM' AND date <= '{endDate} 00:00:00 AM';";
-
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -151,6 +118,8 @@ namespace Backend.Models
             }
             return list;
         }
+
+ 
 
 
 
