@@ -14417,8 +14417,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/InventoryByDate.cshtml",
+      "TargetPath": "Views\\Finance\\InventoryByDate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Home/Login.cshtml",
       "TargetPath": "Views\\Home\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/InventoryByID.cshtml",
+      "TargetPath": "Views\\Finance\\InventoryByID.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14429,6 +14439,11 @@
     {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/GetAllOrder.cshtml",
       "TargetPath": "Views\\Finance\\GetAllOrder.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/InventorySum.cshtml",
+      "TargetPath": "Views\\Finance\\InventorySum.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+
+<body>
+    <h2>Inventory search by id</h2>
+    <div>
+        <form class="d-flex">
+
+            <div>
+
+                <label for="CompanyName">Select inventory date</label>
+                <div>
+                    <div>
+                        <select name="startDate" id="cars">
+                            <option value="2022-01-01">2022-01-01</option>
+                            <option value="2022-01-02">2022-01-02</option>
+                            <option value="2022-01-03">2022-01-03</option>
+                            <option value="2022-01-04">2022-01-04</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select name="endDate" id="cars">
+                            <option value="2022-01-01">2022-01-01</option>
+                            <option value="2022-01-02">2022-01-02</option>
+                            <option value="2022-01-03">2022-01-03</option>
+                            <option value="2022-01-04">2022-01-04</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div>
+        <h2>Inventory</h2>
+        <table class="table">
+            <tr>
+                <th>No</th>
+                <th>debit/Cradit</th>
+                <th>type</th>
+                <th>volume</th>
+                <th>date</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.inventory_id</td>
+                    <td>@item.side</td>
+                    <td>@item.type</td>
+                    <td>@item.volume</td>
+                    <td>@item.price</td>
+                    <td>@item.date</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>

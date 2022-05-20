@@ -32,11 +32,24 @@ namespace Backend.Controllers
             return View(context.getAllOrder());
         }
 
-        public IActionResult Inventory_Date(string startDate, string endDate)
+        public IActionResult InventoryByDate(string startDate, string endDate)
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
-            return View(context.getInventory(startDate,endDate));
+            return View(context.getInventory(startDate, endDate));
+        }
+        public IActionResult InventoryByID(int id)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            return View(context.getInventory_id(id));
+        }
+
+        public IActionResult InventorySum(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory sum infomation");
+            return View(context.getInventory_sum(startDate, endDate));
         }
 
 

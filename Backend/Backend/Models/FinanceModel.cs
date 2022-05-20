@@ -21,6 +21,11 @@ namespace Backend.Models
         public string date { get; set; }
 
     }
+    public class InventorySumModel
+    {
+        public int Debit { get; set; }
+        public int Cradit { get; set; }
+    }
 
 
 }

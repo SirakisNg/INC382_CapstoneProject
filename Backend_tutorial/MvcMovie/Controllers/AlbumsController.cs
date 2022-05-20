@@ -28,23 +28,23 @@ namespace MvcMovie.Controllers
         public IActionResult Albums()
         {
 
-                DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
+            DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
 
-                return View(context.GetAllAlbums());
+            return View(context.GetAllAlbums());
 
         }
 
         public IActionResult AlbumsByID(int ID)
         {
             DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
-            Console.WriteLine("info : "+ DateTime.Today + " : Search albums by album id");
+            Console.WriteLine("info : " + DateTime.Today + " : Search albums by album id");
             return View(context.GetAlbumsByID(ID));
         }
 
         public ActionResult deleteAlbum(int deleteID)
         {
             DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
-            Console.WriteLine("info : "+ DateTime.Today + " : delete album id "+deleteID+"--->");
+            Console.WriteLine("info : " + DateTime.Today + " : delete album id " + deleteID + "--->");
             context.deleteAlbum(deleteID);
             return View();
         }
@@ -52,11 +52,12 @@ namespace MvcMovie.Controllers
         public ActionResult addAlbum(string name, string artist, int price, string genre)
         {
             DbContext context = HttpContext.RequestServices.GetService(typeof(MvcMovie.Models.DbContext)) as DbContext;
-            Console.WriteLine("info : "+ DateTime.Today + " : add album id "+"--->");
+            Console.WriteLine("info : " + DateTime.Today + " : add album id " + "--->");
             context.addAlbum(name, artist, price, genre);
             return View();
         }
 
-        
+
+
     }
 }
