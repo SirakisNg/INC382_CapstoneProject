@@ -74,7 +74,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id WHERE date >= '" + startDate + " 00:00:00 AM' AND date <= '" + endDate + " 00:00:00 AM';";
+                string sql = $"SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id WHERE date >= '" + startDate + " 00:00:00 AM' AND date <= '" + endDate + " 12:59:59 PM';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -107,7 +107,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT SUM(Price)FROM TAS_Project.Inventory WHERE side = '1' AND date >= '2022-01-01 00:00:00 AM' AND date <= '2022-01-04 00:00:00 AM';";
+                string sql = $"SELECT SUM(Price)FROM TAS_Project.Inventory WHERE side = '1' AND date >= '{startDate} 00:00:00 AM' AND date <= '{endDate} 12:59:59 PM';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -123,11 +123,10 @@ namespace Backend.Models
                 }
                 conn.Close();
             }
-
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT SUM(Price)FROM TAS_Project.Inventory WHERE side = '2' AND date >= '2022-01-01 00:00:00 AM' AND date <= '2022-01-04 00:00:00 AM';";
+                string sql = $"SELECT SUM(Price)FROM TAS_Project.Inventory WHERE side = '2' AND date >= '{startDate} 00:00:00 AM' AND date <= '{endDate} 12:59:59 PM';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
