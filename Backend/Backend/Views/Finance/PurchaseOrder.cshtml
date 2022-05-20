@@ -45,7 +45,7 @@
           </li>
           <li class="nav-item d-none d-sm-inline-block">
               <!-- Go to Home page -->
-            <a href="Management.html" class="nav-link">Home</a>
+            <a href="../Management/Management.html" class="nav-link">Home</a>
           </li>
         </ul>
 
@@ -59,7 +59,7 @@
             <div class="navbar-search-block">
               <form class="form-inline">
                 <div class="input-group input-group-sm">
-                  <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-control form-control-navbar" type="search" placeholder=" Enter your PO. number" aria-label="Search">
                   <div class="input-group-append">
                     <button class="btn btn-navbar" type="submit">
                       <i class="fas fa-search"></i>
@@ -80,7 +80,7 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="Management.html" class="brand-link">
+        <a href="../Management/Management.html" class="brand-link">
           <img src="../Utill/dist/img/Group2_LOGO.png" alt="Group2_LOGO" class="brand-image img-circle elevation-3" style="opacity: .8">
           <span class="brand-text font-weight-light">TAS_Group 2</span>
         </a>
@@ -108,17 +108,17 @@
                 </div>
               </div>
             </div>
-
+          
             <!-- Sidebar Menu -->
             <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
-
+                
                     <!-- Management DashBoard in leftSide -->
                     <li class="nav-item">
-                      <a href="./Management.html" class="nav-link">
+                      <a href="../Management/Management.html" class="nav-link">
                         <i class="ion-briefcase"></i>
                         <p>&nbsp;MANAGEMENT</p>
                       </a>
@@ -126,12 +126,12 @@
 
                     <!-- Operation DashBoard in leftSide -->
                     <li class="nav-item">
-                        <a href="./Operation.html" class="nav-link">
+                        <a href="../Operation/Operation.html" class="nav-link">
                           <i class="ion-gear-b"></i>
-                          <p>&nbsp;OPERATION</p>
+                          <p>&nbsp;OPERATION</p>F
                         </a>
                     </li>
-
+                  
                     <!-- Finance DashBoard in leftSide -->
                     <li class="nav-item">
                         <a href="#" class="nav-link">
@@ -189,17 +189,18 @@
                               </a>
                             </li>
                         </ul>
+                
                     </li>
 
-                    <!-- Operation DashBoard in leftSide -->
+                    <!-- Data Table in leftSide -->
                     <li class="nav-item">
-                      <a href="./Operation.html" class="nav-link">
+                      <a href="../Data_Table/Data_Table.html" class="nav-link">
                         <i class="ion-navicon"></i>
                         <p>&nbsp;Data Table</p>
                       </a>
                     </li>
 
-                </li>
+                </li>  
               </ul>
             </nav>
         </class>
@@ -207,68 +208,77 @@
   </div>
   <!-- /.sidebar -->
   </aside>
-    <!-- -------------------------------------------------------------------- -->
-     <!-- Content Wrapper. Contains page content -->
-     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <!-- <h1 class="m-0">General Ledger</h1> -->
-              </div><!-- /.col -->
-            </div><!-- /.row -->
 
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+    
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <div class="card mb-3">
-                  <div class="card-header">
-                      <!-- <h3><i class="fa fa-table"></i> PTT General Ledger </h3> -->
-                  </div>
-
-                  <div class="card-body">
-
-                    <div class="container">
-
-
-              <div class="row">
-                  <div class="col-xl-12">
-                      <div class="breadcrumb-holder">
-                          <ol class="breadcrumb float-right">
-                              <label for="site-search">Search Account: </label>
-                              <input type="search" id="site-search" name="q">
-                              <button>Enter</button>
-                          </ol>
-                          <div class="clearfix"></div>
+                  <div class="card mb-3">
+                      <div class="card-header">
+                          <h3><i class="ion-document-text"></i><strong> &nbsp; Purchased Order </strong></h3>
                       </div>
+                      <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="invoice-title text-center mb-3">
+                                        <img src="../Utill/dist/img/PTT LOGO.png" alt="PTT LOGO.png" height="120" width="100">
+                                        <p><h1>PTT</h1></p>
+                                        <h2>Purchased Order</h2>
+                                        <h5><strong>Date:</strong> May, 2022</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                      <p><h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Purchase Order No. : </h5></p>
+                                      <p><h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Payment Order : </h5></p>
+                                      <p><h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Truck plate ID : </h5></p>
+                                      <p><h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Customer name : </h5></p>
+                                      <p><h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Tax ID : </h5></p>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="panel-body">
+                                      <div class="table-responsive">
+                                          <table class="table table-condensed">
+                                              <thead>
+                                                  <tr>
+                                                      <td><strong>Date time</strong></td>
+                                                      <td class="text-left"><strong>Type</strong></td>
+                                                      <td class="text-center"><strong>Price/Litter</strong></td>
+                                                      <td class="text-center"><strong>Quantity</strong></td>
+                                                      <td class="text-right" style="color:blue"><strong>Total Cost</strong></td>
+                                                  </tr>
+                                              </thead>
+                                          </table>
+                                      </div>
+                                  </div>        <!--Close panel-body class -->
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+
                   </div>
               </div>
-              <!-- end row -->
+            </div>
 
+          </div><!-- /.container-fluid -->
+        </div>
+      </div>
+    </div>
 
-              <div class="row">
-
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-12">
-                      <div class="card mb-3">
-                          <div class="card-header">
-                              <h3><i class="fa fa-table"></i> General Ledger</h3>
-                          </div>
-
-                          <div class="card-body">
-                              <div class="table-responsive">
-                                  <table id="example1" class="table table-bordered table-hover display ">
-                                      <thead class="thead-dark">
-                                          <tr>
-                                              <th>Date</th>
-                                              <th>Account Title and Explanation</th>
-                                              <th>Debit (฿)</th>
-                                              <th>Credit (฿)</th>
-                                              <th>Balance (฿)</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-
-    <!-- -------------------------------------------------------------------- -->
       <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->

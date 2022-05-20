@@ -18,17 +18,68 @@ namespace Backend.Controllers
 
         public string Index()
         {
-            return "This is a test page";
+            Console.WriteLine("info : " + DateTime.Today + " : Finance access test success ...");
+            return "This is a Finance test response";
         }
 
         public FinanceController(ILogger<FinanceController> logger) => _logger = logger;
 
 
-        public IActionResult allOrder()
+        public IActionResult GetAllOrder()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : allOrder");
+            Console.WriteLine("info : " + DateTime.Today + " : getAllOrder");
             return View(context.getAllOrder());
         }
+
+        public IActionResult InventoryByDate(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            return View(context.getInventory(startDate, endDate));
+        }
+        public IActionResult InventoryByID(int id)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            return View(context.getInventory_id(id));
+        }
+
+        public IActionResult InventorySum(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory sum infomation");
+            return View(context.getInventory_sum(startDate, endDate));
+        }
+
+
+        public IActionResult Inventory()
+        {
+            return View();
+        }
+
+
+        public IActionResult GeneralLedger()
+        {
+            return View();
+        }
+
+        public IActionResult Invoice()
+        {
+            return View();
+        }
+        public IActionResult JournalizingTransaction()
+        {
+            return View();
+        }
+        public IActionResult MothlyIncomeStatement()
+        {
+            return View();
+        }
+        public IActionResult PurchaseOrder()
+        {
+            return View();
+        }
+
     }
 }

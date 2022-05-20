@@ -97,3 +97,17 @@ d:/Users/Desktop/GitHub_Frontend/INC382_CapstoneProject/Backend/Backend/obj/Debu
 d:/Users/Desktop/GitHub_Frontend/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Backend.genruntimeconfig.cache
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/bin/Debug/netcoreapp3.1/dist/js/.eslintrc.json
 /Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/bin/Debug/netcoreapp3.1/Views/Utill/dist/js/.eslintrc.json
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/GetAllOrder.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/Inventory.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/DataTable/Table.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/GeneralLedger.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/Invoice.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/JournalizingTransaction.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/MothlyIncomeStatement.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/PurchaseOrder.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Management/Management.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Operation/Operation.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/bin/Debug/netcoreapp3.1/Backend
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/InventoryByID.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/InventoryByDate.cshtml.g.cs
+/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/obj/Debug/netcoreapp3.1/Razor/Views/Finance/InventorySum.cshtml.g.cs

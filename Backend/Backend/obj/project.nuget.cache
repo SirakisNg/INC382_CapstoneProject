@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Rie5Lc765camTFD76GjSoBAWkGHvAN+XakngO9synggs8NWhW7frfL+3EQQ4vONWJGObby4eZN5qiemLAi/xTQ==",
+  "dgSpecHash": "r80+5H1ZZL5VlGMyrs5Gd7yL9HqMaPdzWquCTbclEFnPRLDdebuJHvPi/1bMvvUpaEuS5IkWM6/b9LdCiZN8lA==",
   "success": true,
   "projectFilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Backend.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,10 @@
     "/Users/sirakis/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
     "/Users/sirakis/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/Users/sirakis/.nuget/packages/system.text.encoding.codepages/4.4.0/system.text.encoding.codepages.4.4.0.nupkg.sha512",
-    "/Users/sirakis/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512"
+    "/Users/sirakis/.nuget/packages/system.windows.extensions/4.7.0/system.windows.extensions.4.7.0.nupkg.sha512",
+    "/Users/sirakis/.nuget/packages/microsoft.netcore.app.ref/3.1.0/microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "/Users/sirakis/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.10/microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "/Users/sirakis/.nuget/packages/microsoft.netcore.app.host.osx-x64/3.1.24/microsoft.netcore.app.host.osx-x64.3.1.24.nupkg.sha512"
   ],
   "logs": []
 }
