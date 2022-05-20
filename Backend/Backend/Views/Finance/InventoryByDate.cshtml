@@ -15,7 +15,7 @@
                 <label for="CompanyName">Select inventory date</label>
                 <div>
                     <div>
-                        <select name="startDate" id="startDate">
+                        <select name="startDate" id="cars">
                             <option value="2022-01-01">2022-01-01</option>
                             <option value="2022-01-02">2022-01-02</option>
                             <option value="2022-01-03">2022-01-03</option>
@@ -23,7 +23,7 @@
                         </select>
                     </div>
                     <div>
-                        <select name="endDate" id="endDate">
+                        <select name="endDate" id="cars">
                             <option value="2022-01-01">2022-01-01</option>
                             <option value="2022-01-02">2022-01-02</option>
                             <option value="2022-01-03">2022-01-03</option>
@@ -44,7 +44,6 @@
                 <th>debit/Cradit</th>
                 <th>type</th>
                 <th>volume</th>
-                <th>Cost</th>
                 <th>date</th>
             </tr>
             @foreach (var item in Model)
@@ -60,5 +59,4 @@
             }
         </table>
     </div>
-
 </body>
