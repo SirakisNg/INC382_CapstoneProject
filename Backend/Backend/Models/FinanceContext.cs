@@ -189,8 +189,6 @@ namespace Backend.Models
                 string sql = $"SELECT purchaseOrder_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.purchaseOrder";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
