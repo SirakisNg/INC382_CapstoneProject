@@ -14477,6 +14477,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/Finance/InvoiceByID.cshtml",
+      "TargetPath": "Views\\Finance\\InvoiceByID.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/Backend/Backend/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

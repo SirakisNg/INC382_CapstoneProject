@@ -211,6 +211,70 @@ namespace Backend.Models
 
             return list;
         }
+        public List<InvoiceModel> getInvoive()
+        {
+            Console.WriteLine($"info : " + DateTime.Today + $" : get Invoice");
+            List<InvoiceModel> list = new List<InvoiceModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT invoice_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.invoice";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new InvoiceModel()
+                        {
+                            Invoice_id = Convert.ToInt32(reader["invoice_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Type = reader["gasType"].ToString(),
+                            Quantity = Convert.ToDouble(reader["quantity"]),
+                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
+                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+            }
+
+            return list;
+        }
+        public List<InvoiceModel> getInvoiveById(int id)
+        {
+            Console.WriteLine($"info : " + DateTime.Today + $" : get Invoice id : " + id + "");
+            List<InvoiceModel> list = new List<InvoiceModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT invoice_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.invoice WHERE invoice_id = {id}";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new InvoiceModel()
+                        {
+                            Invoice_id = Convert.ToInt32(reader["invoice_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Type = reader["gasType"].ToString(),
+                            Quantity = Convert.ToDouble(reader["quantity"]),
+                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
+                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+            }
+
+            return list;
+        }
 
 
 

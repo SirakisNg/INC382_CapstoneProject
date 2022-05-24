@@ -66,7 +66,16 @@ namespace Backend.Controllers
 
         public IActionResult Invoice()
         {
-            return View();
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Purchase order infomation");
+            return View(context.getInvoive());
+        }
+
+        public IActionResult InvoiceByID(int id)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine($"info : " + DateTime.Today + $" : get Invoice id : " + id + "");
+            return View(context.getInvoiveById(id));
         }
         public IActionResult JournalizingTransaction()
         {
@@ -79,7 +88,7 @@ namespace Backend.Controllers
         public IActionResult PurchaseOrder()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Purchase order infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get Invoice infomation");
             return View(context.getPurcahseOrder());
         }
 

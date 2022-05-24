@@ -36,6 +36,16 @@ namespace Backend.Models
         public Double PricePerLitter { get; set; }
         public Double TotalCost { get; set; }
     }
+    public class InvoiceModel
+    {
+        public int Invoice_id { get; set; }
+        public string Date { get; set; }
+        public string Time { get; set; }
+        public string Type { get; set; }
+        public Double Quantity { get; set; }
+        public Double PricePerLitter { get; set; }
+        public Double TotalCost { get; set; }
+    }
 
 
 }
