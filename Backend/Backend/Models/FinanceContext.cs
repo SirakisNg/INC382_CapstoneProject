@@ -179,40 +179,6 @@ namespace Backend.Models
             }
             return list;
         }
-        public List<PurchaseOrderModel> getPurcahseOrder()
-        {
-            Console.WriteLine($"info : " + DateTime.Today + $" : get PurchaseOrder");
-            List<PurchaseOrderModel> list = new List<PurchaseOrderModel>();
-            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
-            using (MySqlConnection conn = GetConnection())
-            {
-                string sql = $"SELECT purchaseOrder_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.purchaseOrder";
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        list.Add(new PurchaseOrderModel()
-                        {
-                            PurchaseOrder_id = Convert.ToInt32(reader["purchaseOrder_id"]),
-                            Date = reader["date"].ToString(),
-                            Time = reader["time"].ToString(),
-                            Type = reader["gasType"].ToString(),
-                            Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
-                            TotalCost = Convert.ToDouble(reader["totalCost"])
-                        });
-                    }
-                }
-                conn.Close();
-                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
-            }
-
-            return list;
-        }
 
 
 

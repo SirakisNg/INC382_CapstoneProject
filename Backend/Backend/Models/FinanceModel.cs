@@ -26,16 +26,6 @@ namespace Backend.Models
         public int Debit { get; set; }
         public int Cradit { get; set; }
     }
-    public class PurchaseOrderModel
-    {
-        public int PurchaseOrder_id { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
-        public string Type { get; set; }
-        public Double Quantity { get; set; }
-        public Double PricePerLitter { get; set; }
-        public Double TotalCost { get; set; }
-    }
 
 
 }
