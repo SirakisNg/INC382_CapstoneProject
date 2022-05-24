@@ -78,7 +78,9 @@ namespace Backend.Controllers
         }
         public IActionResult PurchaseOrder()
         {
-            return View();
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            return View(context.getPurcahseOrder());
         }
 
     }
