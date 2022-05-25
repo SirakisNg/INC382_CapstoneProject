@@ -302,7 +302,7 @@
                           <p>Search :</p>
                           <input class="form-control" id="myInput" type="text" placeholder="Search..">
                           <br>
-                          <table id="myTable">
+                          <table>
                             <thead>
                               <tr>
                                 <th onclick="sortTable(0)"><strong>No</strong></th>
@@ -316,7 +316,7 @@
                             </thead>
                             @foreach (var item in Model)
                             {
-                              <tbody>
+                              <tbody id="myTable">
                                 <tr>
                                   <td>@item.PurchaseOrder_id</td>
                                   <td>@item.Date</td>
