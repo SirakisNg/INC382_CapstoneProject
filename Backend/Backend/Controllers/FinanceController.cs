@@ -53,9 +53,12 @@ namespace Backend.Controllers
         }
 
 
-        public IActionResult Inventory()
+        public IActionResult Inventory(string GasType, Double Volume, Double PricePerLitter, Double Debit, Double Credit, Double totalPrice, Double totalVol)
         {
-            return View();
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            context.addInventory(GasType, Volume, PricePerLitter, Debit, Credit, totalPrice, totalVol);
+            return View(context.GetInventory());
         }
 
 

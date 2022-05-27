@@ -276,6 +276,62 @@ namespace Backend.Models
             return list;
         }
 
+        public List<InvenModel> GetInventory()
+        {
+            Console.WriteLine($"info : " + DateTime.Today + $" : get Inventory");
+            List<InvenModel> list = new List<InvenModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.Inventory;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new InvenModel()
+                        {
+                            Inventory_id = Convert.ToInt32(reader["inventory_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            GasType = reader["gasType"].ToString(),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
+                            Debit = Convert.ToDouble(reader["debit"]),
+                            Credit = Convert.ToDouble(reader["credit"]),
+                            totalPrice = Convert.ToDouble(reader["totalPrice"]),
+                            totalVol = Convert.ToDouble(reader["totalVol"]),
+
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+            }
+
+            return list;
+        }
+
+
+        public void addInventory(string GasType, Double Volume, Double PricePerLitter, Double Debit, Double Credit, Double totalPrice, Double totalVol)
+        {
+            using (MySqlConnection conn = GetConnection())
+            {
+                string Date = DateTime.Today.ToString();
+                string Time = DateTime.Today.ToString();
+
+                conn.Open();
+
+                string sql = $"INSERT INTO Inventory (date, time, gasType, volume, pricePerLitter, debit, credit, totalPrice, totalVol) VALUES ('{Date}', '{Time}', '{GasType}', '{Volume},'{PricePerLitter},'{Debit},'{Credit},'{totalPrice},'{totalVol}');";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader()) ;
+                Console.WriteLine("info : " + DateTime.Today + " : add new purchase order");
+            }
+            return;
+        }
+
 
 
 

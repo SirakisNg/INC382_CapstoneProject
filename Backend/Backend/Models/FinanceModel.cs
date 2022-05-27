@@ -47,5 +47,20 @@ namespace Backend.Models
         public Double TotalCost { get; set; }
     }
 
+    public class InvenModel
+    {
+        public int Inventory_id { get; set; }
+        public string Date { get; set; }
+        public string Time { get; set; }
+        public string GasType { get; set; }
+        public Double Volume { get; set; }
+        public Double PricePerLitter { get; set; }
+        public Double Debit { get; set; }
+        public Double Credit { get; set; }
+        public Double totalPrice { get; set; }
+        public Double totalVol { get; set; }
+
+    }
+
 
 }
