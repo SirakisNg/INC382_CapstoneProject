@@ -33,10 +33,12 @@
   <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});      //Load Charts         
     google.charts.load('current', {'packages':['gauge']});          //Load Gauge         
+    google.charts.load("current", {'packages':['corechart']});      //Load Column Charts
     google.charts.setOnLoadCallback(drawFilledChart);               //Draw Amount of Filled Chart when charts is loaded.
     google.charts.setOnLoadCallback(drawSalesChart);               //Draw Sales Chart when charts is loaded.
     google.charts.setOnLoadCallback(drawG95cycleChart);               //Draw Average GASOHOL95 Cycle Time gauge when charts is loaded.
     google.charts.setOnLoadCallback(drawDieselcycleChart);               //Draw Average Diesel Cycle Time gauge when charts is loaded.
+    google.charts.setOnLoadCallback(drawTruckInOutChart);               //Draw Truck-in and Truck-out column chart when charts is loaded.
     
     function drawFilledChart() {
       
@@ -125,10 +127,10 @@
     function drawG95cycleChart() {
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['', 80],
+        ['Min', 80],
       ]);
       var options = {
-        width: 250, height: 250,
+        width: 150, height: 148,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
         minorTicks: 5,
@@ -142,10 +144,10 @@
     function drawDieselcycleChart() {
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['', 55],
+        ['Min', 55],
       ]);
       var options = {
-        width: 250, height: 250,
+        width: 150, height: 148,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
         minorTicks: 5,
@@ -155,6 +157,42 @@
       chart.draw(data, options);
       
     }
+
+    function drawTruckInOutChart() {
+      var data = google.visualization.arrayToDataTable([
+        [" Name", "number", { role: "style" } ],
+        ["Truck in", 90, "#98B6D7"],
+        ["Truck out", 80, "#F7D7C2"],
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Truck in & Truck out",
+        titleTextStyle: {
+          color: 'Black',
+          fontName: 'Arial',
+          fontSize: 14,
+          bold: true, 
+        },
+        width: 230,
+        height: 400,
+        bar: {groupWidth: "65%"},
+        legend: { position: "none" },
+        backgroundColor: '#F0F8FF',
+        fontSize: 14,
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+    }
+
   </script>
 
 </head>
@@ -222,17 +260,20 @@
                     <td>
                       <div class="card card-primary">
                         <div class="card-header">
-                          <h1 class="card-title">Average GASOHOL95 Cycle Time </h1>                    
+                          <h1 class="card-title">Average GAS95 Cycle Time </h1>                    
                         </div>
-                        <div id="G95_Cycle" style="width: 200px; height: 100px;"></div>
+                        <center><div id="G95_Cycle" style="width: 200px; height: 145px;"></div></center>
                       </div>
                       <div class="card card-primary">
                         <div class="card-header">
                           <h1 class="card-title">Average Diesel Cycle Time </h1>                    
                         </div>
-                        <div id="Diesel_Cycle" style="width: 250px; height: 100px;"></div>
+                        <center><div id="Diesel_Cycle" style="width: 250px; height: 145px;"></div></center>
                       </div>
-                    </td>                                                            
+                    </td>  
+                    <td>
+                      <div id="columnchart_values" style="width: 50px; height: 415px;"></div>
+                    </td>                                                          
                                                                               
                   </tr>
                 </table>
