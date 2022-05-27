@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>INC382_Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="../Utill/dist/img/Group2_LOGO.ico">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../Utill/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="../Utill/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../Utill/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../Utill/plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../Utill/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../Utill/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../Utill/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../Utill/plugins/summernote/summernote-bs4.min.css">
+  <!-- Google chart-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <!-- Pie Chart -->
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});      //Load Charts         
+    google.charts.load('current', {'packages':['gauge']});          //Load Gauge         
+    google.charts.setOnLoadCallback(drawFilledChart);               //Draw Amount of Filled Chart when charts is loaded.
+    google.charts.setOnLoadCallback(drawSalesChart);               //Draw Sales Chart when charts is loaded.
+    google.charts.setOnLoadCallback(drawG95cycleChart);               //Draw Average GASOHOL95 Cycle Time gauge when charts is loaded.
+    google.charts.setOnLoadCallback(drawDieselcycleChart);               //Draw Average Diesel Cycle Time gauge when charts is loaded.
+    
+    function drawFilledChart() {
+      
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'Slices');
+      data.addRows([
+        ['Diesel',550],
+        ['Gasohol 95',450],
+      ]);
+      
+      var options = {
+        title: 'Amount Filled (L)', width:550, height:350,
+        titlePosition: 'none',
+        titleTextStyle: {
+          color: 'FFFDD0',
+          fontName: 'Arial',
+          fontSize: 22,
+          bold: true, 
+
+        },
+        pieSliceText: 'value-and-percentage',          //show both of value and percentage in pie chart
+    
+        'is3D' : true,
+        slices: {  1: {offset: 0.1},                    // separate pie chart
+                   2: {offset: 0.05},
+
+          },
+        backgroundColor: 'white',
+        fontName: 'Arial',
+        colors: ['65CCCC', 'FF9900'],                        //Color in pie chart
+        fontSize: 16,
+        legend: {position: 'top', textStyle: {color: 'black'}, frontSize: 12, alignment: 'center'},
+        
+        chartArea: {bottom:12, width: '100%', 'height': '75%'},           //Pie chart position and size
+        reverseCategories: true                             //Change color of object in piechart
+       
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('Filled_pie'));
+        chart.draw(data, options);
+      }
+
+    function drawSalesChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'Slices');
+      data.addRows([
+        ['Diesel',55],
+        ['Gasohol 95',45],
+      ]);
+      
+      var options = {
+        title: 'Sales (฿)', width:550, height:350,
+        titlePosition: 'none',
+        titleTextStyle: {
+          color: 'FFFDD0',
+          fontName: 'Arial',
+          fontSize: 22,
+          bold: true, 
+
+        },
+        pieSliceText: 'value-and-percentage',          //show both of value and percentage in pie chart
+    
+        'is3D' : true,
+        pieStartAngle:-50,                              //Change degree of pie chart
+        slices: {  1: {offset: 0.1},                    // separate pie chart
+                   2: {offset: 0.05},
+
+          },
+        backgroundColor: 'black',
+        fontName: 'Arial',
+        colors: ['FF9900', '65CCCC'],                        //Color in pie chart
+        fontSize: 16,
+        legend: {position: 'top', textStyle: {color: 'white'}, frontSize: 12, alignment: 'center'},
+        
+        chartArea: {bottom:12, width: '100%', 'height': '75%'},           //Pie chart position and size
+        reverseCategories: false                             //Change color of object in piechart
+        
+      };
+      
+      var chart = new google.visualization.PieChart(document.getElementById('Sales_pie'));
+        chart.draw(data, options);
+      }
+
+    function drawG95cycleChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['', 80],
+      ]);
+      var options = {
+        width: 250, height: 250,
+        redFrom: 90, redTo: 100,
+        yellowFrom:75, yellowTo: 90,
+        minorTicks: 5,
+       
+      };
+      var chart = new google.visualization.Gauge(document.getElementById('G95_Cycle'));
+      chart.draw(data, options);
+      
+    }
+
+    function drawDieselcycleChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['', 55],
+      ]);
+      var options = {
+        width: 250, height: 250,
+        redFrom: 90, redTo: 100,
+        yellowFrom:75, yellowTo: 90,
+        minorTicks: 5,
+       
+      };
+      var chart = new google.visualization.Gauge(document.getElementById('Diesel_Cycle'));
+      chart.draw(data, options);
+      
+    }
+  </script>
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">MANAGEMENT DASHBOARD</h1>
+              </div><!-- /.col -->
+
+                <!-- Calendar Dropdown Menu -->
+                <ul class="navbar-nav ml-auto"></ul>
+                  <a class="nav-link" data-toggle="dropdown" href="#">
+                    <h1 class="ion-calendar"></h1>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">Week 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">Week 2</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">Week 3</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">Week 4</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">Monthly</a>
+                  </div>
+            
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        
+        <!-- Main content -->
+        <section class="content">
+          <class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+              <!-- Amount of Filled pie chart -->
+              <div class="col-lg-10 col-6">
+                <table class="columns">
+                  <tr>
+                    <td>
+                      <div class="card card-primary">
+                        <div class="card-header">
+                          <h1 class="card-title">Amount Filled (L) </h1>                    
+                        </div>
+                        <div id="Filled_pie" style="border: 1px solid #ccc"></div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="card card-dark">
+                        <div class="card-header">
+                          <h1 class="card-title">Sales (฿) </h1>                    
+                        </div>
+                        <div id="Sales_pie" style="border: 1px solid #ccc"></div>
+                      </div>
+                    </td> 
+                    <td>
+                      <div class="card card-primary">
+                        <div class="card-header">
+                          <h1 class="card-title">Average GASOHOL95 Cycle Time </h1>                    
+                        </div>
+                        <div id="G95_Cycle" style="width: 200px; height: 100px;"></div>
+                      </div>
+                      <div class="card card-primary">
+                        <div class="card-header">
+                          <h1 class="card-title">Average Diesel Cycle Time </h1>                    
+                        </div>
+                        <div id="Diesel_Cycle" style="width: 250px; height: 100px;"></div>
+                      </div>
+                    </td>                                                            
+                                                                              
+                  </tr>
+                </table>
+                <!-- /.card -->
+              </div>            
+            </div>
+
+
+
+              <!-- ./col -->
+              <di class="col-lg-3 col-6">
+                <!-- small box of Total Sales -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>44</h3>                 
+                    <p>Total Sales</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion-cash"></i>
+                  </div>
+                </div>
+              </di>
+            </div>
+
+            <!-- Title of Card -->
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+              <!-- Left col -->
+              <section class="col-lg-7 connectedSortable">
+                <!-- Custom tabs (Charts with tabs)-->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      <i class="fas fa-chart-pie mr-1"></i>
+                      Sales by Gas Type
+                    </h3>
+                  </div><!-- /.card-header -->
+
+                  <!-- Body of card -->
+                  <div class="card-body">
+                    <div class="tab-content p-0">
+                      <!-- Morris chart - Sales -->
+                      <div class="chart tab-pane active" id="revenue-chart"
+                           style="position: relative; height: 300px;">
+                          <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                       </div>
+                      <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                        <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+              </section>
+            </div>
+
+            <!-- Graph of Volume Sales by Day -->
+            <div class="card bg-gradient-info">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  <i class="fas fa-th mr-1"></i>
+                  Volume Sales by Day
+                </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+
+              <!-- /.card-body -->
+              <div class="card-footer bg-transparent">
+                <div class="row">
+                  <div class="col-10 text-center">
+                    <div class="text-white">Sales</div>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-footer -->
+            </div>
+          </class>
+        </section>
+      </div>
+    </div>
+
+      <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../Utill/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../Utill/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../Utill/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="../Utill/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="../Utill/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="../Utill/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="../Utill/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="../Utill/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="../Utill/plugins/moment/moment.min.js"></script>
+<script src="../Utill/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../Utill/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="../Utill/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../Utill/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../Utill/dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../Utill/dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../Utill/dist/js/pages/dashboard.js"></script>
+
+</body>
+</html>
