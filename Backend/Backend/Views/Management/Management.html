@@ -33,25 +33,28 @@
   <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});      //Load Charts         
     google.charts.load('current', {'packages':['gauge']});          //Load Gauge         
-    google.charts.load("current", {'packages':['corechart']});      //Load Column Charts
+    google.charts.load("current", {'packages':['corechart']});      //Load Column Charts and Bar Charts
     google.charts.setOnLoadCallback(drawFilledChart);               //Draw Amount of Filled Chart when charts is loaded.
     google.charts.setOnLoadCallback(drawSalesChart);               //Draw Sales Chart when charts is loaded.
     google.charts.setOnLoadCallback(drawG95cycleChart);               //Draw Average GASOHOL95 Cycle Time gauge when charts is loaded.
     google.charts.setOnLoadCallback(drawDieselcycleChart);               //Draw Average Diesel Cycle Time gauge when charts is loaded.
     google.charts.setOnLoadCallback(drawTruckInOutChart);               //Draw Truck-in and Truck-out column chart when charts is loaded.
-    
+    google.charts.setOnLoadCallback(drawWaitingTime);               //Draw Waiting Time column chart when charts is loaded.
+    google.charts.setOnLoadCallback(drawFailedTime);               //Draw Number of Failed time column chart when charts is loaded.
+    google.charts.setOnLoadCallback(drawUtilization);               //Draw Scheduled Utilization bar chart when charts is loaded.
+ 
     function drawFilledChart() {
       
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel',550],
-        ['Gasohol 95',450],
+        ['Diesel',55],
+        ['Gasohol 95',45],
       ]);
       
       var options = {
-        title: 'Amount Filled (L)', width:550, height:350,
+        title: 'Amount Filled (L)', width:400, height:400,
         titlePosition: 'none',
         titleTextStyle: {
           color: 'FFFDD0',
@@ -87,12 +90,12 @@
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel',55],
-        ['Gasohol 95',45],
+        ['Diesel',550],
+        ['Gasohol 95',450],
       ]);
       
       var options = {
-        title: 'Sales (฿)', width:550, height:350,
+        title: 'Sales (฿)', width:400, height:400,
         titlePosition: 'none',
         titleTextStyle: {
           color: 'FFFDD0',
@@ -101,8 +104,7 @@
           bold: true, 
 
         },
-        pieSliceText: 'value-and-percentage',          //show both of value and percentage in pie chart
-    
+        pieSliceText: 'value-and-percentage',          //show both of value and percentage in pie chart    
         'is3D' : true,
         pieStartAngle:-50,                              //Change degree of pie chart
         slices: {  1: {offset: 0.1},                    // separate pie chart
@@ -130,11 +132,11 @@
         ['Min', 80],
       ]);
       var options = {
-        width: 150, height: 148,
+        width: 170, height: 230,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
         minorTicks: 5,
-       
+        
       };
       var chart = new google.visualization.Gauge(document.getElementById('G95_Cycle'));
       chart.draw(data, options);
@@ -147,7 +149,7 @@
         ['Min', 55],
       ]);
       var options = {
-        width: 150, height: 148,
+        width: 170, height: 230,
         redFrom: 90, redTo: 100,
         yellowFrom:75, yellowTo: 90,
         minorTicks: 5,
@@ -174,14 +176,7 @@
                        2]);
 
       var options = {
-        title: "Truck in & Truck out",
-        titleTextStyle: {
-          color: 'Black',
-          fontName: 'Arial',
-          fontSize: 14,
-          bold: true, 
-        },
-        width: 230,
+        width: 366,
         height: 400,
         bar: {groupWidth: "65%"},
         legend: { position: "none" },
@@ -189,7 +184,123 @@
         fontSize: 14,
         
       };
-      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      var chart = new google.visualization.ColumnChart(document.getElementById("TruckInOut"));
+      chart.draw(view, options);
+    }
+
+    function drawWaitingTime() {
+      var data = google.visualization.arrayToDataTable([
+        [" Name", "number", { role: "style" } ],
+        ["Sale Office", 9, "#AFD7F6"],
+        ["Inbound WB", 8, "#96CFCF"],
+        ["DIESEL Bay", 2, "#FF8F7F"],
+        ["GASOHOL95 Bay", 5, "#FEB9D0"],
+        ["Outbound WB", 10, "#C1B2C6"],
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Waiting Time at Each Station",
+        titleTextStyle: {
+          color: 'Black',
+          fontName: 'Arial',
+          fontSize: 18,
+          bold: false, 
+          
+        },
+        width: 780,
+        height: 180,
+        bar: {groupWidth: "80%"},
+        legend: { position: "none" },
+        backgroundColor: 'white',
+        fontSize: 14,
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("WaitingTime"));
+      chart.draw(view, options);
+    }
+    
+    function drawUtilization() {
+      var data = google.visualization.arrayToDataTable([
+        ["Station", "Percentage", { role: "style" } ],
+        ["Sale Officer", 8.94, "#AFD7F6"],
+        ["Inbound WB", 10.49, "#96CFCF"],
+        ["DIESEL Dispenser", 19.30, "#FF8F7F"],
+        ["GASOHOL95 Dispenser", 21.45, "#FEB9D0"],
+        ["Outbound WB", 21.45, "#C1B2C6"],
+      ]);
+    
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+    
+      var options = {
+        title: "Scheduled Utilization",
+        width:790,
+        height: 350,
+        bar: {groupWidth: "90%"},
+        legend: { position: "none" },
+        titleTextStyle: {
+          color: 'Black',
+          fontName: 'Arial',
+          fontSize: 18,
+          bold: false, 
+        },
+        hAxis: {
+          title: 'Percentage',
+          minValue: 0,
+          maxValue: 100,
+          format: '#\'%\''
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("Utilization_schedule"));
+      chart.draw(view, options);
+    }
+
+    function drawFailedTime() {
+      var data = google.visualization.arrayToDataTable([
+        [" Name", "number", { role: "style" } ],
+        ["GASOHOL95 BAY", 12, "FF9900"],
+        ["DIESEL BAY", 8, "65CCCC"],
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Number of Failled Time at Each Station",
+        titleTextStyle: {
+          color: 'Black',
+          fontName: 'Arial',
+          fontSize: 18,
+          bold: false, 
+          
+        },
+        width: 780,
+        height: 150,
+        bar: {groupWidth: "60%"},
+        legend: { position: "none" },
+        backgroundColor: 'white',
+        fontSize: 14,
+        
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("FailedTime"));
       chart.draw(view, options);
     }
 
@@ -238,78 +349,98 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
               <!-- Amount of Filled pie chart -->
-              <div class="col-lg-10 col-6">
-                <table class="columns">
-                  <tr>
-                    <td>
-                      <div class="card card-primary">
-                        <div class="card-header">
-                          <h1 class="card-title">Amount Filled (L) </h1>                    
+              <table class="columns">
+                <tr>
+                  <td>
+                      <div class="col-sm">
+                        <div class="card card-primary">
+                          <div class="card-header">
+                            <h1 class="card-title">Amount Filled (L) </h1>                    
+                          </div>
+                          <div id="Filled_pie" style="border: 1px solid #ccc"></div>
                         </div>
-                        <div id="Filled_pie" style="border: 1px solid #ccc"></div>
                       </div>
                     </td>
                     <td>
-                      <div class="card card-dark">
-                        <div class="card-header">
-                          <h1 class="card-title">Total Sales (Baht) &nbsp;</h1>                 
+                      <div class="col-sm">
+                        <div class="card card-dark">
+                          <div class="card-header">
+                            <h1 class="card-title">Total Sales (Baht)</h1>                 
+                          </div>
+                          <div id="Sales_pie" style="border: 1px solid #ccc"></div>
                         </div>
-                        <div id="Sales_pie" style="border: 1px solid #ccc"></div>
                       </div>
-                    </td> 
-                    <td>
-                      <div class="card card-primary">
-                        <div class="card-header">
-                          <h1 class="card-title">Average GAS95 Cycle Time </h1>                    
-                        </div>
-                        <center><div id="G95_Cycle" style="width: 200px; height: 145px;"></div></center>
-                      </div>
-                      <div class="card card-primary">
-                        <div class="card-header">
-                          <h1 class="card-title">Average Diesel Cycle Time </h1>                    
-                        </div>
-                        <center><div id="Diesel_Cycle" style="width: 250px; height: 145px;"></div></center>
-                      </div>
-                    </td>  
-                    <td>
-                      <div id="columnchart_values" style="width: 50px; height: 415px;"></div>
-                    </td>                                                          
+                    </td>                    
                                                                               
                   </tr>
                 </table>
-                <!-- Inventory CHART -->
-                <div class="card card-danger">
-                  <div class="card-header">
-                    <h3 class="card-title">Inventory</h3>
-                   
-                  </div>
-                  <div class="card-body">
-                    <div class="chart">
-                      <canvas id="areaChart" style="min-height: 30px; height: 150px; max-height: 150px; max-width: 100%;"></canvas>
-                    </div>
-                  </div>
-                  <!-- /.card-body -->
-                </div>
 
+                <div class="col-sm">           
+                  <div class="card card-success">
+                    <div class="card-header">
+                      <h1 class="card-title">Average GAS95 Cycle Time </h1>                    
+                    </div>
+                    <center><div id="G95_Cycle" style="width: 250px; height: 170px;"></div></center>
+                  </div>
+                  <div class="card card-success">
+                    <div class="card-header">
+                      <h1 class="card-title">Average Diesel Cycle Time </h1>                    
+                    </div>
+                    <center><div id="Diesel_Cycle" style="width: 250px; height: 170px;"></div></center>
+                  </div>
+                </div>
+               
+                <div class="col-sm">
+                  <div class="card card-info">
+                    <div class="card-header">
+                      <h1 class="card-title">Truck in & Truck out</h1>
+                    </div>
+                    <div id="TruckInOut" style="width: 50px; height: 390px;"></div>
+                  </div>
+                </div>
+            <!-- End First Row -->
+            </div>
+               
+            
+              <div class="row">
+                <div class="col-sm">                
+                  <div class="card">
+                    <div id="Utilization_schedule" style="width: 50px; height: 1px;"></div>
+                  </div>
+                </div>
+                <div class="col-sm"> 
+                  <div class="card">
+                    <div id="WaitingTime" style="width: 50px; height: 175px;"></div>            <!--Distance between graph-->
+                  </div>
+                  <div class="card">
+                    <div id="FailedTime" style="width: 50px; height: 160px;"></div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-sm">
+                  <!-- Inventory CHART -->
+                  <div class="card card-danger">              <!--Resize card-->
+                    <div class="card-header">
+                      <h3 class="card-title">Inventory</h3>                    
+                    </div>
+
+                    <div class="card-body">
+                      <div class="chart">
+                        <canvas id="areaChart" style="min-height: 10px; height: 200px; max-height: 200px; max-width: 100%;"></canvas>
+                      </div>
+                    </div>
+                  <!-- /.card-body -->
+                  </div>
                 <!-- /.card -->
-              </div>            
+                </div>  
+              </div>
+
             </div>
 
 
-
-              <!-- ./col -->
-              <di class="col-lg-3 col-6">
-                <!-- small box of Total Sales -->
-                <div class="small-box bg-warning">
-                  <div class="inner">
-                    <h3>44</h3>                 
-                    <p>Total Sales</p>
-                  </div>
-                  <div class="icon">
-                    <i class="ion-cash"></i>
-                  </div>
-                </div>
-              </di>
             </div>
           </class>
         </section>
@@ -408,14 +539,24 @@
       },
       scales: {
         xAxes: [{
+          scaleLabel : {
+            display : true,
+            labelString: "Days",
+          },
+
           gridLines : {
-            display : false,
-          }
+            display : false,                  //Delete behind line of graph
+          },
         }],
         yAxes: [{
+          scaleLabel : {
+            display : true,
+            labelString: "Liter"
+          },
+
           gridLines : {
-            display : false,              //show behind line of graph
-          }
+            display : false,
+          },
         }]
       }
     }
