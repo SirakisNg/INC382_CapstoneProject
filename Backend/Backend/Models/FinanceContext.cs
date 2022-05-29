@@ -216,18 +216,20 @@ namespace Backend.Models
         }
 
         //Add new inventory item
-        public void addInventory(string GasType, Double Volume, Double PricePerLitter, Double Debit, Double Credit, Double totalPrice, Double totalVol)
+        public void addInventory(string GasType, Double Volume, Double Purchase, Double COG)
         {
             using (MySqlConnection conn = GetConnection())
             {
                 string Date = DateTime.Today.ToString();
                 string Time = DateTime.Today.ToString();
                 conn.Open();
-                string sql = $"INSERT INTO Inventory (date, time, gasType, volume, pricePerLitter, debit, credit, totalPrice, totalVol) VALUES ('{Date}', '{Time}', '{GasType}', '{Volume},'{PricePerLitter},'{Debit},'{Credit},'{totalPrice},'{totalVol}');";
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+                string sql = $"INSERT INTO TAS_Project.Inventory_v2 (date, time, gasType, volume, purchase, cog) VALUES ('" + Date + "', '" + Time + "', '" + GasType + "', '" + Volume + "','" + Purchase + "','" + COG + "';";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                using (var reader = cmd.ExecuteReader()) ;
-                Console.WriteLine("info : " + DateTime.Today + " : add new purchase order");
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
             }
+
             return;
         }
 

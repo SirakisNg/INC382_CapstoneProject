@@ -47,15 +47,15 @@ namespace Backend.Controllers
         }
 
         //Show all inventory
-        public IActionResult Inventory(string GasType, Double Volume, Double PricePerLitter, Double Debit, Double Credit, Double totalPrice, Double totalVol)
+        public IActionResult Inventory(string GasType, Double Volume, Double Purchase, Double COG)
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get all inventory data...");
-            context.addInventory(GasType, Volume, PricePerLitter, Debit, Credit, totalPrice, totalVol);
+            context.addInventory(GasType, Volume, Purchase, COG);
             return View(context.GetAllInventory());
         }
 
-        // Generak ledger ----------------------------------------------------------------------------------------------
+        // General ledger ----------------------------------------------------------------------------------------------
         public IActionResult GeneralLedger()
         {
             return View();

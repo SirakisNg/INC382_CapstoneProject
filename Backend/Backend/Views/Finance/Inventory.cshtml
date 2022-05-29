@@ -142,10 +142,9 @@
                                                         <th>Time</th>
                                                         <th>GasType</th>
                                                         <th>Volume</th>
-                                                        <th>Debit</th>
-                                                        <th>Credit</th>
-                                                        <th>totalPrice</th>
-                                                        <th>totalVol</th>
+                                                        <th>Purchase cost</th>
+                                                        <th>Cost of goods sold</th>
+
 
 
                                                     </tr>
@@ -157,10 +156,9 @@
                                                             <td>@item.Time</td>
                                                             <td>@item.GasType</td>
                                                             <td>@item.Volume</td>
-                                                            <td>@item.Debit</td>
-                                                            <td>@item.Credit</td>
-                                                            <td>@item.totalPrice</td>
-                                                            <td>@item.totalVol</td>
+                                                            <td>@item.Purchase</td>
+                                                            <td>@item.COG</td>
+
 
 
                                                         </tr>
@@ -180,28 +178,13 @@
                                                             value="" />
                                                     </div>
                                                     <div>
-                                                        <label for="CompanyName">PricePerLitter</label>
-                                                        <input class="form-control me-sm-2" type="int"
-                                                            name="PricePerLitter" value="" />
+                                                        <label for="CompanyName">Purchase</label>
+                                                        <input class="form-control me-sm-2" type="string"
+                                                            name="Purchase" name="PricePerLitter" value="" />
                                                     </div>
                                                     <div>
-                                                        <label for="CompanyName">Debit</label>
-                                                        <input class="form-control me-sm-2" type="string" name="genre"
-                                                            value="" />
-                                                    </div>
-                                                    <div>
-                                                        <label for="CompanyName">Credit</label>
-                                                        <input class="form-control me-sm-2" type="string" name="genre"
-                                                            value="" />
-                                                    </div>
-                                                    <div>
-                                                        <label for="CompanyName">totalPrice</label>
-                                                        <input class="form-control me-sm-2" type="string" name="genre"
-                                                            value="" />
-                                                    </div>
-                                                    <div>
-                                                        <label for="CompanyName">totalVol</label>
-                                                        <input class="form-control me-sm-2" type="string" name="genre"
+                                                        <label for="CompanyName">COG</label>
+                                                        <input class="form-control me-sm-2" type="string" name="COG"
                                                             value="" />
                                                     </div>
                                                     <button class="btn btn-secondary my-2 my-sm-0"
