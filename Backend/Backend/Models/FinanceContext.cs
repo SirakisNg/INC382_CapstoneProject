@@ -335,16 +335,137 @@ namespace Backend.Models
             return list;
         }
 
+        // General ledger ----------------------------------------------------------------------------------------------
 
+        //Account recieveable
+        public List<GLARModel> GetGLAR()
+        {
+            List<GLARModel> list = new List<GLARModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.GLAR;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new GLARModel()
+                        {
+                            GLAR_id = Convert.ToInt32(reader["glar_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            PONo = Convert.ToInt32(reader["poNo"]),
+                            Description = reader["description"].ToString(),
+                            Debit = Convert.ToDouble(reader["debit"]),
+                            Credit = Convert.ToDouble(reader["credit"]),
+                            Balance = Convert.ToDouble(reader["balance"]),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            }
+            return list;
+        }
 
+        //Cash
+        public List<GLCModel> GetGLC()
+        {
+            List<GLCModel> list = new List<GLCModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.GLC;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new GLCModel()
+                        {
+                            GLC_id = Convert.ToInt32(reader["glc_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Description = reader["description"].ToString(),
+                            Debit = Convert.ToDouble(reader["debit"]),
+                            Credit = Convert.ToDouble(reader["credit"]),
+                            Balance = Convert.ToDouble(reader["balance"]),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            }
+            return list;
+        }
 
+        //Account Palable
+        public List<GLAPModel> GetGLAP()
+        {
+            List<GLAPModel> list = new List<GLAPModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.GLC;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new GLAPModel()
+                        {
+                            GLAP_id = Convert.ToInt32(reader["glap_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Description = reader["description"].ToString(),
+                            Debit = Convert.ToDouble(reader["debit"]),
+                            Credit = Convert.ToDouble(reader["credit"]),
+                            Balance = Convert.ToDouble(reader["balance"]),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            }
+            return list;
+        }
 
-
-
-
-
-
-
+        //Account Inventory
+        public List<GLIModel> GetGLI()
+        {
+            List<GLIModel> list = new List<GLIModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.GLC;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new GLIModel()
+                        {
+                            GLI_id = Convert.ToInt32(reader["gli_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            poNo = Convert.ToInt32(reader["poNo"]),
+                            Description = reader["description"].ToString(),
+                            Debit = Convert.ToDouble(reader["debit"]),
+                            Credit = Convert.ToDouble(reader["credit"]),
+                            Balance = Convert.ToDouble(reader["balance"]),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            }
+            return list;
+        }
 
 
 
