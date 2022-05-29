@@ -66,7 +66,7 @@ namespace Backend.Models
 
         // Inventory ----------------------------------------------------------------------------------------------
 
-        // All Inventory
+        // All Inventory with join table (not use)
         public List<InventoryModel> getInventory(string startDate, string endDate)
         {
             Console.WriteLine("info : " + DateTime.Today + " : query form " + startDate + "to" + endDate);
@@ -101,40 +101,34 @@ namespace Backend.Models
         }
 
         // All Inventory
-        public List<InvenModel> GetInventory()
+        public List<Inventory_V2Model> GetAllInventory()
         {
-            Console.WriteLine($"info : " + DateTime.Today + $" : get Inventory");
-            List<InvenModel> list = new List<InvenModel>();
+            List<Inventory_V2Model> list = new List<Inventory_V2Model>();
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.Inventory;";
+                string sql = $"SELECT * FROM TAS_Project.Inventory_v2;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new InvenModel()
+                        list.Add(new Inventory_V2Model()
                         {
-                            Inventory_id = Convert.ToInt32(reader["inventory_id"]),
+                            Inventory_id = Convert.ToInt32(reader["inventoryV2_id"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
                             GasType = reader["gasType"].ToString(),
                             Volume = Convert.ToDouble(reader["volume"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
-                            Debit = Convert.ToDouble(reader["debit"]),
-                            Credit = Convert.ToDouble(reader["credit"]),
-                            totalPrice = Convert.ToDouble(reader["totalPrice"]),
-                            totalVol = Convert.ToDouble(reader["totalVol"]),
-
+                            Purchase = Convert.ToDouble(reader["purchase"]),
+                            COG = Convert.ToDouble(reader["cog"]),
                         });
                     }
                 }
                 conn.Close();
-                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
             }
-
             return list;
         }
 
@@ -228,11 +222,8 @@ namespace Backend.Models
             {
                 string Date = DateTime.Today.ToString();
                 string Time = DateTime.Today.ToString();
-
                 conn.Open();
-
                 string sql = $"INSERT INTO Inventory (date, time, gasType, volume, pricePerLitter, debit, credit, totalPrice, totalVol) VALUES ('{Date}', '{Time}', '{GasType}', '{Volume},'{PricePerLitter},'{Debit},'{Credit},'{totalPrice},'{totalVol}');";
-
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader()) ;
                 Console.WriteLine("info : " + DateTime.Today + " : add new purchase order");

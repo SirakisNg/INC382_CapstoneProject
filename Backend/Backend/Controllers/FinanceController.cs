@@ -32,6 +32,7 @@ namespace Backend.Controllers
             return View(context.getAllOrder());
         }
 
+        // Inventory ----------------------------------------------------------------------------------------------
         public IActionResult InventoryByDate(string startDate, string endDate)
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
@@ -45,23 +46,16 @@ namespace Backend.Controllers
             return View(context.getInventory_id(id));
         }
 
-        public IActionResult InventorySum(string startDate, string endDate)
-        {
-            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Inventory sum infomation");
-            return View(context.getInventory_sum(startDate, endDate));
-        }
-
-
+        //Show all inventory
         public IActionResult Inventory(string GasType, Double Volume, Double PricePerLitter, Double Debit, Double Credit, Double totalPrice, Double totalVol)
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get all inventory data...");
             context.addInventory(GasType, Volume, PricePerLitter, Debit, Credit, totalPrice, totalVol);
-            return View(context.GetInventory());
+            return View(context.GetAllInventory());
         }
 
-
+        // Generak ledger ----------------------------------------------------------------------------------------------
         public IActionResult GeneralLedger()
         {
             return View();
