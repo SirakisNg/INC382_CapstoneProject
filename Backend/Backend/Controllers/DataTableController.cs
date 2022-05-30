@@ -41,7 +41,7 @@
 //        public List<DataTableModel> TableV2()
 //        {
 //            List<DataTableModel> dataList = new List<DataTableModel>();
-//            DataTable dt = ConnectDB.GetData($"SELECT * FROM tas_project.PurchaseOrder;");
+//            DataTable dt = ConnectDB.GetData($"SELECT * FROM TAS_Project.PurchaseOrder;");
 //            Console.Write(dt.Rows[0]["purchaseOrder_id"].ToString());
 //            for (int i = 0; i < dt.Rows.Count; i++)
 //            {

@@ -37,7 +37,7 @@ namespace Backend.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM tas_project.test where test_id = 1;", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM TAS_Project.test where test_id = 1;", conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())

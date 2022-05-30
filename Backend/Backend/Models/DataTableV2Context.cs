@@ -27,7 +27,7 @@
 //            using (MySqlConnection conn = GetConnection())
 //            {
 //                conn.Open();
-//                MySqlCommand cmd = new($"SELECT * FROM tas_project.test where test_id = 1;", conn);
+//                MySqlCommand cmd = new($"SELECT * FROM TAS_Project.test where test_id = 1;", conn);
 //                using (var reader = cmd.ExecuteReader())
 //                {
 //                    while (reader.Read())
@@ -48,7 +48,7 @@
 //                conn.Close();
 //                return list;
 //            }
-
+            
 //        }
 //    }
 //}

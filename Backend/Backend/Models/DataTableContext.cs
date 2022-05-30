@@ -34,7 +34,7 @@ namespace Backend.Models
         public List<DataTableModel> showTable()
         {
             List<DataTableModel> list = new List<DataTableModel>();
-            DataTable dt = ConnectDB.GetData($"SELECT * FROM tas_project.PurchaseOrder;");
+            DataTable dt = ConnectDB.GetData($"SELECT * FROM TAS_Project.PurchaseOrder;");
             //Console.Write(dt.Rows[0]["purchaseOrder_id"].ToString());
             list.Add(new DataTableModel()
             {
@@ -57,7 +57,7 @@ namespace Backend.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM tas_project.PurchaseOrder;", conn);
+                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM TAS_Project.PurchaseOrder;", conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -85,7 +85,7 @@ namespace Backend.Models
             using (MySqlConnection conn = GetConnection())
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM tas_project.PurchaseOrder;", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM TAS_Project.PurchaseOrder;", conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
