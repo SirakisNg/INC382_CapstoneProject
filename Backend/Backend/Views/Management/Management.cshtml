@@ -32,12 +32,9 @@
   <!-- Pie Chart -->
   <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});      //Load Charts         
-    google.charts.load('current', {'packages':['gauge']});          //Load Gauge         
     google.charts.load("current", {'packages':['corechart']});      //Load Column Charts and Bar Charts
     google.charts.setOnLoadCallback(drawFilledChart);               //Draw Amount of Filled Chart when charts is loaded.
     google.charts.setOnLoadCallback(drawSalesChart);               //Draw Sales Chart when charts is loaded.
-    google.charts.setOnLoadCallback(drawG95cycleChart);               //Draw Average GASOHOL95 Cycle Time gauge when charts is loaded.
-    google.charts.setOnLoadCallback(drawDieselcycleChart);               //Draw Average Diesel Cycle Time gauge when charts is loaded.
     google.charts.setOnLoadCallback(drawTruckInOutChart);               //Draw Truck-in and Truck-out column chart when charts is loaded.
     google.charts.setOnLoadCallback(drawWaitingTime);               //Draw Waiting Time column chart when charts is loaded.
     google.charts.setOnLoadCallback(drawFailedTime);               //Draw Number of Failed time column chart when charts is loaded.
@@ -125,40 +122,6 @@
       var chart = new google.visualization.PieChart(document.getElementById('Sales_pie'));
         chart.draw(data, options);
       }
-
-    function drawG95cycleChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['Min', 80],
-      ]);
-      var options = {
-        width: 170, height: 230,
-        redFrom: 90, redTo: 100,
-        yellowFrom:75, yellowTo: 90,
-        minorTicks: 5,
-        
-      };
-      var chart = new google.visualization.Gauge(document.getElementById('G95_Cycle'));
-      chart.draw(data, options);
-      
-    }
-
-    function drawDieselcycleChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['Min', 55],
-      ]);
-      var options = {
-        width: 170, height: 230,
-        redFrom: 90, redTo: 100,
-        yellowFrom:75, yellowTo: 90,
-        minorTicks: 5,
-       
-      };
-      var chart = new google.visualization.Gauge(document.getElementById('Diesel_Cycle'));
-      chart.draw(data, options);
-      
-    }
 
     function drawTruckInOutChart() {
       var data = google.visualization.arrayToDataTable([
@@ -376,18 +339,33 @@
                 </table>
 
                 <div class="col-sm">           
-                  <div class="card card-success">
-                    <div class="card-header">
-                      <h1 class="card-title">Average GAS95 Cycle Time </h1>                    
-                    </div>
-                    <center><div id="G95_Cycle" style="width: 250px; height: 170px;"></div></center>
-                  </div>
-                  <div class="card card-success">
-                    <div class="card-header">
-                      <h1 class="card-title">Average Diesel Cycle Time </h1>                    
-                    </div>
-                    <center><div id="Diesel_Cycle" style="width: 250px; height: 170px;"></div></center>
-                  </div>
+              
+                    <!-- small box of Average GASOHOL 95 Cycle Time -->
+                    <div class="small-box bg-white" style="height:210px">
+                      <div class="card-header bg-success">
+                        <h1 class="card-title">Average GASOHOL 95 Cycle Time</h1>
+                      </div>
+                      <div class="inner">
+                        <div class="icon">
+                          <center><h3 class="ion-clock" style="font-size:75px; color:black"></h3></center>
+                        </div>
+                        <center><h3>46.38 min</h3></center>                 
+                      </div>
+                    </div>                                                        
+              
+                    <!-- small box of Average DIESEL Cycle Time -->
+                    <div class="small-box bg-white" style="height:210px">
+                      <div class="card-header bg-success">
+                        <h1 class="card-title">Average DIESEL Cycle Time</h1>
+                      </div>
+                      <div class="inner">
+                        <div class="icon">
+                          <center><h3 class="ion-clock" style="font-size:75px; color:black"></h3></center>
+                        </div>
+                        <center><h3>45.68 min</h3></center>                 
+                      </div>
+                    </div>              
+                       
                 </div>
                
                 <div class="col-sm">
