@@ -337,6 +337,7 @@ namespace Backend.Models
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         //Account recieveable
         public List<GLARModel> GetGLAR()
         {
@@ -467,15 +468,23 @@ namespace Backend.Models
             return list;
         }
 =======
+=======
+
+
+
+>>>>>>> parent of b34545c (Merge branch 'cChung_Branch' of https://github.com/SirakisNg/INC382_CapstoneProject into cChung_Branch)
 
 
 
 
 
 
+<<<<<<< HEAD
 
 
 
+>>>>>>> parent of b34545c (Merge branch 'cChung_Branch' of https://github.com/SirakisNg/INC382_CapstoneProject into cChung_Branch)
+=======
 >>>>>>> parent of b34545c (Merge branch 'cChung_Branch' of https://github.com/SirakisNg/INC382_CapstoneProject into cChung_Branch)
 
 
