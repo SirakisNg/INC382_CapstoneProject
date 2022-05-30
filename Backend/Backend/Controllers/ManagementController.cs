@@ -30,7 +30,7 @@ namespace Backend.Controllers
         {
             ManagementContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.ManagementContext)) as ManagementContext;
             Console.WriteLine("info : " + DateTime.Today + " : Management");
-            return View(context.managements());
+            return View();
         }
     }
 }
