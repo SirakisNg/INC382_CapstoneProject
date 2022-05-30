@@ -467,6 +467,37 @@ namespace Backend.Models
             return list;
         }
 
+        //Operation----------------------------------------------------------------------------------------------
+
+        public List<CycleModel> AverageCycleTime()
+        {
+            List<CycleModel> list = new List<CycleModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.Operation_CycleTime;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CycleModel()
+                        {
+                            Cycle = reader["CycleTime"].ToString(),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            }
+            foreach (var data in list)
+            {
+                Console.WriteLine(data);
+            }
+            return list;
+        }
+
 
 
 

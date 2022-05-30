@@ -103,4 +103,9 @@ namespace Backend.Models
         public Double Balance { get; set; }
     }
 
+    public class CycleModel
+    {
+        public string Cycle { get; set; }
+    }
+
 }

@@ -27,6 +27,9 @@ namespace Backend.Controllers
 
         public IActionResult Operation()
         {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get average cycle time");
+            context.AverageCycleTime();
             return View();
         }
     }
