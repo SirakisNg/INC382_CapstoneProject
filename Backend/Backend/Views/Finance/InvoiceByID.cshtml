@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+
+}
+
+
+<body>
+    <h2>Inventory search by id</h2>
+    <div>
+        <form class="d-flex">
+
+            <div>
+
+                <label for="CompanyName">Input inventory transection number</label>
+                <input class="form-control me-sm-2" type="text" name="id" value="" />
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </div>
+
+        </form>
+    </div>
+    <div>
+
+        <h2>Inventory</h2>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)"><strong>No</strong></th>
+                    <th onclick="sortTable(1)"><strong>Date</strong></th>
+                    <th onclick="sortTable(2)"><strong>time</strong></th>
+                    <th onclick="sortTable(3)"><strong>Gas Type</strong></th>
+                    <th onclick="sortTable(4)"><strong>Price/Litter</strong></th>
+                    <th onclick="sortTable(5)"><strong>Quantity</strong></th>
+                    <th onclick="sortTable(6)"><strong>Total Cost</strong></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.Invoice_id</td>
+                        <td>@item.Date</td>
+                        <td>@item.Time</td>
+                        <td>@item.Type</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.PricePerLitter</td>
+                        <td>@item.TotalCost</td>
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</body>
