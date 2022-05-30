@@ -140,7 +140,6 @@
                                                         <th>No</th>
                                                         <th>Date</th>
                                                         <th>Time</th>
-                                                        <th>Purchase No</th>
                                                         <th>Description</th>
                                                         <th>Debit</th>
                                                         <th>Credit</th>
@@ -152,10 +151,9 @@
                                                     @foreach (var item in Model)
                                                     {
                                                         <tr>
-                                                            <td>@item.gli_id</td>
+                                                            <td>@item.GLC_id</td>
                                                             <td>@item.Date</td>
                                                             <td>@item.Time</td>
-                                                            <td>@item.PONo</td>
                                                             <td>@item.Description</td>
                                                             <td>@item.Debit</td>
                                                             <td>@item.Credit</td>
