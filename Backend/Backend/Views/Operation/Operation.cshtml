@@ -84,13 +84,16 @@
       chart.draw(data, options);
     }
 
+    <h1>@Model.DAVVolume;</h1>
+
+
     function drawSalesChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel', 550],
-        ['Gasohol 95', 450],
+        ['Diesel', 34],
+        ['Gasohol 95', 43],
       ]);
 
       var options = {
@@ -326,6 +329,7 @@
         </div><!-- /.container-fluid -->
       </div>
 
+
       <!-- Main content -->
       <section class="content">
         <class="container-fluid">
@@ -354,7 +358,6 @@
                     </div>
                   </div>
                 </td>
-
               </tr>
             </table>
 

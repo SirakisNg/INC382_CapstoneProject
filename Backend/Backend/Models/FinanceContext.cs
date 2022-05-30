@@ -469,7 +469,8 @@ namespace Backend.Models
 
         //Operation----------------------------------------------------------------------------------------------
 
-        public List<CycleModel> AverageCycleTime()
+        //public List<CycleModel> AverageCycleTime()
+        public int AverageCycleTime()
         {
             List<CycleModel> list = new List<CycleModel>();
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
@@ -493,10 +494,64 @@ namespace Backend.Models
             }
             foreach (var data in list)
             {
-                Console.WriteLine(data);
+                //Console.WriteLine(data.Cycle);
+            }
+
+            return 55;
+
+            //return list;
+        }
+
+        //Average volume
+        public List<CycleModel> AvVolume()
+        {
+            List<CycleModel> list = new List<CycleModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT AVG(Volume) as DAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'DIESEL';";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CycleModel()
+                        {
+                            DAVVolume = Convert.ToInt32(reader["DAVVolume"])
+                        });
+                    }
+                }
+                conn.Close();
+            }
+
+            // using (MySqlConnection conn = GetConnection())
+            // {
+            //     string sql = $"SELECT AVG(Volume) as SAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'GASOHOL95';";
+            //     conn.Open();
+            //     MySqlCommand cmd = new MySqlCommand(sql, conn);
+            //     using (var reader = cmd.ExecuteReader())
+            //     {
+            //         while (reader.Read())
+            //         {
+            //             list.Add(new CycleModel()
+            //             {
+            //                 SAVVolume = Convert.ToInt32(reader["SAVVolume"])
+            //             });
+            //         }
+            //     }
+            //     conn.Close();
+            //     Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            // }
+            foreach (var data in list)
+            {
+                Console.WriteLine(data.DAVVolume);
+                Console.WriteLine(data.SAVVolume);
             }
             return list;
         }
+
+
 
 
 

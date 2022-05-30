@@ -106,6 +106,8 @@ namespace Backend.Models
     public class CycleModel
     {
         public string Cycle { get; set; }
+        public int DAVVolume { get; set; }
+        public int SAVVolume { get; set; }
     }
 
 }
