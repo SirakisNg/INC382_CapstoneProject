@@ -89,5 +89,40 @@ namespace Backend.Controllers
             return View(context.getPurcahseOrder());
         }
 
+        // General ledger ----------------------------------------------------------------------------------------------
+
+        //Account recieveable
+        public IActionResult GeneralLaggerAccountRevieveable()
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get GLAR");
+            return View(context.GetGLAR());
+        }
+
+        //Cash
+        public IActionResult GeneralLaggerCash()
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get GLC");
+            return View(context.GetGLC());
+        }
+
+        //Account payable
+        public IActionResult GeneralLaggerAccountPayable()
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get GLAP");
+            return View(context.GetGLAP());
+        }
+
+        //Inventory
+        public IActionResult GeneralLaggerInventory()
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get GLI");
+            return View(context.GetGLI());
+        }
+
+
     }
 }
