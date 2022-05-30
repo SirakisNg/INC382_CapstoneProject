@@ -335,8 +335,8 @@ namespace Backend.Models
             return list;
         }
 
-        // General ledger ----------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
         //Account recieveable
         public List<GLARModel> GetGLAR()
         {
@@ -466,6 +466,17 @@ namespace Backend.Models
             }
             return list;
         }
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> parent of b34545c (Merge branch 'cChung_Branch' of https://github.com/SirakisNg/INC382_CapstoneProject into cChung_Branch)
 
 
 

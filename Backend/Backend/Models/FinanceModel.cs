@@ -56,51 +56,8 @@ namespace Backend.Models
         public Double Volume { get; set; }
         public Double Purchase { get; set; }
         public Double COG { get; set; }
-    }
-    public class GLARModel
-    {
-        public int GLAR_id { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
-        public int PONo { get; set; }
-        public string Description { get; set; }
-        public Double Debit { get; set; }
-        public Double Credit { get; set; }
-        public Double Balance { get; set; }
+
     }
 
-    public class GLCModel
-    {
-        public int GLC_id { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
-        public string Description { get; set; }
-        public Double Debit { get; set; }
-        public Double Credit { get; set; }
-        public Double Balance { get; set; }
-    }
-
-    public class GLAPModel
-    {
-        public int GLAP_id { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
-        public string Description { get; set; }
-        public Double Debit { get; set; }
-        public Double Credit { get; set; }
-        public Double Balance { get; set; }
-    }
-
-    public class GLIModel
-    {
-        public int GLI_id { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
-        public int poNo { get; set; }
-        public string Description { get; set; }
-        public Double Debit { get; set; }
-        public Double Credit { get; set; }
-        public Double Balance { get; set; }
-    }
 
 }
