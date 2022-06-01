@@ -5978,31 +5978,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sirakis Ngamwongwan\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/sirakis/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sirakis Ngamwongwan\\Desktop\\BackendDotNet\\BackendDotNet.csproj",
+      "projectUniqueName": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/BackendDotNet/BackendDotNet.csproj",
       "projectName": "BackendDotNet",
-      "projectPath": "C:\\Users\\Sirakis Ngamwongwan\\Desktop\\BackendDotNet\\BackendDotNet.csproj",
-      "packagesPath": "C:\\Users\\Sirakis Ngamwongwan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sirakis Ngamwongwan\\Desktop\\BackendDotNet\\obj\\",
+      "projectPath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/BackendDotNet/BackendDotNet.csproj",
+      "packagesPath": "/Users/sirakis/.nuget/packages/",
+      "outputPath": "/Users/sirakis/Documents/GitHub/INC382_CapstoneProject/BackendDotNet/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Sirakis Ngamwongwan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/sirakis/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6054,7 +6047,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }
