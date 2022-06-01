@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json;
 using System.Net;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
