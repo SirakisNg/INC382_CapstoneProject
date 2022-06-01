@@ -1,0 +1,140 @@
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\appsettings.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.staticwebassets.runtime.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.exe
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.deps.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.runtimeconfig.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.pdb
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.csproj.AssemblyReference.cache
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.AssemblyInfoInputs.cache
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.AssemblyInfo.cs
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.csproj.CoreCompileInputs.cache
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.RazorAssemblyInfo.cache
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.RazorAssemblyInfo.cs
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\scopedcss\bundle\BackendDotNet.styles.css
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\scopedcss\projectbundle\BackendDotNet.bundle.scp.css
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\refint\BackendDotNet.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.pdb
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.genruntimeconfig.cache
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\ref\BackendDotNet.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Humanizer.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.csproj.CopyComplete
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\quake\OneDrive\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\appsettings.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.staticwebassets.runtime.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.exe
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.deps.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.runtimeconfig.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\BackendDotNet.pdb
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.csproj.AssemblyReference.cache
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.AssemblyInfoInputs.cache
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.AssemblyInfo.cs
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.csproj.CoreCompileInputs.cache
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.RazorAssemblyInfo.cache
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.RazorAssemblyInfo.cs
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\scopedcss\bundle\BackendDotNet.styles.css
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\scopedcss\projectbundle\BackendDotNet.bundle.scp.css
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.csproj.CopyComplete
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\refint\BackendDotNet.dll
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.pdb
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\BackendDotNet.genruntimeconfig.cache
+C:\Users\Sirakis Ngamwongwan\Desktop\BackendDotNet\obj\Debug\net6.0\ref\BackendDotNet.dll
