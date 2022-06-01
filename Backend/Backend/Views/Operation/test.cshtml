@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>This is the all albums</h2>
+<h2>Albums</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+
+    </tr>
+    @* @foreach (var item in Model)
+        {
+        <tr>
+        <td>@item.Values</td>
+        <td>@item.TimeStamp</td>
+        </tr>
+        } *@
+</table>
+
+<form class="d-flex">
+
+    <div>
+
+        <label for="deletealbum">delete albums</label>
+        <input class="form-control me-sm-2" type="int" name="deleteID" value="" />
+    </div>
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit">delete</button>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Albums" asp-action="deleteAlbum">delete</a>
+    </li>
+</form>

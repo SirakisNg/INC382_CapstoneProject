@@ -36,7 +36,7 @@ namespace Backend.Controllers
         // }
 
 
-        public IActionResult getDieselVolDailyAsync(DateTime seldate)
+        public IActionResult test(DateTime seldate)
         {
             seldate = new DateTime(2022, 03, 31);
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;

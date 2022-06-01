@@ -8,80 +8,78 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System.Net;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Collections.Generic;
 using System;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
-using Backend.Utill;
-using System.Data;
-
+using Newtonsoft.Json.Linq;
 
 namespace Backend.Controllers
 {
-    //[ApiController]
+    [ApiController]
     [Route("api/pi")]
-
-    public class PiController : Controller
+    public class PIController : ControllerBase
     {
-
-        [HttpGet("test")]
-        public string Get()
+        private readonly string username = "group1";
+        private readonly string password = "inc.382";
+        private readonly ILogger<PIController> _logger;
+        public PIController(ILogger<PIController> logger)
         {
-            return "hi";
+            _logger = logger;
         }
+        [HttpGet]
 
-        [HttpGet("getDieselVolDaily/{selDate}")]
-        public async Task<IActionResult> getDieselVolDaily(DateTime selDate)
+        public async Task<IActionResult> GetItemValuesAsync(string itemname)
         {
             try
             {
-                var credentrials = new NetworkCredential("group1", "inc.382");
+                //business logic
+                Console.WriteLine("Connecting to PI...");
+                var credentrials = new NetworkCredential(username, password);
                 HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
-                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
                 HttpClient client = new HttpClient(clientHandler);
 
-                Console.WriteLine("Connecting...");
-
-                DateTime today = DateTime.Now;
-                // DateTime month = new DateTime (2022,4,29);
-                TimeSpan value = today.Subtract(selDate);
-                // TimeSpan value = today.Subtract(month);
-
-                string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
-                string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
-                string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
-                HttpResponseMessage response = await client.GetAsync(itemURL);
-                string content = await response.Content.ReadAsStringAsync();
-                var data = (JArray)JObject.Parse(content)["Items"];
-                var result = new List<TagValue>();
-
-                foreach (var item in data)
+                string webId = "";
+                string piserverURL = @$"https://202.44.12.146:1443/piwebapi/points/?path=\\PISRV\{itemname}";
+                using (HttpResponseMessage response = await client.GetAsync(piserverURL))
                 {
-                    if (item["Good"].Value<bool>() == true)
-                    {
-                        var dataPair = new TagValue()
-                        {
-                            Values = item["Value"].Value<string>(),
-                            TimeStamp = item["Timestamp"].Value<DateTime>()
-                        };
-                        result.Add(dataPair);
-
-                    }
+                    string content = await response.Content.ReadAsStringAsync();
+                    webId = JObject.Parse(content)["WebId"].Value<string>();
                 }
-                return Ok(new { result = result, message = "success" });
+
+                string itemURL = @$"https://202.44.12.146:1443/piwebapi/streams/{webId}/recorded?starttime=*-2y&endtime=*";
+                using (HttpResponseMessage response = await client.GetAsync(itemURL))
+                {
+                    string content = await response.Content.ReadAsStringAsync();
+
+                    var data = (JArray)JObject.Parse(content)["Items"];
+                    var result = new List<TagValue>();
+
+                    foreach (var item in data)
+                    {
+                        if (item["Good"].Value<bool>() == true)
+                        {
+                            var dataPair = new TagValue()
+                            {
+                                Values = item["Value"].Value<string>(),
+                                TimeStamp = item["Timestamp"].Value<DateTime>()
+                            };
+                            result.Add(dataPair);
+                        }
+                    }
+                    return Ok(new { result = result, message = "success" });
+                }
             }
 
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = ex.Message });
             }
-
         }
 
     }
 }
-
