@@ -21,9 +21,12 @@ namespace Backend
 
         public IConfiguration Configuration { get; }
 
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen();
             services.AddMvc();
             //Login connectuin time out
             services.AddSession(options =>
@@ -53,6 +56,15 @@ namespace Backend
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2");
+            });
+
+
+
 
             app.UseSession();
 

@@ -103,4 +103,17 @@ namespace Backend.Models
         public Double Balance { get; set; }
     }
 
+    public class CycleModel
+    {
+        public string Cycle { get; set; }
+        public int DAVVolume { get; set; }
+        public int SAVVolume { get; set; }
+    }
+
+    public class TagValue
+    {
+        public string Values { get; set; }
+        public DateTime TimeStamp { get; set; }
+    }
+
 }

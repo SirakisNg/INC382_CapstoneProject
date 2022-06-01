@@ -7,7 +7,11 @@ using Backend.Utill;
 using System.Linq;
 using Google.Protobuf.Collections;
 using MySql.Data.MySqlClient;
-
+using System.Threading.Tasks;
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace Backend.Models
 {
@@ -466,6 +470,157 @@ namespace Backend.Models
             }
             return list;
         }
+
+        //Operation----------------------------------------------------------------------------------------------
+
+        //public List<CycleModel> AverageCycleTime()
+        public int AverageCycleTime()
+        {
+            List<CycleModel> list = new List<CycleModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM TAS_Project.Operation_CycleTime;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CycleModel()
+                        {
+                            Cycle = reader["CycleTime"].ToString(),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            }
+            foreach (var data in list)
+            {
+                //Console.WriteLine(data.Cycle);
+            }
+
+            return 55;
+
+            //return list;
+        }
+
+        //Average volume
+        public List<CycleModel> AvVolume()
+        {
+            List<CycleModel> list = new List<CycleModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT AVG(Volume) as DAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'DIESEL';";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CycleModel()
+                        {
+                            DAVVolume = Convert.ToInt32(reader["DAVVolume"])
+                        });
+                    }
+                }
+                conn.Close();
+            }
+
+            // using (MySqlConnection conn = GetConnection())
+            // {
+            //     string sql = $"SELECT AVG(Volume) as SAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'GASOHOL95';";
+            //     conn.Open();
+            //     MySqlCommand cmd = new MySqlCommand(sql, conn);
+            //     using (var reader = cmd.ExecuteReader())
+            //     {
+            //         while (reader.Read())
+            //         {
+            //             list.Add(new CycleModel()
+            //             {
+            //                 SAVVolume = Convert.ToInt32(reader["SAVVolume"])
+            //             });
+            //         }
+            //     }
+            //     conn.Close();
+            //     Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+            // }
+            foreach (var data in list)
+            {
+                Console.WriteLine(data.DAVVolume);
+                Console.WriteLine(data.SAVVolume);
+            }
+            return list;
+        }
+
+        // public async Task<List<TagValue>> getDieselVolDailyAsync(DateTime selDate)
+        // {
+        //     // try
+        //     // {
+        //     var credentrials = new NetworkCredential("group1", "inc.382");
+        //     HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
+        //     clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
+        //     HttpClient client = new HttpClient(clientHandler);
+
+        //     Console.WriteLine("Connecting...");
+
+        //     DateTime today = DateTime.Now;
+        //     // DateTime month = new DateTime (2022,4,29);
+        //     TimeSpan value = today.Subtract(selDate);
+        //     // TimeSpan value = today.Subtract(month);
+
+        //     string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
+        //     string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
+        //     //string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
+        //     string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-50d&endtime=*-20d";
+        //     HttpResponseMessage response = await client.GetAsync(itemURL);
+        //     string content = await response.Content.ReadAsStringAsync();
+        //     var data = (JArray)JObject.Parse(content)["Items"];
+        //     var result = new List<TagValue>();
+        //     //List<TagValue> list = new List<TagValue>();
+
+        //     foreach (var item in data)
+        //     {
+        //         // list.Add(new TagValue()
+        //         // {
+        //         //     Values = item["Value"].Value<string>(),
+        //         //     TimeStamp = item["Timestamp"].Value<DateTime>()
+        //         // });
+
+        //         // if (item["Good"].Value<bool>() == true)
+        //         // {
+
+
+        //         var dataPair = new TagValue()
+        //         {
+        //             Values = item["Value"].Value<string>(),
+        //             TimeStamp = item["Timestamp"].Value<DateTime>()
+        //         };
+        //         result.Add(dataPair);
+
+        //         // }
+        //     }
+        //     //return Ok(new { result = result, message = "success" });
+
+        //     Console.WriteLine("test");
+
+        //     return result;
+        //     //         //return TagValue;
+        //     //}
+
+        //     // catch (Exception ex)
+        //     // {
+        //     //     return StatusCode(500, new { message = ex.Message });
+        //     // }
+
+        // }
+
+
+
+
+
 
 
 
