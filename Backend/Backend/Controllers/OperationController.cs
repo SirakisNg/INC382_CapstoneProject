@@ -9,6 +9,9 @@ using Backend.Models;
 using Microsoft.AspNetCore.Http;
 using Backend.Utill;
 using System.Data;
+using System.Net;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace Backend.Controllers
 {
@@ -25,11 +28,25 @@ namespace Backend.Controllers
         public OperationController(ILogger<FinanceController> logger) => _logger = logger;
 
 
-        public IActionResult Operation()
+        // public IActionResult Operation()
+        // {
+        //     FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+        //     Console.WriteLine("info : " + DateTime.Today + " : get average cycle time");
+        //     return View(context.AvVolume());
+        // }
+
+
+        public IActionResult getDieselVolDailyAsync(DateTime seldate)
         {
+            seldate = new DateTime(2022, 03, 31);
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get average cycle time");
-            return View(context.AvVolume());
+            Console.WriteLine("info : " + DateTime.Today + " : get DieselVolDailyAsync");
+            return View(context.getDieselVolDailyAsync(seldate));
         }
+
+
+
+
+
     }
 }

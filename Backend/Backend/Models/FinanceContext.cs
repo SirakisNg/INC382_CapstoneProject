@@ -7,7 +7,11 @@ using Backend.Utill;
 using System.Linq;
 using Google.Protobuf.Collections;
 using MySql.Data.MySqlClient;
-
+using System.Threading.Tasks;
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace Backend.Models
 {
@@ -550,6 +554,67 @@ namespace Backend.Models
             }
             return list;
         }
+
+        public async Task<List<TagValue>> getDieselVolDailyAsync(DateTime selDate)
+        {
+            // try
+            // {
+            var credentrials = new NetworkCredential("group1", "inc.382");
+            HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
+            HttpClient client = new HttpClient(clientHandler);
+
+            Console.WriteLine("Connecting...");
+
+            DateTime today = DateTime.Now;
+            // DateTime month = new DateTime (2022,4,29);
+            TimeSpan value = today.Subtract(selDate);
+            // TimeSpan value = today.Subtract(month);
+
+            string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
+            string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
+            string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
+            HttpResponseMessage response = await client.GetAsync(itemURL);
+            string content = await response.Content.ReadAsStringAsync();
+            var data = (JArray)JObject.Parse(content)["Items"];
+            //var result = new List<TagValue>();
+            List<TagValue> list = new List<TagValue>();
+
+            foreach (var item in data)
+            {
+                list.Add(new TagValue()
+                {
+                    Values = item["Value"].Value<string>(),
+                    TimeStamp = item["Timestamp"].Value<DateTime>()
+                });
+
+                // if (item["Good"].Value<bool>() == true)
+                // {
+
+
+                //     var dataPair = new TagValue()
+                //     {
+                //         Values = item["Value"].Value<string>(),
+                //         TimeStamp = item["Timestamp"].Value<DateTime>()
+                //     };
+                //     result.Add(dataPair);
+
+                // }
+            }
+            //return Ok(new { result = result, message = "success" });
+            return list;
+            //         //return TagValue;
+            //}
+
+            // catch (Exception ex)
+            // {
+            //     return StatusCode(500, new { message = ex.Message });
+            // }
+
+        }
+
+
+
 
 
 

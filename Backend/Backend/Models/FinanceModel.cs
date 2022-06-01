@@ -110,4 +110,10 @@ namespace Backend.Models
         public int SAVVolume { get; set; }
     }
 
+    public class TagValue
+    {
+        public string Values { get; set; }
+        public DateTime TimeStamp { get; set; }
+    }
+
 }
