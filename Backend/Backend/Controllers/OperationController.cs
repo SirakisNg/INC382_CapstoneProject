@@ -24,16 +24,21 @@ namespace Backend.Controllers
             Console.WriteLine("info : " + DateTime.Today + " : Operation access test success ...");
             return "This is an Operation test response";
         }
+        public string Index()
+        {
+            Console.WriteLine("info : " + DateTime.Today + " : Operation access test success ...");
+            return "This is an Operation test response";
+        }
 
         public OperationController(ILogger<FinanceController> logger) => _logger = logger;
 
 
-        // public IActionResult Operation()
-        // {
-        //     FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-        //     Console.WriteLine("info : " + DateTime.Today + " : get average cycle time");
-        //     return View(context.AvVolume());
-        // }
+        public IActionResult Operation()
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get average cycle time");
+            return View(context.AvVolume());
+        }
 
 
         // public IActionResult test(DateTime seldate)
