@@ -35,26 +35,29 @@ namespace BackendDotNet.Controllers
                 HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
                 clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
                 HttpClient client = new HttpClient(clientHandler);
+                Console.WriteLine(@$"Connecting to web pi ..." + itemname + "");
 
                 string webId = "";
                 string piserverURL = @$"https://202.44.12.146:1443/piwebapi/points/?path=\\PISRV\{itemname}";
-                using(HttpResponseMessage response = await client.GetAsync(piserverURL))
+                using (HttpResponseMessage response = await client.GetAsync(piserverURL))
                 {
                     string content = await response.Content.ReadAsStringAsync();
                     webId = JObject.Parse(content)["WebId"].Value<string>();
+                    Console.WriteLine(@$"Connecting to web id ..." + webId + "");
                 }
 
+
                 string itemURL = @$"https://202.44.12.146:1443/piwebapi/streams/{webId}/recorded?starttime=*-2y&endtime=*";
-                using(HttpResponseMessage response = await client.GetAsync(itemURL))
+                using (HttpResponseMessage response = await client.GetAsync(itemURL))
                 {
                     string content = await response.Content.ReadAsStringAsync();
 
                     var data = (JArray)JObject.Parse(content)["Items"];
                     var result = new List<TagValue>();
 
-                    foreach(var item in data)
+                    foreach (var item in data)
                     {
-                        if(item["Good"].Value<bool>() == true)
+                        if (item["Good"].Value<bool>() == true)
                         {
                             var dataPair = new TagValue()
                             {
@@ -64,7 +67,7 @@ namespace BackendDotNet.Controllers
                             result.Add(dataPair);
                         }
                     }
-                    return Ok( new{ result = result, message = "success" });
+                    return Ok(new { result = result, message = "success" });
                 }
             }
 

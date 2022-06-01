@@ -36,13 +36,13 @@ namespace Backend.Controllers
         // }
 
 
-        public IActionResult test(DateTime seldate)
-        {
-            seldate = new DateTime(2022, 03, 31);
-            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get DieselVolDailyAsync");
-            return View(context.getDieselVolDailyAsync(seldate));
-        }
+        // public IActionResult test(DateTime seldate)
+        // {
+        //     seldate = new DateTime(2022, 03, 31);
+        //     FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+        //     Console.WriteLine("info : " + DateTime.Today + " : get DieselVolDailyAsync");
+        //     return View(context.getDieselVolDailyAsync(seldate));
+        // }
 
 
 
