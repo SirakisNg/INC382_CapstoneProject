@@ -70,9 +70,6 @@ namespace Backend.Models
 
         // Inventory ----------------------------------------------------------------------------------------------
 
-        // All Inventory with join table (not use)
-        public string sDate = "2022-03-01";
-        public string eDate = "2022-03-31";
         public List<Inventory_V2Model> getInventory(string startDate, string endDate)
         {
             if (startDate == null)
@@ -286,6 +283,44 @@ namespace Backend.Models
 
             return list;
         }
+        public List<PurchaseOrderModel> getPurcahseOrderByDate(string startDate, string endDate)
+        {
+            if (startDate == null)
+            {
+                startDate = "2022-03-01";
+                endDate = "2022-03-31";
+
+            }
+            Console.WriteLine("info : " + DateTime.Today + " : get purchase ofder from  " + startDate + "to" + endDate);
+            List<PurchaseOrderModel> list = new List<PurchaseOrderModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT purchaseOrder_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.purchaseOrder WHERE date >= '" + startDate + "' AND date <= '" + endDate + "'";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PurchaseOrderModel()
+                        {
+                            PurchaseOrder_id = Convert.ToInt32(reader["purchaseOrder_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Type = reader["gasType"].ToString(),
+                            Quantity = Convert.ToDouble(reader["quantity"]),
+                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
+                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+            }
+
+            return list;
+        }
 
         // Invoice ----------------------------------------------------------------------------------------------
         public List<InvoiceModel> getInvoive()
@@ -304,13 +339,13 @@ namespace Backend.Models
                     {
                         list.Add(new InvoiceModel()
                         {
-                            Invoice_id = Convert.ToInt32(reader["invoice_id"]),
+                            Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gasType"].ToString(),
-                            Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
-                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                            Type = reader["gas type"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            price = Convert.ToDouble(reader["price"])
                         });
                     }
                 }
@@ -318,6 +353,45 @@ namespace Backend.Models
                 Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
             }
 
+            return list;
+        }
+
+        //Invoice by date
+        public List<InvoiceModel> getInvoiceByDate(string startDate, string endDate)
+        {
+            if (startDate == null)
+            {
+                startDate = "2022-03-01";
+                endDate = "2022-03-31";
+            }
+            Console.WriteLine("info : " + DateTime.Today + " : query form " + startDate + "to" + endDate);
+
+            List<InvoiceModel> list = new List<InvoiceModel>();
+
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT invoice_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.invoice WHERE date >= '" + startDate + "' AND date <= '" + endDate + "';";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new InvoiceModel()
+                        {
+                            Invoice_id = Convert.ToInt32(reader["invoice_number"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Type = reader["gas type"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            price = Convert.ToDouble(reader["price"])
+                        });
+                    }
+                }
+                conn.Close();
+            }
             return list;
         }
 
@@ -338,13 +412,13 @@ namespace Backend.Models
                     {
                         list.Add(new InvoiceModel()
                         {
-                            Invoice_id = Convert.ToInt32(reader["invoice_id"]),
+                            Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gasType"].ToString(),
-                            Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
-                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                            Type = reader["gas type"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            price = Convert.ToDouble(reader["price"])
                         });
                     }
                 }

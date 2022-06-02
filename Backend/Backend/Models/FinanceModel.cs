@@ -42,9 +42,9 @@ namespace Backend.Models
         public string Date { get; set; }
         public string Time { get; set; }
         public string Type { get; set; }
-        public Double Quantity { get; set; }
         public Double PricePerLitter { get; set; }
-        public Double TotalCost { get; set; }
+        public Double Volume { get; set; }
+        public Double price { get; set; }
     }
 
     public class Inventory_V2Model

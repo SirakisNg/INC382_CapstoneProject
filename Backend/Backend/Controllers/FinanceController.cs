@@ -35,8 +35,6 @@ namespace Backend.Controllers
         // Inventory ----------------------------------------------------------------------------------------------
         public IActionResult InventoryByDate(string startDate, string endDate)
         {
-            // startDate = "2022-03-01";
-            // endDate = "2022-03-05";
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation by date " + startDate + "" + endDate + "");
             return View(context.getInventory(startDate, endDate));
@@ -62,12 +60,18 @@ namespace Backend.Controllers
         {
             return View();
         }
-
+        // Invoice ----------------------------------------------------------------------------------------------
         public IActionResult Invoice()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Purchase order infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get invoice infomation");
             return View(context.getInvoive());
+        }
+        public IActionResult InvoiceByDate(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Invoice infomation bt date");
+            return View(context.getInvoiceByDate(startDate, endDate));
         }
 
         public IActionResult InvoiceByID(int id)
@@ -76,6 +80,7 @@ namespace Backend.Controllers
             Console.WriteLine($"info : " + DateTime.Today + $" : get Invoice id : " + id + "");
             return View(context.getInvoiveById(id));
         }
+        // ----------------------------------------------------------------------------------------------
         public IActionResult JournalizingTransaction()
         {
             return View();
@@ -84,11 +89,21 @@ namespace Backend.Controllers
         {
             return View();
         }
+
+
+        // Purchase Order ----------------------------------------------------------------------------------------------
         public IActionResult PurchaseOrder()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Invoice infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get Purchase Order infomation");
             return View(context.getPurcahseOrder());
+        }
+
+        public IActionResult PurchaseOrderByDate(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Purchase Order infomation");
+            return View(context.getPurcahseOrderByDate(startDate, endDate));
         }
 
         // General ledger ----------------------------------------------------------------------------------------------
