@@ -258,7 +258,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT purchaseOrder_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.purchaseOrder";
+                string sql = $"SELECT * FROM TAS_Project.purchaseOrder";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -296,7 +296,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT purchaseOrder_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.purchaseOrder WHERE date >= '" + startDate + "' AND date <= '" + endDate + "'";
+                string sql = $"SELECT * FROM TAS_Project.purchaseOrder WHERE date >= '" + startDate + "' AND date <= '" + endDate + "'";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
