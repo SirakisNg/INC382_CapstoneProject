@@ -124,14 +124,11 @@
                                                         <th>Debit</th>
                                                         <th>Credit</th>
                                                         <th>Balance</th>
-
-
-
                                                     </tr>
                                                     @foreach (var item in Model)
                                                     {
                                                         <tr>
-                                                            <td>@item.gli_id</td>
+                                                            <td>@item.GLAR_id</td>
                                                             <td>@item.Date</td>
                                                             <td>@item.Time</td>
                                                             <td>@item.PONo</td>
@@ -142,7 +139,6 @@
                                                         </tr>
                                                     }
                                                 </table>
-                                                <!-- Search -->
                                                 <script>
                                                     $(document).ready(function () {
                                                         $("#myInput").on("keyup", function () {
