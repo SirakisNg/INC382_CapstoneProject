@@ -83,7 +83,9 @@ namespace Backend.Controllers
         // ----------------------------------------------------------------------------------------------
         public IActionResult JournalizingTransaction()
         {
-            return View();
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine($"info : " + DateTime.Today + $" : get JZ");
+            return View(context.JournalizingTransaction());
         }
         public IActionResult MothlyIncomeStatement()
         {

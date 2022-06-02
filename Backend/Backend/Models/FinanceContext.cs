@@ -703,28 +703,39 @@ namespace Backend.Models
                 return list;
             }
 
+        }
 
-
-
-
-
-
-
+        public List<FJModel> JournalizingTransaction()
+        {
+            List<FJModel> list = new List<FJModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT * FROM tas_project.journalt";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new FJModel()
+                        {
+                            no = Convert.ToInt32(reader["no"]),
+                            Date = reader["Date"].ToString(),
+                            Title = reader["Title"].ToString(),
+                            Debit = Convert.ToDouble(reader["Debit"]),
+                            Credit = Convert.ToDouble(reader["Credit"])
+                        });
+                    }
+                    conn.Close();
+                    Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+                }
+                return list;
+            }
 
         }
 
-
-
-
-
-
     }
-
-
-
-
-
-
 
 }
 

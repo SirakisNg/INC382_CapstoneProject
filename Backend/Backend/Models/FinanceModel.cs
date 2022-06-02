@@ -143,4 +143,14 @@ public class DataTable_V2Model
     public string exit_gate { get; set; }
 }
 
+public class FJModel
+{
+    public int no { get; set; }
+    public string Date { get; set; }
+    public string Title { get; set; }
+    public Double Debit { get; set; }
+    public Double Credit { get; set; }
+
+}
+
 
