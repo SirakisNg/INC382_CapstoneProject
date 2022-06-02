@@ -32,5 +32,23 @@ namespace Backend.Controllers
             Console.WriteLine("info : " + DateTime.Today + " : Management");
             return View();
         }
+        public IActionResult Management_Monthly()
+        {
+            ManagementContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.ManagementContext)) as ManagementContext;
+            Console.WriteLine("info : " + DateTime.Today + " : Management");
+            return View();
+        }
+        public IActionResult Management_Week1()
+        {
+            ManagementContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.ManagementContext)) as ManagementContext;
+            Console.WriteLine("info : " + DateTime.Today + " : Management");
+            return View();
+        }
+        public IActionResult Management_Week2()
+        {
+            ManagementContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.ManagementContext)) as ManagementContext;
+            Console.WriteLine("info : " + DateTime.Today + " : Management");
+            return View();
+        }
     }
 }

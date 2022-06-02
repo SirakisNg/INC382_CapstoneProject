@@ -35,6 +35,14 @@ namespace Backend.Controllers
 
             return View();
         }
+        public IActionResult Operation2()
+        {
+
+
+            Console.WriteLine("info : " + DateTime.Today + " : get average cycle time");
+
+            return View();
+        }
 
         // public IActionResult test()
         // {
