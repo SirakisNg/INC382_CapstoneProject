@@ -39,6 +39,7 @@ namespace Backend.Models
     public class InvoiceModel
     {
         public int Invoice_id { get; set; }
+        public string Plate_number { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
         public string Type { get; set; }
