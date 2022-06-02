@@ -31,6 +31,13 @@
   <!-- Google chart-->
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+  <!-- Plug-in calendar picker -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
   <!-- Pie Chart -->
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });      //Load Charts         
@@ -43,12 +50,13 @@
 
     function drawFilledChart() {
 
+      //Amount fill
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel', 55],
-        ['Gasohol 95', 45],
+        ['Diesel', 10256.9602],
+        ['Gasohol 95', 9597.3232],
       ]);
 
       var options = {
@@ -85,14 +93,14 @@
     }
 
 
-
+    //Total Sale
     function drawSalesChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel', 34],
-        ['Gasohol 95', 43],
+        ['Diesel', 274578.82],
+        ['Gasohol 95', 305866.71],
       ]);
 
       var options = {
@@ -127,12 +135,12 @@
       var chart = new google.visualization.PieChart(document.getElementById('Sales_pie'));
       chart.draw(data, options);
     }
-
+    // truck in out
     function drawTruckInOutChart() {
       var data = google.visualization.arrayToDataTable([
         [" Name", "number", { role: "style" }],
-        ["Truck in", 90, "#98B6D7"],
-        ["Truck out", 80, "#F7D7C2"],
+        ["Truck in", 85, "#98B6D7"],
+        ["Truck out", 77, "#F7D7C2"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -158,14 +166,16 @@
       chart.draw(view, options);
     }
 
+
+    //Av waiting time
     function drawWaitingTime() {
       var data = google.visualization.arrayToDataTable([
         [" Name", "number", { role: "style" }],
-        ["Sale Office", 9, "#AFD7F6"],
-        ["Inbound WB", 8, "#96CFCF"],
-        ["DIESEL Bay", 2, "#FF8F7F"],
-        ["GASOHOL95 Bay", 5, "#FEB9D0"],
-        ["Outbound WB", 10, "#C1B2C6"],
+        ["Sale Office", 0, "#AFD7F6"],
+        ["Inbound WB", 7.36, "#96CFCF"],
+        ["DIESEL Bay", 3.41, "#FF8F7F"],
+        ["GASOHOL95 Bay", 1.19, "#FEB9D0"],
+        ["Outbound WB", 2.18, "#C1B2C6"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -199,11 +209,12 @@
       chart.draw(view, options);
     }
 
+    // Number of fill time
     function drawFailedTime() {
       var data = google.visualization.arrayToDataTable([
         [" Name", "number", { role: "style" }],
-        ["GASOHOL95 BAY", 12, "FF9900"],
-        ["DIESEL BAY", 8, "65CCCC"],
+        ["GASOHOL95 BAY", 45.44, "FF9900"],
+        ["DIESEL BAY", 46.02, "65CCCC"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -256,73 +267,12 @@
 
             <!-- Calendar Dropdown Menu -->
             <ul class="navbar-nav ml-auto"></ul>
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <h1 class="ion-calendar"></h1>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 1</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 2</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 3</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 4</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 5</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 6</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 7</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 8</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 9</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 10</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 11</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 12</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 13</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 14</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 15</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 16</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 17</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 18</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 19</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 20</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 21</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 22</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 23</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 24</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 25</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 26</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 27</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 28</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 29</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 30</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">Mar. 31</a>
-            </div>
+            <input id="datepicker" width="276" />
+            <script>
+              $('#datepicker').datepicker({
+                uiLibrary: 'bootstrap4'
+              });
+            </script>
 
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -374,7 +324,7 @@
                     </center>
                   </div>
                   <center>
-                    <h3>46.38 min</h3>
+                    <h3>1.51.29 min</h3>
                   </center>
                 </div>
               </div>
@@ -391,7 +341,7 @@
                     </center>
                   </div>
                   <center>
-                    <h3>45.68 min</h3>
+                    <h3>1.58.44 min</h3>
                   </center>
                 </div>
               </div>
