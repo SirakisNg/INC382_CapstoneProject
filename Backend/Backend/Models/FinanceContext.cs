@@ -352,6 +352,24 @@ namespace Backend.Models
                 conn.Close();
                 Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
             }
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT Plate_number FROM tas_project.data_table;";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new InvoiceModel()
+                        {
+                            Plate_number = reader["Plate_number"].ToString(),
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+            }
 
             return list;
         }
