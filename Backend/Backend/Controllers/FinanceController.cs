@@ -109,7 +109,7 @@ namespace Backend.Controllers
         // General ledger ----------------------------------------------------------------------------------------------
 
         //Account recieveable
-        public IActionResult GeneralLaggerAccountRevieveable()
+        public IActionResult GeneralLadgerAccountRecieveable()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLAR");
@@ -117,7 +117,7 @@ namespace Backend.Controllers
         }
 
         //Cash
-        public IActionResult GeneralLaggerCash()
+        public IActionResult GeneralLadgerCash()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLC");
@@ -125,7 +125,7 @@ namespace Backend.Controllers
         }
 
         //Account payable
-        public IActionResult GeneralLaggerAccountPayable()
+        public IActionResult GeneralLadgerAccountPayable()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLAP");
@@ -133,7 +133,7 @@ namespace Backend.Controllers
         }
 
         //Inventory
-        public IActionResult GeneralLaggerInventory()
+        public IActionResult GeneralLadgerInventory()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLI");
