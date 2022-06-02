@@ -34,114 +34,232 @@
     <div class="wrapper">
 
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Inventory Stock Card</h1>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Inventory Stock Card</h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
 
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h3><i class="fa fa-table"></i> Inventory Stock Card </h3>
-                            </div>
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h3><i class="fa fa-table"></i> Inventory Stock Card </h3>
+                                </div>
 
-                            <div class="card-body">
+                                <div class="card-body">
 
-                                <div class="container">
+                                    <div class="container">
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="invoice-title text-center mb-3">
-                                                <h1>PTT</h1>
-                                                <h2>Inventory Stock Card</h2>
-                                                <h5><strong>Date:</strong> May, 2022</h5>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="invoice-title text-center mb-3">
+                                                    <h1>PTT</h1>
+                                                    <h2>Inventory Stock Card</h2>
+                                                    <h5><strong>Date:</strong> May, 2022</h5>
+
+                                                </div>
+                                                <hr>
 
                                             </div>
-                                            <hr>
-
                                         </div>
-                                    </div>
 
 
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h3 class="panel-title">Purchase Order</h3>
-                                                </div>
-                                                <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                    </div>
                                                     <div class="panel-body">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-condensed">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <td><strong>No.</strong></td>
-                                                                        <td class="text-left"><strong>date</strong></td>
-                                                                        <td class="text-right"><strong>time</strong>
-                                                                        </td>
-                                                                        <td class="text-right"><strong>Payment
-                                                                                No</strong></td>
-                                                                        <td class="text-right"><strong>Invoice
-                                                                                No</strong></td>
-                                                                        <td class="text-right"><strong>User ID</strong>
-                                                                        </td>
-                                                                        <td class="text-right"><strong>Order ID</strong>
-                                                                        </td>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
+                                                        <div class="panel-body">
+                                                            <div class="table-responsive">
+                                                                <!-- Search -->
+                                                                <meta charset="utf-8">
+                                                                <meta name="viewport"
+                                                                    content="width=device-width, initial-scale=1">
+                                                                <script
+                                                                    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                                                <script
+                                                                    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                                                                <style>
+                                                                    table {
+                                                                        border-spacing: 0;
+                                                                        width: 100%;
+                                                                        border: 1px solid #ddd;
+                                                                    }
 
+                                                                    th {
+                                                                        cursor: pointer;
+                                                                    }
+
+                                                                    th,
+                                                                    td {
+                                                                        text-align: left;
+                                                                        padding: 16px;
+                                                                    }
+
+                                                                    tr:nth-child(even) {
+                                                                        background-color: #f2f2f2
+                                                                    }
+                                                                </style>
+
+                                                                <!-- data table-->
+                                                                <p>Search :</p>
+                                                                <input class="form-control" id="myInput" type="text"
+                                                                    placeholder="Search..">
+                                                                <br>
+                                                                <table class="table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th onclick="sortTable(6)"><strong>Pruchase
+                                                                                    No</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Plate
+                                                                                    No</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Enter
+                                                                                    sale</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Sale
+                                                                                    service time</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Exit
+                                                                                    sale</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Enter
+                                                                                    inbound weighbridge</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Inweight
+                                                                                    service time</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Exit
+                                                                                    inbound weighbridge</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Enter
+                                                                                    bayloading</strong></th>
+                                                                            <th onclick="sortTable(6)">
+                                                                                <strong>Bayloaing service time</strong>
+                                                                            </th>
+                                                                            <th onclick="sortTable(6)"><strong>Exit
+                                                                                    bayloading</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Outbound
+                                                                                    weighbridge service time</strong>
+                                                                            </th>
+
+                                                                            <th onclick="sortTable(6)"><strong>Exit
+                                                                                    outbound weighbridge</strong></th>
+                                                                            <th onclick="sortTable(6)"><strong>Exit
+                                                                                    gate</strong></th>
+
+                                                                            <th onclick="sortTable(6)">
+                                                                                <strong>Enter_outbound_weighbridge</strong>
+                                                                            </th>
+
+                                                                        </tr>
+                                                                    </thead>
                                                                     @foreach (var item in Model)
                                                                     {
-                                                                        <tr>
-                                                                            <td>@item.purchaseOrder_id</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>@item.paymentNo</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>@item.invoiceNo</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>@item.user_id</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>@item.price_id</td>
-                                                                        </tr>
+                                                                        <tbody id="myTable">
+                                                                            <tr>
+                                                                                <td>@item.ponumber</td>
+                                                                                <td>@item.Plate_number</td>
+                                                                                <td>@item.Enter_Sale</td>
+                                                                                <td>@item.Sales_Service_Time</td>
+                                                                                <td>@item.Exit_Sale</td>
+                                                                                <td>@item.Enter_Inbound_weighbridge</td>
+                                                                                <td>@item.in_weight_service_time</td>
+                                                                                <td>@item.Exit_Inbound_weighbridge</td>
+                                                                                <td>@item.Enter_bayloading</td>
+                                                                                <td>@item.bayloaing_service_time</td>
+                                                                                <td>@item.Exit_bayloading</td>
+                                                                                <td>@item.Enter_outbound_weighbridge</td>
+                                                                                <td>@item.outbound_weighbridge_servicetime
+                                                                                </td>
+                                                                                <td>@item.Exit_outbound_weighbridge</td>
+                                                                                <td>@item.exit_gate</td>
+                                                                            </tr>
+                                                                        </tbody>
                                                                     }
-                                                                    <tr>
-                                                                        <td class="thick-line"></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
+                                                                </table>
+                                                                <!-- Search -->
+                                                                <script>
+                                                                    $(document).ready(function () {
+                                                                        $("#myInput").on("keyup", function () {
+                                                                            var value = $(this).val().toLowerCase();
+                                                                            $("#myTable tr").filter(function () {
+                                                                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                                                            });
+                                                                        });
+                                                                    });
+                                                                </script>
+
+                                                                <!-- Sort -->
+                                                                <script>
+                                                                    function sortTable(n) {
+                                                                        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                                                                        table = document.getElementById("myTable");
+                                                                        switching = true;
+                                                                        //Set the sorting direction to ascending:
+                                                                        dir = "asc";
+                                                                        /*Make a loop that will continue until
+                                                                        no switching has been done:*/
+                                                                        while (switching) {
+                                                                            //start by saying: no switching is done:
+                                                                            switching = false;
+                                                                            rows = table.rows;
+                                                                            /*Loop through all table rows (except the
+                                                                            first, which contains table headers):*/
+                                                                            for (i = 1; i < (rows.length - 1); i++) {
+                                                                                //start by saying there should be no switching:
+                                                                                shouldSwitch = false;
+                                                                                /*Get the two elements you want to compare,
+                                                                                one from current row and one from the next:*/
+                                                                                x = rows[i].getElementsByTagName("TD")[n];
+                                                                                y = rows[i + 1].getElementsByTagName("TD")[n];
+                                                                                /*check if the two rows should switch place,
+                                                                                based on the direction, asc or desc:*/
+                                                                                if (dir == "asc") {
+                                                                                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                                                                        //if so, mark as a switch and break the loop:
+                                                                                        shouldSwitch = true;
+                                                                                        break;
+                                                                                    }
+                                                                                } else if (dir == "desc") {
+                                                                                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                                                                        //if so, mark as a switch and break the loop:
+                                                                                        shouldSwitch = true;
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            if (shouldSwitch) {
+                                                                                /*If a switch has been marked, make the switch
+                                                                                and mark that a switch has been done:*/
+                                                                                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                                                                switching = true;
+                                                                                //Each time a switch is done, increase this count by 1:
+                                                                                switchcount++;
+                                                                            } else {
+                                                                                /*If no switching has been done AND the direction is "asc",
+                                                                                set the direction to "desc" and run the while loop again.*/
+                                                                                if (switchcount == 0 && dir == "asc") {
+                                                                                    dir = "desc";
+                                                                                    switching = true;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                </script>
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
-
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
 
                         </div>
 

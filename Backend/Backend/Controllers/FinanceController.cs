@@ -36,7 +36,7 @@ namespace Backend.Controllers
         public IActionResult InventoryByDate(string startDate, string endDate)
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation by date " + startDate + "" + endDate + "");
             return View(context.getInventory(startDate, endDate));
         }
         public IActionResult InventoryByID(int id)
@@ -51,7 +51,7 @@ namespace Backend.Controllers
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get all inventory data...");
-            context.addInventory(GasType, Volume, Purchase, COG);
+            //context.addInventory(GasType, Volume, Purchase, COG);
             return View(context.GetAllInventory());
         }
 
@@ -60,12 +60,18 @@ namespace Backend.Controllers
         {
             return View();
         }
-
+        // Invoice ----------------------------------------------------------------------------------------------
         public IActionResult Invoice()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Purchase order infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get invoice infomation");
             return View(context.getInvoive());
+        }
+        public IActionResult InvoiceByDate(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Invoice infomation bt date");
+            return View(context.getInvoiceByDate(startDate, endDate));
         }
 
         public IActionResult InvoiceByID(int id)
@@ -74,6 +80,7 @@ namespace Backend.Controllers
             Console.WriteLine($"info : " + DateTime.Today + $" : get Invoice id : " + id + "");
             return View(context.getInvoiveById(id));
         }
+        // ----------------------------------------------------------------------------------------------
         public IActionResult JournalizingTransaction()
         {
             return View();
@@ -82,17 +89,27 @@ namespace Backend.Controllers
         {
             return View();
         }
+
+
+        // Purchase Order ----------------------------------------------------------------------------------------------
         public IActionResult PurchaseOrder()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Invoice infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get Purchase Order infomation");
             return View(context.getPurcahseOrder());
+        }
+
+        public IActionResult PurchaseOrderByDate(string startDate, string endDate)
+        {
+            FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
+            Console.WriteLine("info : " + DateTime.Today + " : get Purchase Order infomation");
+            return View(context.getPurcahseOrderByDate(startDate, endDate));
         }
 
         // General ledger ----------------------------------------------------------------------------------------------
 
         //Account recieveable
-        public IActionResult GeneralLaggerAccountRevieveable()
+        public IActionResult GeneralLadgerAccountRecieveable()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLAR");
@@ -100,7 +117,7 @@ namespace Backend.Controllers
         }
 
         //Cash
-        public IActionResult GeneralLaggerCash()
+        public IActionResult GeneralLadgerCash()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLC");
@@ -108,7 +125,7 @@ namespace Backend.Controllers
         }
 
         //Account payable
-        public IActionResult GeneralLaggerAccountPayable()
+        public IActionResult GeneralLadgerAccountPayable()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLAP");
@@ -116,7 +133,7 @@ namespace Backend.Controllers
         }
 
         //Inventory
-        public IActionResult GeneralLaggerInventory()
+        public IActionResult GeneralLadgerInventory()
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get GLI");

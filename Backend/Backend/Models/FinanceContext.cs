@@ -70,31 +70,41 @@ namespace Backend.Models
 
         // Inventory ----------------------------------------------------------------------------------------------
 
-        // All Inventory with join table (not use)
-        public List<InventoryModel> getInventory(string startDate, string endDate)
+        public List<Inventory_V2Model> getInventory(string startDate, string endDate)
         {
+            if (startDate == null)
+            {
+                startDate = "2022-03-01";
+                endDate = "2022-03-31";
+
+            }
+
             Console.WriteLine("info : " + DateTime.Today + " : query form " + startDate + "to" + endDate);
 
-            List<InventoryModel> list = new List<InventoryModel>();
+            List<Inventory_V2Model> list = new List<Inventory_V2Model>();
 
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id WHERE date >= '" + startDate + " 00:00:00 AM' AND date <= '" + endDate + " 00:00:00 AM';";
+                string sql = $"SELECT * FROM TAS_Project.data_inventory WHERE date >= '" + startDate + "' AND date <= '" + endDate + "';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new InventoryModel()
+                        list.Add(new Inventory_V2Model()
                         {
-                            inventory_id = Convert.ToInt32(reader["inventory_id"]),
-                            side = Convert.ToInt32(reader["side"]),
-                            type = reader["type"].ToString(),
-                            volume = Convert.ToInt32(reader["Volume"]),
-                            price = Convert.ToInt32(reader["Price"]),
-                            date = reader["Date"].ToString()
+                            Inventory_id = Convert.ToInt32(reader["inventory_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            GasType = reader["gasType"].ToString(),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            COG = Convert.ToDouble(reader["cost_of_goods_sold"]),
+                            price = Convert.ToDouble(reader["price"]),
+                            purchase = Convert.ToDouble(reader["purchase"]),
+                            InventoryD = Convert.ToDouble(reader["inventoryD"]),
+                            InventoryG = Convert.ToDouble(reader["inventoryG"]),
 
                         });
                     }
@@ -111,7 +121,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.Inventory_v2;";
+                string sql = $"SELECT * FROM TAS_Project.data_inventory;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -120,13 +130,16 @@ namespace Backend.Models
                     {
                         list.Add(new Inventory_V2Model()
                         {
-                            Inventory_id = Convert.ToInt32(reader["inventoryV2_id"]),
+                            Inventory_id = Convert.ToInt32(reader["inventory_id"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
                             GasType = reader["gasType"].ToString(),
                             Volume = Convert.ToDouble(reader["volume"]),
-                            Purchase = Convert.ToDouble(reader["purchase"]),
-                            COG = Convert.ToDouble(reader["cog"]),
+                            COG = Convert.ToDouble(reader["cost_of_goods_sold"]),
+                            price = Convert.ToDouble(reader["price"]),
+                            purchase = Convert.ToDouble(reader["purchase"]),
+                            InventoryD = Convert.ToDouble(reader["inventoryD"]),
+                            InventoryG = Convert.ToDouble(reader["inventoryG"]),
                         });
                     }
                 }
@@ -270,6 +283,44 @@ namespace Backend.Models
 
             return list;
         }
+        public List<PurchaseOrderModel> getPurcahseOrderByDate(string startDate, string endDate)
+        {
+            if (startDate == null)
+            {
+                startDate = "2022-03-01";
+                endDate = "2022-03-31";
+
+            }
+            Console.WriteLine("info : " + DateTime.Today + " : get purchase ofder from  " + startDate + "to" + endDate);
+            List<PurchaseOrderModel> list = new List<PurchaseOrderModel>();
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT purchaseOrder_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.purchaseOrder WHERE date >= '" + startDate + "' AND date <= '" + endDate + "'";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new PurchaseOrderModel()
+                        {
+                            PurchaseOrder_id = Convert.ToInt32(reader["purchaseOrder_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Type = reader["gasType"].ToString(),
+                            Quantity = Convert.ToDouble(reader["quantity"]),
+                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
+                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                        });
+                    }
+                }
+                conn.Close();
+                Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
+            }
+
+            return list;
+        }
 
         // Invoice ----------------------------------------------------------------------------------------------
         public List<InvoiceModel> getInvoive()
@@ -288,13 +339,13 @@ namespace Backend.Models
                     {
                         list.Add(new InvoiceModel()
                         {
-                            Invoice_id = Convert.ToInt32(reader["invoice_id"]),
+                            Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gasType"].ToString(),
-                            Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
-                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                            Type = reader["gas type"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            price = Convert.ToDouble(reader["price"])
                         });
                     }
                 }
@@ -302,6 +353,45 @@ namespace Backend.Models
                 Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database success ");
             }
 
+            return list;
+        }
+
+        //Invoice by date
+        public List<InvoiceModel> getInvoiceByDate(string startDate, string endDate)
+        {
+            if (startDate == null)
+            {
+                startDate = "2022-03-01";
+                endDate = "2022-03-31";
+            }
+            Console.WriteLine("info : " + DateTime.Today + " : query form " + startDate + "to" + endDate);
+
+            List<InvoiceModel> list = new List<InvoiceModel>();
+
+            Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
+            using (MySqlConnection conn = GetConnection())
+            {
+                string sql = $"SELECT invoice_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.invoice WHERE date >= '" + startDate + "' AND date <= '" + endDate + "';";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new InvoiceModel()
+                        {
+                            Invoice_id = Convert.ToInt32(reader["invoice_number"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            Type = reader["gas type"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            price = Convert.ToDouble(reader["price"])
+                        });
+                    }
+                }
+                conn.Close();
+            }
             return list;
         }
 
@@ -322,13 +412,13 @@ namespace Backend.Models
                     {
                         list.Add(new InvoiceModel()
                         {
-                            Invoice_id = Convert.ToInt32(reader["invoice_id"]),
+                            Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gasType"].ToString(),
-                            Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
-                            TotalCost = Convert.ToDouble(reader["totalCost"])
+                            Type = reader["gas type"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            price = Convert.ToDouble(reader["price"])
                         });
                     }
                 }
@@ -507,119 +597,121 @@ namespace Backend.Models
         }
 
         //Average volume
-        public List<CycleModel> AvVolume()
+
+
+        public async Task<List<TagValue>> getDieselVolDailyAsync(DateTime selDate)
         {
-            List<CycleModel> list = new List<CycleModel>();
+            // try
+            // {
+            Console.WriteLine(@$"Connecting to PI..." + selDate + "");
+            var credentrials = new NetworkCredential("group1", "inc.382");
+            HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
+            HttpClient client = new HttpClient(clientHandler);
+
+            Console.WriteLine("Connecting...");
+
+            DateTime today = DateTime.Now;
+            // DateTime month = new DateTime (2022,4,29);
+            TimeSpan value = today.Subtract(selDate);
+            // TimeSpan value = today.Subtract(month);
+
+            string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
+            string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
+            string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
+            //string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-50d&endtime=*-20d";
+            HttpResponseMessage response = await client.GetAsync(itemURL);
+            string content = await response.Content.ReadAsStringAsync();
+            //Console.WriteLine(content);
+            //var data = JsonConvert.DeserializeObject<JArray>(content);
+            var data = (JArray)JObject.Parse(content)["Items"];
+            //JArray jsonArray = JArray.Parse(content);
+            //dynamic data = JObject.Parse(jsonArray[0].ToString());
+            //var data = JsonConvert.DeserializeObject<object>(content);
+
+
+            //var result = new List<TagValue>();
+            List<TagValue> list = new List<TagValue>();
+
+            // foreach (var item in data)
+            // {
+
+            //     // var dataPair = new TagValue()
+            //     // {
+            //     //     Values = item["Value"].Value<string>(),
+            //     //     TimeStamp = item["Timestamp"].Value<DateTime>()
+            //     // };
+            //     // result.Add(dataPair);
+
+
+            //     list.Add(new TagValue()
+            //     {
+            //         //Cycle = reader["CycleTime"].ToString(),
+            //         Values = item["Value"].Value<string>(),
+            //         TimeStamp = item["Timestamp"].Value<DateTime>()
+            //     });
+            // }
+            return list;
+        }
+
+
+        // }
+        // catch (Exception ex)
+        // {
+        //     return StatusCode(500, new { message = ex.Message });
+        // }
+
+        //Data table ------------------------------------------------------
+
+        public List<DataTable_V2Model> getDataTableV2(string myInput)
+        {
+
+            Console.WriteLine(myInput);
+            List<DataTable_V2Model> list = new List<DataTable_V2Model>();
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT AVG(Volume) as DAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'DIESEL';";
+                string sql = $"SELECT * FROM tas_project.data_table;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new CycleModel()
+                        list.Add(new DataTable_V2Model()
                         {
-                            DAVVolume = Convert.ToInt32(reader["DAVVolume"])
+                            ponumber = Convert.ToInt32(reader["ponumber"]),
+                            Plate_number = reader["Plate_number"].ToString(),
+                            Enter_Sale = reader["Enter_Sale"].ToString(),
+                            Sales_Service_Time = reader["Sales_Service_Time"].ToString(),
+                            Exit_Sale = reader["Exit_Sale"].ToString(),
+                            Enter_Inbound_weighbridge = reader["Enter_Inbound_weighbridge"].ToString(),
+                            in_weight_service_time = reader["in_weight_service_time"].ToString(),
+                            Exit_Inbound_weighbridge = reader["Exit_Inbound_weighbridge"].ToString(),
+                            Enter_bayloading = reader["Enter_bayloading"].ToString(),
+                            bayloaing_service_time = reader["bayloaing_service_time"].ToString(),
+                            Exit_bayloading = reader["Exit_bayloading"].ToString(),
+                            Enter_outbound_weighbridge = reader["Enter_outbound_weighbridge"].ToString(),
+                            outbound_weighbridge_servicetime = reader["outbound_weighbridge_servicetime"].ToString(),
+                            Exit_outbound_weighbridge = reader["Exit_outbound_weighbridge"].ToString(),
+                            exit_gate = reader["exit_gate"].ToString()
                         });
                     }
+                    conn.Close();
+                    Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
                 }
-                conn.Close();
+                return list;
             }
 
-            // using (MySqlConnection conn = GetConnection())
-            // {
-            //     string sql = $"SELECT AVG(Volume) as SAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'GASOHOL95';";
-            //     conn.Open();
-            //     MySqlCommand cmd = new MySqlCommand(sql, conn);
-            //     using (var reader = cmd.ExecuteReader())
-            //     {
-            //         while (reader.Read())
-            //         {
-            //             list.Add(new CycleModel()
-            //             {
-            //                 SAVVolume = Convert.ToInt32(reader["SAVVolume"])
-            //             });
-            //         }
-            //     }
-            //     conn.Close();
-            //     Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
-            // }
-            foreach (var data in list)
-            {
-                Console.WriteLine(data.DAVVolume);
-                Console.WriteLine(data.SAVVolume);
-            }
-            return list;
+
+
+
+
+
+
+
+
         }
-
-        // public async Task<List<TagValue>> getDieselVolDailyAsync(DateTime selDate)
-        // {
-        //     // try
-        //     // {
-        //     var credentrials = new NetworkCredential("group1", "inc.382");
-        //     HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
-        //     clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
-        //     HttpClient client = new HttpClient(clientHandler);
-
-        //     Console.WriteLine("Connecting...");
-
-        //     DateTime today = DateTime.Now;
-        //     // DateTime month = new DateTime (2022,4,29);
-        //     TimeSpan value = today.Subtract(selDate);
-        //     // TimeSpan value = today.Subtract(month);
-
-        //     string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
-        //     string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
-        //     //string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
-        //     string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-50d&endtime=*-20d";
-        //     HttpResponseMessage response = await client.GetAsync(itemURL);
-        //     string content = await response.Content.ReadAsStringAsync();
-        //     var data = (JArray)JObject.Parse(content)["Items"];
-        //     var result = new List<TagValue>();
-        //     //List<TagValue> list = new List<TagValue>();
-
-        //     foreach (var item in data)
-        //     {
-        //         // list.Add(new TagValue()
-        //         // {
-        //         //     Values = item["Value"].Value<string>(),
-        //         //     TimeStamp = item["Timestamp"].Value<DateTime>()
-        //         // });
-
-        //         // if (item["Good"].Value<bool>() == true)
-        //         // {
-
-
-        //         var dataPair = new TagValue()
-        //         {
-        //             Values = item["Value"].Value<string>(),
-        //             TimeStamp = item["Timestamp"].Value<DateTime>()
-        //         };
-        //         result.Add(dataPair);
-
-        //         // }
-        //     }
-        //     //return Ok(new { result = result, message = "success" });
-
-        //     Console.WriteLine("test");
-
-        //     return result;
-        //     //         //return TagValue;
-        //     //}
-
-        //     // catch (Exception ex)
-        //     // {
-        //     //     return StatusCode(500, new { message = ex.Message });
-        //     // }
-
-        // }
-
-
-
-
 
 
 
@@ -627,4 +719,12 @@ namespace Backend.Models
 
 
     }
+
+
+
+
+
+
+
 }
+

@@ -4,8 +4,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Invoice</title>
+  <title>Purchase order</title>
   <link rel="icon" type="image/x-icon" href="../Utill/dist/img/Group2_LOGO.ico">
+
+  <!-- Search -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    table {
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      cursor: pointer;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+  </style>
+
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet"
@@ -38,11 +66,12 @@
       <!-- Content Header (Page header) -->
       <div class="content-header">
         <div class="container-fluid">
+
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <div class="card mb-3">
                 <div class="card-header">
-                  <h3><i class="ion-card"></i><strong> &nbsp; Invoice </strong></h3>
+                  <h3><i class="ion-document-text"></i><strong> &nbsp; Purchased Order </strong></h3>
                 </div>
                 <div class="card-body">
                   <div class="container">
@@ -53,43 +82,30 @@
                           <p>
                           <h1>PTT</h1>
                           </p>
-                          <h2>Invoice</h2>
+                          <h2>Purchased Order</h2>
                           <h5><strong>Date:</strong> May, 2022</h5>
                         </div>
                       </div>
                     </div>
-
 
                     <div class="row">
                       <div class="col-md-12">
                         <div class="panel panel-default">
                           <div class="panel-heading">
                             <p>
-                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Company name : </h5>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Purchase Order No. : </h5>
                             </p>
                             <p>
-                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Address : </h5>
-                            </p>
-                            <right align="right">
-                              <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Invoice No. : </h5>
-                            </right>
-                            <right align="right">
-                              <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; PO No. : </h5>
-                            </right>
-                            <right align="right">
-                              <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Payment No. : </h5>
-                            </right>
-                            <right align="right">
-                              <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Date : </h5>
-                            </right>
-                            <p>
-                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Customer ID : </h5>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Payment Order : </h5>
                             </p>
                             <p>
-                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Customer : </h5>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Truck plate ID : </h5>
                             </p>
                             <p>
-                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Tax Payer ID : </h5>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Customer name : </h5>
+                            </p>
+                            <p>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Tax ID : </h5>
                             </p>
                           </div>
                         </div>
@@ -100,6 +116,13 @@
                       <div class="col-md-12">
                         <div class="panel-body">
 
+
+
+
+
+                          <!--///////////////////////////////////////////////////////////////////////////////////
+                          /////////////////////// TABLE Date by selected HERE////////////////////////////////////////////////////
+                          //////////////////////////////////////////////////////////////////////////////////-->
                           <div class="table-responsive">
                             <!--Sort-->
                             <link rel="stylesheet"
@@ -144,9 +167,94 @@
                             </style>
 
                             <!-- data table-->
-                            <p>Search :</p>
-                            <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                            <br>
+                            <div>
+                              <label for="CompanyName">Select date</label>
+                              <form class="d-flex">
+                                <div>
+                                  <div>
+                                    <select name="startDate">
+                                      <option value="2022-03-01">1</option>
+                                      <option value="2022-03-02">2</option>
+                                      <option value="2022-03-03">3</option>
+                                      <option value="2022-03-04">4</option>
+                                      <option value="2022-03-05">5</option>
+                                      <option value="2022-03-06">6</option>
+                                      <option value="2022-03-07">7</option>
+                                      <option value="2022-03-08">8</option>
+                                      <option value="2022-03-09">9</option>
+                                      <option value="2022-03-10">10</option>
+                                      <option value="2022-03-11">11</option>
+                                      <option value="2022-03-12">12</option>
+                                      <option value="2022-03-13">13</option>
+                                      <option value="2022-03-14">14</option>
+                                      <option value="2022-03-15">15</option>
+                                      <option value="2022-03-16">16</option>
+                                      <option value="2022-03-17">17</option>
+                                      <option value="2022-03-18">18</option>
+                                      <option value="2022-03-19">19</option>
+                                      <option value="2022-03-20">20</option>
+                                      <option value="2022-03-21">21</option>
+                                      <option value="2022-03-22">22</option>
+                                      <option value="2022-03-23">23</option>
+                                      <option value="2022-03-24">24</option>
+                                      <option value="2022-03-25">25</option>
+                                      <option value="2022-03-26">26</option>
+                                      <option value="2022-03-27">27</option>
+                                      <option value="2022-03-28">28</option>
+                                      <option value="2022-03-29">29</option>
+                                      <option value="2022-03-30">30</option>
+                                      <option value="2022-03-31">31</option>
+                                    </select>
+                                    <select>
+                                      <option value="3">3</option>
+                                    </select>
+                                  </div>
+                                  <div>
+                                    <select name="endDate">
+                                      <option value="2022-03-01">1</option>
+                                      <option value="2022-03-02">2</option>
+                                      <option value="2022-03-03">3</option>
+                                      <option value="2022-03-04">4</option>
+                                      <option value="2022-03-05">5</option>
+                                      <option value="2022-03-06">6</option>
+                                      <option value="2022-03-07">7</option>
+                                      <option value="2022-03-08">8</option>
+                                      <option value="2022-03-09">9</option>
+                                      <option value="2022-03-10">10</option>
+                                      <option value="2022-03-11">11</option>
+                                      <option value="2022-03-12">12</option>
+                                      <option value="2022-03-13">13</option>
+                                      <option value="2022-03-14">14</option>
+                                      <option value="2022-03-15">15</option>
+                                      <option value="2022-03-16">16</option>
+                                      <option value="2022-03-17">17</option>
+                                      <option value="2022-03-18">18</option>
+                                      <option value="2022-03-19">19</option>
+                                      <option value="2022-03-20">20</option>
+                                      <option value="2022-03-21">21</option>
+                                      <option value="2022-03-22">22</option>
+                                      <option value="2022-03-23">23</option>
+                                      <option value="2022-03-24">24</option>
+                                      <option value="2022-03-25">25</option>
+                                      <option value="2022-03-26">26</option>
+                                      <option value="2022-03-27">27</option>
+                                      <option value="2022-03-28">28</option>
+                                      <option value="2022-03-29">29</option>
+                                      <option value="2022-03-30">30</option>
+                                      <option value="2022-03-31">31</option>
+                                    </select>
+                                    <select>
+                                      <option value="3">3</option>
+                                    </select>
+                                  </div>
+
+
+                                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+
+                                </div>
+                              </form>
+                            </div>
+
                             <table class="table">
                               <thead>
                                 <tr>
@@ -157,20 +265,19 @@
                                   <th onclick="sortTable(4)"><strong>Price/Litter</strong></th>
                                   <th onclick="sortTable(5)"><strong>Quantity</strong></th>
                                   <th onclick="sortTable(6)"><strong>Total Cost</strong></th>
-
                                 </tr>
                               </thead>
                               @foreach (var item in Model)
                               {
                                 <tbody id="myTable">
                                   <tr>
-                                    <td>@item.Invoice_id</td>
+                                    <td>@item.PurchaseOrder_id</td>
                                     <td>@item.Date</td>
                                     <td>@item.Time</td>
                                     <td>@item.Type</td>
+                                    <td>@item.Quantity</td>
                                     <td>@item.PricePerLitter</td>
-                                    <td>@item.Volume</td>
-                                    <td>@item.price</td>
+                                    <td>@item.TotalCost</td>
                                   </tr>
                                 </tbody>
                               }
@@ -248,31 +355,35 @@
                               }
                             </script>
                           </div>
+                          <!--///////////////////////////////////////////////////////////////////////////////////
+                          ///////////////////////  TABLE Date by selected HERE////////////////////////////////////////////////////
+                          //////////////////////////////////////////////////////////////////////////////////-->
 
 
 
 
 
+
+                          <!--Close panel-body class -->
                         </div>
-                        <!--Close panel-body class -->
                       </div>
                     </div>
                   </div>
-                </div>
 
+                </div>
               </div>
             </div>
-          </div>
-        </div><!-- /.container-fluid -->
+
+          </div><!-- /.container-fluid -->
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 

@@ -33,123 +33,160 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-    <!-- -------------------------------------------------------------------- -->
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <!-- <h1 class="m-0">General Ledger</h1> -->
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
+        <!-- -------------------------------------------------------------------- -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <!-- <h1 class="m-0">General Ledger</h1> -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <!-- <h3><i class="fa fa-table"></i> PTT General Ledger </h3> -->
-                            </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <!-- <h3><i class="fa fa-table"></i> PTT General Ledger </h3> -->
+                                </div>
 
-                            <div class="card-body">
+                                <div class="card-body">
 
-                                <div class="container">
-
-
-                                    <div class="row">
-                                        <div class="col-xl-12">
-            
-                                            <div class="breadcrumb-holder">
-                                                <ol class="breadcrumb float-right">
-                                                    <label for="site-search">Search Account: </label>
-                                                    <input type="search" id="site-search" name="q">
-                                                    <button>Enter</button>
+                                    <div class="container">
 
 
-                                                </ol>
-                                                <div class="clearfix"></div>
+                                        <div class="row">
+                                            <div class="col-xl-12">
+
+                                                <div class="breadcrumb-holder">
+                                                    <ol class="breadcrumb float-right">
+                                                        <label for="site-search">Search Account: </label>
+                                                        <input type="search" id="site-search" name="q">
+                                                        <button>Enter</button>
+
+
+                                                    </ol>
+                                                    <div class="clearfix"></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- end row -->
+                                        <!-- end row -->
 
 
-                                    <div class="row">
+                                        <div class="row">
 
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-12">
-                                            <div class="card mb-3">
-                                                <div class="card-header">
-                                                    <h3><i class="fa fa-table"></i> General Ledger</h3>
-                                                </div>
-
-                                                <div class="card-body">
-                                                    <div class="table-responsive">
-                                                        <table id="example1"
-                                                            class="table table-bordered table-hover display ">
-                                                            <thead class="thead-dark">
-                                                                <tr>
-                                                                    <th>Date</th>
-                                                                    <th>Account Title and Explanation</th>
-                                                                    <th>Debit (฿)</th>
-                                                                    <th>Credit (฿)</th>
-                                                                    <th>Balance (฿)</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                
-                                                                <!-- -------------------------------------------------------------------- -->
-                                                                <!-- Control Sidebar -->
-                                                                <aside class="control-sidebar control-sidebar-dark">
-                                                                    <!-- Control sidebar content goes here -->
-                                                                    
-                                                                </aside>
-                                                                <!-- /.control-sidebar -->
-                                                            
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-12">
+                                                <div class="card mb-3">
+                                                    <div class="card-header">
+                                                        <h3><i class="fa fa-table"></i> General Ledger</h3>
                                                     </div>
-                                                    <!-- ./wrapper -->
 
-                                                    <!-- jQuery -->
-                                                    <script src="../Utill/plugins/jquery/jquery.min.js"></script>
-                                                    <!-- jQuery UI 1.11.4 -->
-                                                    <script src="../Utill/plugins/jquery-ui/jquery-ui.min.js"></script>
-                                                    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-                                                    <script>
-                                                        $.widget.bridge('uibutton', $.ui.button)
-                                                    </script>
-                                                    <!-- Bootstrap 4 -->
-                                                    <script
-                                                        src="../Utill/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                                                    <!-- ChartJS -->
-                                                    <script src="../Utill/plugins/chart.js/Chart.min.js"></script>
-                                                    <!-- Sparkline -->
-                                                    <script src="../Utill/plugins/sparklines/sparkline.js"></script>
-                                                    <!-- JQVMap -->
-                                                    <script src="../Utill/plugins/jqvmap/jquery.vmap.min.js"></script>
-                                                    <script
-                                                        src="../Utill/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-                                                    <!-- jQuery Knob Chart -->
-                                                    <script
-                                                        src="../Utill/plugins/jquery-knob/jquery.knob.min.js"></script>
-                                                    <!-- daterangepicker -->
-                                                    <script src="../Utill/plugins/moment/moment.min.js"></script>
-                                                    <script
-                                                        src="../Utill/plugins/daterangepicker/daterangepicker.js"></script>
-                                                    <!-- Tempusdominus Bootstrap 4 -->
-                                                    <script
-                                                        src="../Utill/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-                                                    <!-- Summernote -->
-                                                    <script
-                                                        src="../Utill/plugins/summernote/summernote-bs4.min.js"></script>
-                                                    <!-- overlayScrollbars -->
-                                                    <script
-                                                        src="../Utill/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-                                                    <!-- AdminLTE App -->
-                                                    <script src="../Utill/dist/js/adminlte.js"></script>
-                                                    <!-- AdminLTE for demo purposes -->
-                                                    <script src="../Utill/dist/js/demo.js"></script>
-                                                    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-                                                    <script src="../Utill/dist/js/pages/dashboard.js"></script>
+                                                    <div class="card-body">
+                                                        <div class="table-responsive">
+                                                            <table id="example1"
+                                                                class="table table-bordered table-hover display ">
+                                                                <a href="../Finance/GeneralLadgerInventory"
+                                                                    class="brand-link">
+                                                                    <!--
+                                                                    <img src="https://i.ibb.co/c1dJNrJ/Group2-LOGO.png"
+                                                                        alt="Group2_LOGO"
+                                                                        class="brand-image img-circle elevation-3"
+                                                                        style="opacity: .8">
+                                                                        -->
+                                                                    <span
+                                                                        class="brand-text font-weight-light">Inventory</span>
+                                                                </a>
+                                                                <a href="../Finance/GeneralLadgerCash"
+                                                                    class="brand-link">
+                                                                    <!--
+                                                                    <img src="https://i.ibb.co/c1dJNrJ/Group2-LOGO.png"
+                                                                        alt="Group2_LOGO"
+                                                                        class="brand-image img-circle elevation-3"
+                                                                        style="opacity: .8">
+                                                                        -->
+                                                                    <span
+                                                                        class="brand-text font-weight-light">Cash</span>
+                                                                </a>
+                                                                <a href="../Finance/GeneralLadgerAccountRecieveable"
+                                                                    class="brand-link">
+                                                                    <!--
+                                                                    <img src="https://i.ibb.co/c1dJNrJ/Group2-LOGO.png"
+                                                                        alt="Group2_LOGO"
+                                                                        class="brand-image img-circle elevation-3"
+                                                                        style="opacity: .8">
+                                                                        -->
+                                                                    <span class="brand-text font-weight-light">Account
+                                                                        Recieveable</span>
+                                                                </a>
+                                                                <a href="../Finance/GeneralLadgerAccountPayable"
+                                                                    class="brand-link">
+                                                                    <!--
+                                                                    <img src="https://i.ibb.co/c1dJNrJ/Group2-LOGO.png"
+                                                                        alt="Group2_LOGO"
+                                                                        class="brand-image img-circle elevation-3"
+                                                                        style="opacity: .8">
+                                                                        -->
+                                                                    <span class="brand-text font-weight-light">Account
+                                                                        Payable</span>
+                                                                </a>
+                                                                <tbody>
+
+                                                                    <!-- -------------------------------------------------------------------- -->
+                                                                    <!-- Control Sidebar -->
+                                                                    <aside class="control-sidebar control-sidebar-dark">
+                                                                        <!-- Control sidebar content goes here -->
+
+                                                                    </aside>
+                                                                    <!-- /.control-sidebar -->
+
+                                                        </div>
+                                                        <!-- ./wrapper -->
+
+                                                        <!-- jQuery -->
+                                                        <script src="../Utill/plugins/jquery/jquery.min.js"></script>
+                                                        <!-- jQuery UI 1.11.4 -->
+                                                        <script
+                                                            src="../Utill/plugins/jquery-ui/jquery-ui.min.js"></script>
+                                                        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+                                                        <script>
+                                                            $.widget.bridge('uibutton', $.ui.button)
+                                                        </script>
+                                                        <!-- Bootstrap 4 -->
+                                                        <script
+                                                            src="../Utill/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                                                        <!-- ChartJS -->
+                                                        <script src="../Utill/plugins/chart.js/Chart.min.js"></script>
+                                                        <!-- Sparkline -->
+                                                        <script src="../Utill/plugins/sparklines/sparkline.js"></script>
+                                                        <!-- JQVMap -->
+                                                        <script
+                                                            src="../Utill/plugins/jqvmap/jquery.vmap.min.js"></script>
+                                                        <script
+                                                            src="../Utill/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+                                                        <!-- jQuery Knob Chart -->
+                                                        <script
+                                                            src="../Utill/plugins/jquery-knob/jquery.knob.min.js"></script>
+                                                        <!-- daterangepicker -->
+                                                        <script src="../Utill/plugins/moment/moment.min.js"></script>
+                                                        <script
+                                                            src="../Utill/plugins/daterangepicker/daterangepicker.js"></script>
+                                                        <!-- Tempusdominus Bootstrap 4 -->
+                                                        <script
+                                                            src="../Utill/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+                                                        <!-- Summernote -->
+                                                        <script
+                                                            src="../Utill/plugins/summernote/summernote-bs4.min.js"></script>
+                                                        <!-- overlayScrollbars -->
+                                                        <script
+                                                            src="../Utill/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+                                                        <!-- AdminLTE App -->
+                                                        <script src="../Utill/dist/js/adminlte.js"></script>
+                                                        <!-- AdminLTE for demo purposes -->
+                                                        <script src="../Utill/dist/js/demo.js"></script>
+                                                        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+                                                        <script src="../Utill/dist/js/pages/dashboard.js"></script>
 </body>
 
 </html>

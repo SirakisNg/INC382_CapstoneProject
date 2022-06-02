@@ -1,62 +1,472 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventory Stock Card</title>
+    <link rel="icon" type="image/x-icon" href="../Utill/dist/img/Group2_LOGO.ico">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../Utill/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="../Utill/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="../Utill/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="../Utill/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../Utill/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="../Utill/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="../Utill/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../Utill/plugins/summernote/summernote-bs4.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Inventory Stock Card</h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <h3><i class="fa fa-table"></i> Inventory Stock Card </h3>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="container">
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="invoice-title text-center mb-3">
+                                                    <h1>PTT</h1>
+                                                    <h2>Inventory Stock Card</h2>
+                                                    <h5><strong>Date:</strong> May, 2022</h5>
+
+                                                </div>
+                                                <hr>
+
+                                            </div>
+                                        </div>
 
 
-}
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h3 class="panel-title">Inventory</h3>
+                                                    </div>
+                                                    <div class="panel-body">
+                                                        <div class="panel-body">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-condensed">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <td><strong>Gas Type</strong></td>
+                                                                            <td class="text-left">
+                                                                                <strong>DIESEL</strong>
+                                                                            </td>
+                                                                            <td class="text-right"><strong>GASOHOL
+                                                                                    95</strong></td>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                                                        <tr>
+                                                                            <td>Beginning Inventory</td>
+                                                                            <!-- <td class="text-left">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["BEGINING_STOCK_DIESEL"]), 2))</td>
+                                                              <td class="text-right">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["BEGINING_STOCK_GASOHOL95"]), 2))</td> -->
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Purchased</td>
+                                                                            <!-- <td class="text-left">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["PURCHASED_DIESEL"]), 2)) </td>
+                                                              <td class="text-right">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["PURCHASED_GASOHOL95"]), 2)) </td> -->
+
+                                                                        </tr>
 
 
-<body>
-    <h2>Inventory search by id</h2>
-    <div>
-        <form class="d-flex">
+                                                                        <tr>
+                                                                            <td>Sold</td>
+                                                                            <!-- <td class="text-left">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["SOLD_DIESEL"]), 2))</td>
+                                                              <td class="text-right">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["SOLD_GASOHOL95"]), 2))</td> -->
 
-            <div>
+                                                                        </tr>
 
-                <label for="CompanyName">Select inventory date</label>
-                <div>
-                    <div>
-                        <select name="startDate" id="cars">
-                            <option value="2022-01-01">2022-01-01</option>
-                            <option value="2022-01-02">2022-01-02</option>
-                            <option value="2022-01-03">2022-01-03</option>
-                            <option value="2022-01-04">2022-01-04</option>
-                        </select>
-                    </div>
-                    <div>
-                        <select name="endDate" id="cars">
-                            <option value="2022-01-01">2022-01-01</option>
-                            <option value="2022-01-02">2022-01-02</option>
-                            <option value="2022-01-03">2022-01-03</option>
-                            <option value="2022-01-04">2022-01-04</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </div>
-            </div>
+                                                                        <tr>
+                                                                            <td>Ending Inventory</td>
+                                                                            <!-- <td class="text-left">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["ENDING_STOCK_DIESEL"]), 2))</td>
+                                                              <td class="text-right">@String.Format("{0:n}", Math.Round(Convert.ToDouble(@ViewData["ENDING_STOCK_GASOHOL95"]), 2))</td> -->
 
-        </form>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="thick-line"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div>
+
+
+
+                                                <!--///////////////////////////////////////////////////////////////////////////////////
+                                                    /////////////////////// TABLE Date by selected HERE////////////////////////////////////////////////////
+                                                    //////////////////////////////////////////////////////////////////////////////////-->
+                                                <div class="table-responsive">
+                                                    <!--Sort-->
+                                                    <link rel="stylesheet"
+                                                        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                                                    <script
+                                                        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+                                                        </script>
+                                                    <script
+                                                        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+                                                        </script>
+                                                    <script
+                                                        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+                                                        </script>
+                                                    <link rel="stylesheet"
+                                                        href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+                                                    <script
+                                                        src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+                                                        </script>
+                                                    <script
+                                                        src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js">
+                                                        </script>
+                                                    <!-- Search -->
+                                                    <meta charset="utf-8">
+                                                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                                                    <script
+                                                        src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                                                    <script
+                                                        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                                                    <style>
+                                                        table {
+                                                            border-spacing: 0;
+                                                            width: 100%;
+                                                            border: 1px solid #ddd;
+                                                        }
+
+                                                        th {
+                                                            cursor: pointer;
+                                                        }
+
+                                                        th,
+                                                        td {
+                                                            text-align: left;
+                                                            padding: 16px;
+                                                        }
+
+                                                        tr:nth-child(even) {
+                                                            background-color: #f2f2f2
+                                                        }
+                                                    </style>
+
+                                                    <!-- data table-->
+                                                    <div>
+                                                        <label for="CompanyName">Select date</label>
+                                                        <form class="d-flex">
+                                                            <div>
+                                                                <div>
+                                                                    <select name="startDate">
+                                                                        <option value="2022-03-01">1</option>
+                                                                        <option value="2022-03-02">2</option>
+                                                                        <option value="2022-03-03">3</option>
+                                                                        <option value="2022-03-04">4</option>
+                                                                        <option value="2022-03-05">5</option>
+                                                                        <option value="2022-03-06">6</option>
+                                                                        <option value="2022-03-07">7</option>
+                                                                        <option value="2022-03-08">8</option>
+                                                                        <option value="2022-03-09">9</option>
+                                                                        <option value="2022-03-10">10</option>
+                                                                        <option value="2022-03-11">11</option>
+                                                                        <option value="2022-03-12">12</option>
+                                                                        <option value="2022-03-13">13</option>
+                                                                        <option value="2022-03-14">14</option>
+                                                                        <option value="2022-03-15">15</option>
+                                                                        <option value="2022-03-16">16</option>
+                                                                        <option value="2022-03-17">17</option>
+                                                                        <option value="2022-03-18">18</option>
+                                                                        <option value="2022-03-19">19</option>
+                                                                        <option value="2022-03-20">20</option>
+                                                                        <option value="2022-03-21">21</option>
+                                                                        <option value="2022-03-22">22</option>
+                                                                        <option value="2022-03-23">23</option>
+                                                                        <option value="2022-03-24">24</option>
+                                                                        <option value="2022-03-25">25</option>
+                                                                        <option value="2022-03-26">26</option>
+                                                                        <option value="2022-03-27">27</option>
+                                                                        <option value="2022-03-28">28</option>
+                                                                        <option value="2022-03-29">29</option>
+                                                                        <option value="2022-03-30">30</option>
+                                                                        <option value="2022-03-31">31</option>
+                                                                    </select>
+                                                                    <select>
+                                                                        <option value="3">3</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div>
+                                                                    <select name="endDate">
+                                                                        <option value="2022-03-01">1</option>
+                                                                        <option value="2022-03-02">2</option>
+                                                                        <option value="2022-03-03">3</option>
+                                                                        <option value="2022-03-04">4</option>
+                                                                        <option value="2022-03-05">5</option>
+                                                                        <option value="2022-03-06">6</option>
+                                                                        <option value="2022-03-07">7</option>
+                                                                        <option value="2022-03-08">8</option>
+                                                                        <option value="2022-03-09">9</option>
+                                                                        <option value="2022-03-10">10</option>
+                                                                        <option value="2022-03-11">11</option>
+                                                                        <option value="2022-03-12">12</option>
+                                                                        <option value="2022-03-13">13</option>
+                                                                        <option value="2022-03-14">14</option>
+                                                                        <option value="2022-03-15">15</option>
+                                                                        <option value="2022-03-16">16</option>
+                                                                        <option value="2022-03-17">17</option>
+                                                                        <option value="2022-03-18">18</option>
+                                                                        <option value="2022-03-19">19</option>
+                                                                        <option value="2022-03-20">20</option>
+                                                                        <option value="2022-03-21">21</option>
+                                                                        <option value="2022-03-22">22</option>
+                                                                        <option value="2022-03-23">23</option>
+                                                                        <option value="2022-03-24">24</option>
+                                                                        <option value="2022-03-25">25</option>
+                                                                        <option value="2022-03-26">26</option>
+                                                                        <option value="2022-03-27">27</option>
+                                                                        <option value="2022-03-28">28</option>
+                                                                        <option value="2022-03-29">29</option>
+                                                                        <option value="2022-03-30">30</option>
+                                                                        <option value="2022-03-31">31</option>
+                                                                    </select>
+                                                                    <select>
+                                                                        <option value="3">3</option>
+                                                                    </select>
+                                                                </div>
+
+
+                                                                <button class="btn btn-secondary my-2 my-sm-0"
+                                                                    type="submit">Search</button>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th onclick="sortTable(0)"><strong>No</strong></th>
+                                                                <th onclick="sortTable(1)"><strong>Date</strong></th>
+                                                                <th onclick="sortTable(2)"><strong>time</strong></th>
+                                                                <th onclick="sortTable(3)"><strong>Gas Type</strong>
+                                                                </th>
+                                                                <th onclick="sortTable(4)"><strong>Volume</strong>
+                                                                </th>
+                                                                <th onclick="sortTable(5)"><strong>COG</strong>
+                                                                </th>
+                                                                <th onclick="sortTable(6)"><strong>price/Liter</strong>
+                                                                </th>
+                                                                <th onclick="sortTable(6)"><strong>purchase</strong>
+                                                                </th>
+                                                                <th onclick="sortTable(6)"><strong>InventoryD</strong>
+                                                                </th>
+                                                                <th onclick="sortTable(6)"><strong>InventoryG</strong>
+                                                                </th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        @foreach (var item in Model)
+                                                        {
+                                                            <tbody id="myTable">
+                                                                <tr>
+                                                                    <td>@item.Inventory_id</td>
+                                                                    <td>@item.Date</td>
+                                                                    <td>@item.Time</td>
+                                                                    <td>@item.GasType</td>
+                                                                    <td>@item.Volume</td>
+                                                                    <td>@item.COG</td>
+                                                                    <td>@item.price</td>
+                                                                    <td>@item.purchase</td>
+                                                                    <td>@item.InventoryD</td>
+                                                                    <td>@item.InventoryG</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        }
+                                                    </table>
+                                                    <!-- Search -->
+                                                    <script>
+                                                        $(document).ready(function () {
+                                                            $("#myInput").on("keyup", function () {
+                                                                var value = $(this).val().toLowerCase();
+                                                                $("#myTable tr").filter(function () {
+                                                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                                                });
+                                                            });
+                                                        });
+                                                    </script>
+
+                                                    <!-- Sort -->
+                                                    <script>
+                                                        $('#myTable').DataTable();
+                                                    </script>
+                                                    <script>
+                                                        function sortTable(n) {
+                                                            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                                                            table = document.getElementById("myTable");
+                                                            switching = true;
+                                                            //Set the sorting direction to ascending:
+                                                            dir = "asc";
+                                                            /*Make a loop that will continue until
+                                                            no switching has been done:*/
+                                                            while (switching) {
+                                                                //start by saying: no switching is done:
+                                                                switching = false;
+                                                                rows = table.rows;
+                                                                /*Loop through all table rows (except the
+                                                                first, which contains table headers):*/
+                                                                for (i = 1; i < (rows.length - 1); i++) {
+                                                                    //start by saying there should be no switching:
+                                                                    shouldSwitch = false;
+                                                                    /*Get the two elements you want to compare,
+                                                                    one from current row and one from the next:*/
+                                                                    x = rows[i].getElementsByTagName("TD")[n];
+                                                                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                                                                    /*check if the two rows should switch place,
+                                                                    based on the direction, asc or desc:*/
+                                                                    if (dir == "asc") {
+                                                                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                                                            //if so, mark as a switch and break the loop:
+                                                                            shouldSwitch = true;
+                                                                            break;
+                                                                        }
+                                                                    } else if (dir == "desc") {
+                                                                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                                                            //if so, mark as a switch and break the loop:
+                                                                            shouldSwitch = true;
+                                                                            break;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                if (shouldSwitch) {
+                                                                    /*If a switch has been marked, make the switch
+                                                                    and mark that a switch has been done:*/
+                                                                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                                                                    switching = true;
+                                                                    //Each time a switch is done, increase this count by 1:
+                                                                    switchcount++;
+                                                                } else {
+                                                                    /*If no switching has been done AND the direction is "asc",
+                                                                    set the direction to "desc" and run the while loop again.*/
+                                                                    if (switchcount == 0 && dir == "asc") {
+                                                                        dir = "desc";
+                                                                        switching = true;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    </script>
+                                                </div>
+                                                <!--///////////////////////////////////////////////////////////////////////////////////
+                                                    ///////////////////////  TABLE Date by selected HERE////////////////////////////////////////////////////
+                                                    //////////////////////////////////////////////////////////////////////////////////-->
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+
+
+                            </div><!-- end card body -->
+
+                        </div><!-- end card-->
+
+                    </div><!-- end col-->
+
+                </div><!-- end row-->
+            </div><!-- /.container-fluid -->
+        </div>
     </div>
-    <div>
-        <h2>Inventory</h2>
-        <table class="table">
-            <tr>
-                <th>No</th>
-                <th>debit/Cradit</th>
-                <th>type</th>
-                <th>volume</th>
-                <th>date</th>
-            </tr>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.inventory_id</td>
-                    <td>@item.side</td>
-                    <td>@item.type</td>
-                    <td>@item.volume</td>
-                    <td>@item.price</td>
-                    <td>@item.date</td>
-                </tr>
-            }
-        </table>
     </div>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../Utill/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../Utill/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="../Utill/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="../Utill/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="../Utill/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="../Utill/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../Utill/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="../Utill/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="../Utill/plugins/moment/moment.min.js"></script>
+    <script src="../Utill/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../Utill/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="../Utill/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../Utill/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../Utill/dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../Utill/dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="../Utill/dist/js/pages/dashboard.js"></script>
 </body>
+
+</html>
