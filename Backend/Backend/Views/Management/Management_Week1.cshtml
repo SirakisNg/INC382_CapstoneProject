@@ -48,8 +48,8 @@
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel', 55],
-        ['Gasohol 95', 45],
+        ['Diesel', 11486.75],
+        ['Gasohol 95', 10027.02],
       ]);
 
       var options = {
@@ -73,7 +73,7 @@
         backgroundColor: 'white',
         fontName: 'Arial',
         colors: ['65CCCC', 'FF9900'],                        //Color in pie chart
-        fontSize: 16,
+        fontSize: 15,
         legend: { position: 'top', textStyle: { color: 'black' }, frontSize: 12, alignment: 'center' },
 
         chartArea: { bottom: 12, width: '100%', 'height': '75%' },           //Pie chart position and size
@@ -90,8 +90,8 @@
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');
       data.addRows([
-        ['Diesel', 550],
-        ['Gasohol 95', 450],
+        ['Diesel', 315850.16],
+        ['Gasohol 95', 323111.40],
       ]);
 
       var options = {
@@ -130,8 +130,8 @@
     function drawTruckInOutChart() {
       var data = google.visualization.arrayToDataTable([
         [" Name", "number", { role: "style" }],
-        ["Truck in", 90, "#98B6D7"],
-        ["Truck out", 80, "#F7D7C2"],
+        ["Truck in", 715, "#98B6D7"],
+        ["Truck out", 708, "#F7D7C2"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -160,11 +160,11 @@
     function drawWaitingTime() {
       var data = google.visualization.arrayToDataTable([
         [" Name", "number", { role: "style" }],
-        ["Sale Office", 9, "#AFD7F6"],
-        ["Inbound WB", 8, "#96CFCF"],
-        ["DIESEL Bay", 2, "#FF8F7F"],
-        ["GASOHOL95 Bay", 5, "#FEB9D0"],
-        ["Outbound WB", 10, "#C1B2C6"],
+        ["Sale Office", 0, "#AFD7F6"],
+        ["Inbound WB", 5.55, "#96CFCF"],
+        ["DIESEL Bay", 9.29, "#FF8F7F"],
+        ["GASOHOL95 Bay", 1.52, "#FEB9D0"],
+        ["Outbound WB", 3.40, "#C1B2C6"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -201,11 +201,11 @@
     function drawUtilization() {
       var data = google.visualization.arrayToDataTable([
         ["Station", "Percentage", { role: "style" }],
-        ["Sale Officer", 8.94, "#AFD7F6"],
-        ["Inbound WB", 10.49, "#96CFCF"],
-        ["DIESEL Dispenser", 19.30, "#FF8F7F"],
-        ["GASOHOL95 Dispenser", 21.45, "#FEB9D0"],
-        ["Outbound WB", 21.45, "#C1B2C6"],
+        ["Sale Officer", 29.35, "#AFD7F6"],
+        ["Inbound WB", 32.85, "#96CFCF"],
+        ["DIESEL Dispenser", 41.75, "#FF8F7F"],
+        ["GASOHOL95 Dispenser", 27.47, "#FEB9D0"],
+        ["Outbound WB", 36.44, "#C1B2C6"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -244,8 +244,8 @@
     function drawFailedTime() {
       var data = google.visualization.arrayToDataTable([
         [" Name", "number", { role: "style" }],
-        ["GASOHOL95 BAY", 12, "FF9900"],
-        ["DIESEL BAY", 8, "65CCCC"],
+        ["GASOHOL95 BAY", 6, "FF9900"],
+        ["DIESEL BAY", 14, "65CCCC"],
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -364,7 +364,7 @@
                     </center>
                   </div>
                   <center>
-                    <h3>46.38 min</h3>
+                    <h3>120.29 min</h3>
                   </center>
                 </div>
               </div>
@@ -381,7 +381,7 @@
                     </center>
                   </div>
                   <center>
-                    <h3>45.68 min</h3>
+                    <h3>125.51 min</h3>
                   </center>
                 </div>
               </div>
