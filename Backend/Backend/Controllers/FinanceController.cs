@@ -35,8 +35,10 @@ namespace Backend.Controllers
         // Inventory ----------------------------------------------------------------------------------------------
         public IActionResult InventoryByDate(string startDate, string endDate)
         {
+            // startDate = "2022-03-01";
+            // endDate = "2022-03-05";
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
-            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation");
+            Console.WriteLine("info : " + DateTime.Today + " : get Inventory infomation by date " + startDate + "" + endDate + "");
             return View(context.getInventory(startDate, endDate));
         }
         public IActionResult InventoryByID(int id)
@@ -51,7 +53,7 @@ namespace Backend.Controllers
         {
             FinanceContext context = HttpContext.RequestServices.GetService(typeof(Backend.Models.FinanceContext)) as FinanceContext;
             Console.WriteLine("info : " + DateTime.Today + " : get all inventory data...");
-            context.addInventory(GasType, Volume, Purchase, COG);
+            //context.addInventory(GasType, Volume, Purchase, COG);
             return View(context.GetAllInventory());
         }
 

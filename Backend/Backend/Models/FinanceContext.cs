@@ -71,30 +71,43 @@ namespace Backend.Models
         // Inventory ----------------------------------------------------------------------------------------------
 
         // All Inventory with join table (not use)
-        public List<InventoryModel> getInventory(string startDate, string endDate)
+        public string sDate = "2022-03-01";
+        public string eDate = "2022-03-31";
+        public List<Inventory_V2Model> getInventory(string startDate, string endDate)
         {
+            if (startDate == null)
+            {
+                startDate = "2022-03-01";
+                endDate = "2022-03-31";
+
+            }
+
             Console.WriteLine("info : " + DateTime.Today + " : query form " + startDate + "to" + endDate);
 
-            List<InventoryModel> list = new List<InventoryModel>();
+            List<Inventory_V2Model> list = new List<Inventory_V2Model>();
 
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT Inventory.inventory_id,Inventory.side,Gas.type,Inventory.Volume,Inventory.Price,Inventory.Date FROM TAS_Project.Inventory INNER JOIN Gas ON Inventory.gas_id = Gas.gas_id WHERE date >= '" + startDate + " 00:00:00 AM' AND date <= '" + endDate + " 00:00:00 AM';";
+                string sql = $"SELECT * FROM TAS_Project.data_inventory WHERE date >= '" + startDate + "' AND date <= '" + endDate + "';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new InventoryModel()
+                        list.Add(new Inventory_V2Model()
                         {
-                            inventory_id = Convert.ToInt32(reader["inventory_id"]),
-                            side = Convert.ToInt32(reader["side"]),
-                            type = reader["type"].ToString(),
-                            volume = Convert.ToInt32(reader["Volume"]),
-                            price = Convert.ToInt32(reader["Price"]),
-                            date = reader["Date"].ToString()
+                            Inventory_id = Convert.ToInt32(reader["inventory_id"]),
+                            Date = reader["date"].ToString(),
+                            Time = reader["time"].ToString(),
+                            GasType = reader["gasType"].ToString(),
+                            Volume = Convert.ToDouble(reader["volume"]),
+                            COG = Convert.ToDouble(reader["cost_of_goods_sold"]),
+                            price = Convert.ToDouble(reader["price"]),
+                            purchase = Convert.ToDouble(reader["purchase"]),
+                            InventoryD = Convert.ToDouble(reader["inventoryD"]),
+                            InventoryG = Convert.ToDouble(reader["inventoryG"]),
 
                         });
                     }
@@ -111,7 +124,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.Inventory_v2;";
+                string sql = $"SELECT * FROM TAS_Project.data_inventory;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -120,13 +133,16 @@ namespace Backend.Models
                     {
                         list.Add(new Inventory_V2Model()
                         {
-                            Inventory_id = Convert.ToInt32(reader["inventoryV2_id"]),
+                            Inventory_id = Convert.ToInt32(reader["inventory_id"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
                             GasType = reader["gasType"].ToString(),
                             Volume = Convert.ToDouble(reader["volume"]),
-                            Purchase = Convert.ToDouble(reader["purchase"]),
-                            COG = Convert.ToDouble(reader["cog"]),
+                            COG = Convert.ToDouble(reader["cost_of_goods_sold"]),
+                            price = Convert.ToDouble(reader["price"]),
+                            purchase = Convert.ToDouble(reader["purchase"]),
+                            InventoryD = Convert.ToDouble(reader["inventoryD"]),
+                            InventoryG = Convert.ToDouble(reader["inventoryG"]),
                         });
                     }
                 }
