@@ -36,7 +36,8 @@
 
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../Utill/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
@@ -60,224 +61,219 @@
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
 
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="card mb-3">
-              <div class="card-header">
-                <h3><i class="ion-document-text"></i><strong> &nbsp; Purchased Order </strong></h3>
-              </div>
-              <div class="card-body">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="invoice-title text-center mb-3">
-                        <img src="https://i.ibb.co/znrz308/PTT-LOGO.png" alt="PTT LOGO.png" height="120" width="100">
-                        <p>
-                        <h1>PTT</h1>
-                        </p>
-                        <h2>Purchased Order</h2>
-                        <h5><strong>Date:</strong> May, 2022</h5>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h3><i class="ion-document-text"></i><strong> &nbsp; Purchased Order </strong></h3>
+                </div>
+                <div class="card-body">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="invoice-title text-center mb-3">
+                          <img src="https://i.ibb.co/znrz308/PTT-LOGO.png" alt="PTT LOGO.png" height="120" width="100">
                           <p>
-                          <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Purchase Order No. : </h5>
+                          <h1>PTT</h1>
                           </p>
-                          <p>
-                          <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Payment Order : </h5>
-                          </p>
-                          <p>
-                          <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Truck plate ID : </h5>
-                          </p>
-                          <p>
-                          <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Customer name : </h5>
-                          </p>
-                          <p>
-                          <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Tax ID : </h5>
-                          </p>
+                          <h2>Purchased Order</h2>
+                          <h5><strong>Date:</strong> March, 2022</h5>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="panel-body">
-                        <div class="table-responsive">
-                          <!-- data table-->
-                          <p>Search :</p>
-                          <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                          <br>
-                          <table class="table">
-                            <thead>
-                              <tr>
-                                <th onclick="sortTable(0)"><strong>No</strong></th>
-                                <th onclick="sortTable(1)"><strong>Date</strong></th>
-                                <th onclick="sortTable(2)"><strong>time</strong></th>
-                                <th onclick="sortTable(3)"><strong>Gas Type</strong></th>
-                                <th onclick="sortTable(4)"><strong>Price/Litter</strong></th>
-                                <th onclick="sortTable(5)"><strong>Quantity</strong></th>
-                                <th onclick="sortTable(6)"><strong>Total Cost</strong></th>
-                              </tr>
-                            </thead>
-                            @foreach (var item in Model)
-                            {
-                              <tbody id="myTable">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <p>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Payment Order : 21452412</h5>
+                            </p>
+                            <p>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Truck plate ID : 44-4444</h5>
+                            </p>
+                            <p>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Customer name : Sathorn saitai</h5>
+                            </p>
+                            <p>
+                            <h5 class="panel-title"> &nbsp;&nbsp;&nbsp; Tax ID : 124444423234</h5>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="panel-body">
+                          <div class="table-responsive">
+                            <!-- data table-->
+                            <p>Search :</p>
+                            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                            <br>
+                            <table class="table">
+                              <thead>
                                 <tr>
-                                  <td>@item.PurchaseOrder_id</td>
-                                  <td>@item.Date</td>
-                                  <td>@item.Time</td>
-                                  <td>@item.Type</td>
-                                  <td>@item.Quantity</td>
-                                  <td>@item.PricePerLitter</td>
-                                  <td>@item.TotalCost</td>
+                                  <th onclick="sortTable(0)"><strong>No</strong></th>
+                                  <th onclick="sortTable(1)"><strong>Date</strong></th>
+                                  <th onclick="sortTable(2)"><strong>time</strong></th>
+                                  <th onclick="sortTable(3)"><strong>Gas Type</strong></th>
+                                  <th onclick="sortTable(5)"><strong>Quantity</strong></th>
+                                  <th onclick="sortTable(6)"><strong>Total Cost</strong></th>
                                 </tr>
-                              </tbody>
-                            }
-                          </table>
-                        </div>
+                              </thead>
+                              @foreach (var item in Model)
+                              {
+                                <tbody id="myTable">
+                                  <tr>
+                                    <td>@item.PurchaseOrder_id</td>
+                                    <td>@item.Date</td>
+                                    <td>@item.Time</td>
+                                    <td>@item.Type</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.TotalCost</td>
+                                  </tr>
+                                </tbody>
+                              }
+                            </table>
+                          </div>
 
 
 
-                        <!-- Search -->
-                        <script>
-                          $(document).ready(function () {
-                            $("#myInput").on("keyup", function () {
-                              var value = $(this).val().toLowerCase();
-                              $("#myTable tr").filter(function () {
-                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                          <!-- Search -->
+                          <script>
+                            $(document).ready(function () {
+                              $("#myInput").on("keyup", function () {
+                                var value = $(this).val().toLowerCase();
+                                $("#myTable tr").filter(function () {
+                                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
                               });
                             });
-                          });
-                        </script>
+                          </script>
 
-                        <!-- Sort -->
-                        <script>
-                          function sortTable(n) {
-                            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-                            table = document.getElementById("myTable");
-                            switching = true;
-                            //Set the sorting direction to ascending:
-                            dir = "asc";
-                            /*Make a loop that will continue until
-                            no switching has been done:*/
-                            while (switching) {
-                              //start by saying: no switching is done:
-                              switching = false;
-                              rows = table.rows;
-                              /*Loop through all table rows (except the
-                              first, which contains table headers):*/
-                              for (i = 1; i < (rows.length - 1); i++) {
-                                //start by saying there should be no switching:
-                                shouldSwitch = false;
-                                /*Get the two elements you want to compare,
-                                one from current row and one from the next:*/
-                                x = rows[i].getElementsByTagName("TD")[n];
-                                y = rows[i + 1].getElementsByTagName("TD")[n];
-                                /*check if the two rows should switch place,
-                                based on the direction, asc or desc:*/
-                                if (dir == "asc") {
-                                  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                                    //if so, mark as a switch and break the loop:
-                                    shouldSwitch = true;
-                                    break;
-                                  }
-                                } else if (dir == "desc") {
-                                  if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                                    //if so, mark as a switch and break the loop:
-                                    shouldSwitch = true;
-                                    break;
+                          <!-- Sort -->
+                          <script>
+                            function sortTable(n) {
+                              var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                              table = document.getElementById("myTable");
+                              switching = true;
+                              //Set the sorting direction to ascending:
+                              dir = "asc";
+                              /*Make a loop that will continue until
+                              no switching has been done:*/
+                              while (switching) {
+                                //start by saying: no switching is done:
+                                switching = false;
+                                rows = table.rows;
+                                /*Loop through all table rows (except the
+                                first, which contains table headers):*/
+                                for (i = 1; i < (rows.length - 1); i++) {
+                                  //start by saying there should be no switching:
+                                  shouldSwitch = false;
+                                  /*Get the two elements you want to compare,
+                                  one from current row and one from the next:*/
+                                  x = rows[i].getElementsByTagName("TD")[n];
+                                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                                  /*check if the two rows should switch place,
+                                  based on the direction, asc or desc:*/
+                                  if (dir == "asc") {
+                                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                      //if so, mark as a switch and break the loop:
+                                      shouldSwitch = true;
+                                      break;
+                                    }
+                                  } else if (dir == "desc") {
+                                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                      //if so, mark as a switch and break the loop:
+                                      shouldSwitch = true;
+                                      break;
+                                    }
                                   }
                                 }
-                              }
-                              if (shouldSwitch) {
-                                /*If a switch has been marked, make the switch
-                                and mark that a switch has been done:*/
-                                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                                switching = true;
-                                //Each time a switch is done, increase this count by 1:
-                                switchcount++;
-                              } else {
-                                /*If no switching has been done AND the direction is "asc",
-                                set the direction to "desc" and run the while loop again.*/
-                                if (switchcount == 0 && dir == "asc") {
-                                  dir = "desc";
+                                if (shouldSwitch) {
+                                  /*If a switch has been marked, make the switch
+                                  and mark that a switch has been done:*/
+                                  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
                                   switching = true;
+                                  //Each time a switch is done, increase this count by 1:
+                                  switchcount++;
+                                } else {
+                                  /*If no switching has been done AND the direction is "asc",
+                                  set the direction to "desc" and run the while loop again.*/
+                                  if (switchcount == 0 && dir == "asc") {
+                                    dir = "desc";
+                                    switching = true;
+                                  }
                                 }
                               }
                             }
-                          }
-                        </script>
+                          </script>
 
+                        </div>
+                        <!--Close panel-body class -->
                       </div>
-                      <!--Close panel-body class -->
                     </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </div>
           </div>
-        </div>
 
-      </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
+      </div>
     </div>
   </div>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
+  <!-- ./wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- jQuery -->
-    <script src="../Utill/plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="../Utill/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="../Utill/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="../Utill/plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="../Utill/plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="../Utill/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="../Utill/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="../Utill/plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="../Utill/plugins/moment/moment.min.js"></script>
-    <script src="../Utill/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="../Utill/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="../Utill/plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="../Utill/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../Utill/dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="../Utill/dist/js/demo.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../Utill/dist/js/pages/dashboard.js"></script>
+  <!-- jQuery -->
+  <script src="../Utill/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="../Utill/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="../Utill/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../Utill/plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="../Utill/plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="../Utill/plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="../Utill/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="../Utill/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="../Utill/plugins/moment/moment.min.js"></script>
+  <script src="../Utill/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="../Utill/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="../Utill/plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="../Utill/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../Utill/dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="../Utill/dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="../Utill/dist/js/pages/dashboard.js"></script>
 </body>
 
 </html>

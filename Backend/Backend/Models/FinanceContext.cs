@@ -258,7 +258,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.purchaseOrder";
+                string sql = $"SELECT * FROM TAS_Project.po";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -272,7 +272,6 @@ namespace Backend.Models
                             Time = reader["time"].ToString(),
                             Type = reader["gasType"].ToString(),
                             Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
                             TotalCost = Convert.ToDouble(reader["totalCost"])
                         });
                     }
@@ -296,7 +295,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.purchaseOrder WHERE date >= '" + startDate + "' AND date <= '" + endDate + "'";
+                string sql = $"SELECT * FROM TAS_Project.po WHERE date >= '" + startDate + "' AND date <= '" + endDate + "'";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -310,7 +309,6 @@ namespace Backend.Models
                             Time = reader["time"].ToString(),
                             Type = reader["gasType"].ToString(),
                             Quantity = Convert.ToDouble(reader["quantity"]),
-                            PricePerLitter = Convert.ToDouble(reader["pricePerLitter"]),
                             TotalCost = Convert.ToDouble(reader["totalCost"])
                         });
                     }
