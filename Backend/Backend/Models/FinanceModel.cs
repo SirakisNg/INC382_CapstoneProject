@@ -116,4 +116,24 @@ namespace Backend.Models
         public DateTime TimeStamp { get; set; }
     }
 
+    public class DataTable_V2Model
+    {
+        public int ponumber { get; set; }
+        public string Plate_number { get; set; }
+        public string Enter_Sale { get; set; }
+        public string Sales_Service_Time { get; set; }
+        public string Exit_Sale { get; set; }
+        public string Enter_Inbound_weighbridge { get; set; }
+        public string in_weight_service_time { get; set; }
+        public string Exit_Inbound_weighbridge { get; set; }
+        public string Enter_bayloading { get; set; }
+        public string bayloaing_service_time { get; set; }
+        public string Exit_bayloading { get; set; }
+        public string Enter_outbound_weighbridge { get; set; }
+        public string outbound_weighbridge_servicetime { get; set; }
+        public string Exit_outbound_weighbridge { get; set; }
+        public string exit_gate { get; set; }
+    }
+
+
 }

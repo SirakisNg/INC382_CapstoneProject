@@ -507,119 +507,121 @@ namespace Backend.Models
         }
 
         //Average volume
-        public List<CycleModel> AvVolume()
+
+
+        public async Task<List<TagValue>> getDieselVolDailyAsync(DateTime selDate)
         {
-            List<CycleModel> list = new List<CycleModel>();
+            // try
+            // {
+            Console.WriteLine(@$"Connecting to PI..." + selDate + "");
+            var credentrials = new NetworkCredential("group1", "inc.382");
+            HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
+            HttpClient client = new HttpClient(clientHandler);
+
+            Console.WriteLine("Connecting...");
+
+            DateTime today = DateTime.Now;
+            // DateTime month = new DateTime (2022,4,29);
+            TimeSpan value = today.Subtract(selDate);
+            // TimeSpan value = today.Subtract(month);
+
+            string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
+            string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
+            string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
+            //string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-50d&endtime=*-20d";
+            HttpResponseMessage response = await client.GetAsync(itemURL);
+            string content = await response.Content.ReadAsStringAsync();
+            //Console.WriteLine(content);
+            //var data = JsonConvert.DeserializeObject<JArray>(content);
+            var data = (JArray)JObject.Parse(content)["Items"];
+            //JArray jsonArray = JArray.Parse(content);
+            //dynamic data = JObject.Parse(jsonArray[0].ToString());
+            //var data = JsonConvert.DeserializeObject<object>(content);
+
+
+            //var result = new List<TagValue>();
+            List<TagValue> list = new List<TagValue>();
+
+            // foreach (var item in data)
+            // {
+
+            //     // var dataPair = new TagValue()
+            //     // {
+            //     //     Values = item["Value"].Value<string>(),
+            //     //     TimeStamp = item["Timestamp"].Value<DateTime>()
+            //     // };
+            //     // result.Add(dataPair);
+
+
+            //     list.Add(new TagValue()
+            //     {
+            //         //Cycle = reader["CycleTime"].ToString(),
+            //         Values = item["Value"].Value<string>(),
+            //         TimeStamp = item["Timestamp"].Value<DateTime>()
+            //     });
+            // }
+            return list;
+        }
+
+
+        // }
+        // catch (Exception ex)
+        // {
+        //     return StatusCode(500, new { message = ex.Message });
+        // }
+
+        //Data table ------------------------------------------------------
+
+        public List<DataTable_V2Model> getDataTableV2(string myInput)
+        {
+
+            Console.WriteLine(myInput);
+            List<DataTable_V2Model> list = new List<DataTable_V2Model>();
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT AVG(Volume) as DAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'DIESEL';";
+                string sql = $"SELECT * FROM tas_project.data_table;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        list.Add(new CycleModel()
+                        list.Add(new DataTable_V2Model()
                         {
-                            DAVVolume = Convert.ToInt32(reader["DAVVolume"])
+                            ponumber = Convert.ToInt32(reader["ponumber"]),
+                            Plate_number = reader["Plate_number"].ToString(),
+                            Enter_Sale = reader["Enter_Sale"].ToString(),
+                            Sales_Service_Time = reader["Sales_Service_Time"].ToString(),
+                            Exit_Sale = reader["Exit_Sale"].ToString(),
+                            Enter_Inbound_weighbridge = reader["Enter_Inbound_weighbridge"].ToString(),
+                            in_weight_service_time = reader["in_weight_service_time"].ToString(),
+                            Exit_Inbound_weighbridge = reader["Exit_Inbound_weighbridge"].ToString(),
+                            Enter_bayloading = reader["Enter_bayloading"].ToString(),
+                            bayloaing_service_time = reader["bayloaing_service_time"].ToString(),
+                            Exit_bayloading = reader["Exit_bayloading"].ToString(),
+                            Enter_outbound_weighbridge = reader["Enter_outbound_weighbridge"].ToString(),
+                            outbound_weighbridge_servicetime = reader["outbound_weighbridge_servicetime"].ToString(),
+                            Exit_outbound_weighbridge = reader["Exit_outbound_weighbridge"].ToString(),
+                            exit_gate = reader["exit_gate"].ToString()
                         });
                     }
+                    conn.Close();
+                    Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
                 }
-                conn.Close();
+                return list;
             }
 
-            // using (MySqlConnection conn = GetConnection())
-            // {
-            //     string sql = $"SELECT AVG(Volume) as SAVVolume FROM TAS_Project.Operation_Volume WHERE GasType = 'GASOHOL95';";
-            //     conn.Open();
-            //     MySqlCommand cmd = new MySqlCommand(sql, conn);
-            //     using (var reader = cmd.ExecuteReader())
-            //     {
-            //         while (reader.Read())
-            //         {
-            //             list.Add(new CycleModel()
-            //             {
-            //                 SAVVolume = Convert.ToInt32(reader["SAVVolume"])
-            //             });
-            //         }
-            //     }
-            //     conn.Close();
-            //     Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
-            // }
-            foreach (var data in list)
-            {
-                Console.WriteLine(data.DAVVolume);
-                Console.WriteLine(data.SAVVolume);
-            }
-            return list;
+
+
+
+
+
+
+
+
         }
-
-        // public async Task<List<TagValue>> getDieselVolDailyAsync(DateTime selDate)
-        // {
-        //     // try
-        //     // {
-        //     var credentrials = new NetworkCredential("group1", "inc.382");
-        //     HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };
-        //     clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyerrors) => { return true; }; // access to https
-        //     HttpClient client = new HttpClient(clientHandler);
-
-        //     Console.WriteLine("Connecting...");
-
-        //     DateTime today = DateTime.Now;
-        //     // DateTime month = new DateTime (2022,4,29);
-        //     TimeSpan value = today.Subtract(selDate);
-        //     // TimeSpan value = today.Subtract(month);
-
-        //     string starttime = Convert.ToString(Convert.ToInt32(value.TotalDays));
-        //     string endtime = Convert.ToString(Convert.ToInt32(value.TotalDays) - 1);
-        //     //string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-" + starttime + "d&endtime=*-" + endtime + "d";
-        //     string itemURL = $@"https://202.44.12.146:1443/piwebapi/streams/F1DP9bkh7eqdMUSKGalDzu9F3wyhUAAAUE1TU1ZcQIAWMSOWMDAWLVMZLURBVEEwMjA/recorded?starttime=*-50d&endtime=*-20d";
-        //     HttpResponseMessage response = await client.GetAsync(itemURL);
-        //     string content = await response.Content.ReadAsStringAsync();
-        //     var data = (JArray)JObject.Parse(content)["Items"];
-        //     var result = new List<TagValue>();
-        //     //List<TagValue> list = new List<TagValue>();
-
-        //     foreach (var item in data)
-        //     {
-        //         // list.Add(new TagValue()
-        //         // {
-        //         //     Values = item["Value"].Value<string>(),
-        //         //     TimeStamp = item["Timestamp"].Value<DateTime>()
-        //         // });
-
-        //         // if (item["Good"].Value<bool>() == true)
-        //         // {
-
-
-        //         var dataPair = new TagValue()
-        //         {
-        //             Values = item["Value"].Value<string>(),
-        //             TimeStamp = item["Timestamp"].Value<DateTime>()
-        //         };
-        //         result.Add(dataPair);
-
-        //         // }
-        //     }
-        //     //return Ok(new { result = result, message = "success" });
-
-        //     Console.WriteLine("test");
-
-        //     return result;
-        //     //         //return TagValue;
-        //     //}
-
-        //     // catch (Exception ex)
-        //     // {
-        //     //     return StatusCode(500, new { message = ex.Message });
-        //     // }
-
-        // }
-
-
-
-
 
 
 
@@ -627,4 +629,12 @@ namespace Backend.Models
 
 
     }
+
+
+
+
+
+
+
 }
+
