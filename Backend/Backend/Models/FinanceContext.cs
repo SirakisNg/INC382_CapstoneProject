@@ -330,7 +330,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT invoice_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.invoice";
+                string sql = $"SELECT * FROM TAS_Project.data_invoice";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -342,8 +342,8 @@ namespace Backend.Models
                             Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gas type"].ToString(),
-                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Type = reader["gasType"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["PricePerLitter"]),
                             Volume = Convert.ToDouble(reader["volume"]),
                             price = Convert.ToDouble(reader["price"])
                         });
@@ -371,7 +371,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT invoice_id,date,time,gasType,quantity,pricePerLitter,quantity*pricePerLitter as totalCost FROM TAS_Project.invoice WHERE date >= '" + startDate + "' AND date <= '" + endDate + "';";
+                string sql = $"SELECT * FROM TAS_Project.data_invoice WHERE date >= '" + startDate + "' AND date <= '" + endDate + "';";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -383,8 +383,8 @@ namespace Backend.Models
                             Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gas type"].ToString(),
-                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Type = reader["gasType"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["PricePerLitter"]),
                             Volume = Convert.ToDouble(reader["volume"]),
                             price = Convert.ToDouble(reader["price"])
                         });
@@ -415,8 +415,8 @@ namespace Backend.Models
                             Invoice_id = Convert.ToInt32(reader["invoice_number"]),
                             Date = reader["date"].ToString(),
                             Time = reader["time"].ToString(),
-                            Type = reader["gas type"].ToString(),
-                            PricePerLitter = Convert.ToDouble(reader["Price per litter"]),
+                            Type = reader["gasType"].ToString(),
+                            PricePerLitter = Convert.ToDouble(reader["PricePerLitter"]),
                             Volume = Convert.ToDouble(reader["volume"]),
                             price = Convert.ToDouble(reader["price"])
                         });
@@ -438,7 +438,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.GLAR;";
+                string sql = $"SELECT * FROM TAS_Project.glar;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -471,7 +471,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.GLC;";
+                string sql = $"SELECT * FROM TAS_Project.glc;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -503,7 +503,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.GLC;";
+                string sql = $"SELECT * FROM TAS_Project.glap;";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
@@ -535,7 +535,7 @@ namespace Backend.Models
             Console.WriteLine("info : " + DateTime.Today + " : Connect to the Database ... ");
             using (MySqlConnection conn = GetConnection())
             {
-                string sql = $"SELECT * FROM TAS_Project.GLC;";
+                string sql = $"SELECT * FROM tas_project.gli";
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 using (var reader = cmd.ExecuteReader())
