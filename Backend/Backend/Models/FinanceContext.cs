@@ -692,7 +692,8 @@ namespace Backend.Models
                             Enter_outbound_weighbridge = reader["Enter_outbound_weighbridge"].ToString(),
                             outbound_weighbridge_servicetime = reader["outbound_weighbridge_servicetime"].ToString(),
                             Exit_outbound_weighbridge = reader["Exit_outbound_weighbridge"].ToString(),
-                            exit_gate = reader["exit_gate"].ToString()
+                            exit_gate = reader["exit_gate"].ToString(),
+                            CN = reader["CustomerName"].ToString()
                         });
                     }
                     conn.Close();
@@ -721,12 +722,17 @@ namespace Backend.Models
                             no = Convert.ToInt32(reader["no"]),
                             Date = reader["Date"].ToString(),
                             Title = reader["Title"].ToString(),
+                            Description = reader["Description"].ToString(),
                             Debit = Convert.ToDouble(reader["Debit"]),
                             Credit = Convert.ToDouble(reader["Credit"])
                         });
                     }
                     conn.Close();
                     Console.WriteLine("info : " + DateTime.Today + " : Database connection success ");
+                }
+                foreach (var month in list)
+                {
+                    Console.WriteLine(month);
                 }
                 return list;
             }

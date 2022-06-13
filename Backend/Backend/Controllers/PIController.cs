@@ -38,7 +38,6 @@ namespace Backend.Controllers
         {
             try
             {
-                //business logic
                 Console.WriteLine(@$"Connecting to PI..." + itemname + "");
                 var credentrials = new NetworkCredential(username, password);
                 HttpClientHandler clientHandler = new HttpClientHandler { Credentials = credentrials };

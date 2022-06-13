@@ -7,14 +7,14 @@
 <script>
   await fetch('https://localhost:7000/api/pi?itemname=A002-0000-S2-DATA10')
     .then(response => response.json())
-    .then(data => sw = data.result[0].values)
-    .then(data1 => sw = data.result[1].values)
-    .then(data2 => sw = data.result[2].values)
-    .then(data3 => sw = data.result[3].values)
-    .then(data4 => sw = data.result[4].values)
-    .then(data5 => sw = data.result[5].values)
-    .then(data6 => sw = data.result[6].values)
-    .then(data7 => sw = data.result[7].values)
+    .then(data => data.result[0].values)
+    .then(data1 => sw1 = data.result[1].values)
+    .then(data2 => sw2 = data.result[2].values)
+    .then(data3 => sw3 = data.result[3].values)
+    .then(data4 => sw4 = data.result[4].values)
+    .then(data5 => sw5 = data.result[5].values)
+    .then(data6 => sw6 = data.result[6].values)
+    .then(data7 => sw7 = data.result[7].values)
 </script>
 
 <head>
